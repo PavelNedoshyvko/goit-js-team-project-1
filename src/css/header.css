@@ -44,23 +44,23 @@
 }
 
 .header-menu-link {
-  /* del positio*/
-  position: relative;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-
   display: flex;
   align-items: center;
-  letter-spacing: -0.02em;
 
-  color: var(--black-color);
-  transition: color var(--cubic-bezier);
+  color: #050505;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  position: relative;
+
+  transition: color green;
 }
 
 .header-menu-link:is(:hover, :focus) {
-  color: var(--accent-orange-color);
+  color: green;
 }
 
 .header-logo {
