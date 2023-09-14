@@ -1,25 +1,21 @@
 <header class="top-header" id="home">
   <div class="top-header-container container">
+    <!-- Навігація -->
     <nav class="header-menu-nav">
       <ul class="header-menu-list">
         <li class="header-menu-item">
           <a class="header-menu-link" href="#home">Home</a>
         </li>
         <li class="header-menu-item">
-          <a class="header-menu-link" href="./favorites.html">Favorites</a>
+          <a class="header-menu-link" href="./favorites">Favorites</a>
         </li>
       </ul>
     </nav>
 
+    <!-- ЛОГОТИП -->
     <a class="header-logo" href="./index.html">
       <span class="header-logo-part">tasty</span>treats.
     </a>
-    <svg class="basket-icon" width="24" height="24">
-      <use href="./img/icons.svg#basket"></use>
-    </svg>
-    <svg class="switch-icon" width="46" height="20">
-      <use href="./img/icons.svg#switch"></use>
-    </svg>
 
     <!-- button-toggle -->
     <button
@@ -31,22 +27,68 @@
         <use href="./img/icons.svg#burger"></use>
       </svg>
     </button>
+
+    <!-- ІКОНКИ: КОРЗИНА і РАДІІОБАТОН -->
+    <ul class="header-icon-list list">
+      <li class="header-icon-list-item">
+        <a
+          href=""
+          class="header-icon-list-link"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <svg class="header-list-icon" width="30" height="30">
+            <use href="./img/icons.svg#basket"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="header-icon-list-item">
+        <a
+          href=""
+          class="header-icon-list-link"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <svg class="header-list-icon" width="30" height="30">
+            <use href="./img/icons.svg#switch"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
   </div>
 </header>
+
+<!-- MOBILE MENU -->
 
 <div class="menu-container js-menu-container" id="mobile-menu">
   <button class="menu-toggle js-close-menu">
     <svg class="menu-toggle-close-btn">
-      <use href="./img/icons.svg#icon-x-close"></use>
+      <use href="./img/icons.svg#close"></use>
     </svg>
   </button>
 
   <ul class="mobile-menu">
     <li class="mobile-menu-items">
-      <a href="#home" class="mobile-menu-link">Home</a>
+      <a href="./index.html" class="mobile-menu-link">Home</a>
     </li>
     <li class="mobile-menu-items">
-      <a href="#made" class="mobile-menu-link">How it’s made?</a>
+      <a href="./favorites" class="mobile-menu-link">Favorites</a>
+    </li>
+  </ul>
+
+  <!-- MOBILE ICON/BUTON -->
+  <ul class="mobile-tool-icon">
+    <li class="mobile-tool-list-item">
+      <a
+        href=""
+        class="mobile-tool-list-link"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        <svg class="mobile-tool-list-icon">
+          <use href="./img/icons.svg#switch"></use>
+        </svg>
+      </a>
     </li>
   </ul>
 </div>
