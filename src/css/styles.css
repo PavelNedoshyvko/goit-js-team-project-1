@@ -11,4 +11,46 @@
 @import url('./base-styles.css');
 @import url('./utils.css');
 @import url('./header.css');
-@import url('./categories.css');
+
+/* ----------------popular-recipes-------------------- */
+
+.popular-recipes {
+  width: 235px;
+  display: block;
+}
+.title-popular-recipes {
+  margin-bottom: 30px;
+}
+.popular-recipes-text-transform {
+  text-transform: uppercase;
+}
+.img-popular-recipes {
+  display: inline-block;
+  margin-right: 10px;
+}
+.col-popular-recipes {
+  display: inline-block;
+}
+.sub-title-popular{
+  font-size: 14px;
+  transform: translate(0, -50%);
+}
+
+.blok-popular {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.text-popular-recipes {
+  width: 155px;
+  font-size: 10px;
+  line-height: 14px;
+  max-height: 41px;
+  -webkit-box-orient: vertical;
+  display: block;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+}
+
