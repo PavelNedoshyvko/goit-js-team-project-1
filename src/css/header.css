@@ -21,6 +21,8 @@
 .top-header-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+
   /* min-height: 40px; */
 }
 
@@ -28,11 +30,11 @@
   display: none;
 }
 
-/* @media only screen and (max-width: 1199px) {
+@media only screen and (min-width: 768px) {
   .header-menu-nav {
-    display: none;
+    display: block;
   }
-} */
+}
 
 .header-menu-list {
   display: flex;
@@ -40,26 +42,15 @@
   align-items: center;
 
   gap: 16px;
-  /* margin-left: 188px; */
-  /* margin-right: 137px; */
 }
-
-/* @media only screen and (min-width: 1200px) {
-  .header-menu-link {
-    padding-top: 28px;
-    padding-bottom: 28px;
-  }
-} */
 
 .header-menu-link {
   position: relative;
 
-  font-family: Inter;
   font-style: normal;
-  font-weight: 400;
   font-size: 12px;
   line-height: normal;
-
+  font-weight: 400;
   display: flex;
   align-items: center;
   letter-spacing: -0.02em;
@@ -76,50 +67,49 @@
 
 .header-logo {
   display: flex;
-  /* align-items: center; */
-  /* justify-content: center; */
 
   font-family: Inter;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
-  line-height: 1.11;
-  letter-spacing: -0.72px;
+  line-height: 1.12;
+  letter-spacing: -0.64px;
 
   color: var(--black);
-  /* margin-left: auto; */
-  /* margin-right: auto; */
 }
 
 .header-logo-part {
   color: var(--green);
 }
 
-/* @media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 768px) {
   .header-logo {
-    font-weight: 700;
-    font-size: 18px;
     line-height: 1.11;
-
-    letter-spacing: -0.03em;
+    letter-spacing: -0.72px;
   }
-} */
+}
 
 /* ІКОНКИ: КОРЗИНА, РАДІІОБАТОН, БУРГЕР */
 
 .header-icon-list {
   display: flex;
-  align-items: baseline;
 
   gap: 14px;
-  margin-left: auto;
+}
+
+.header-icon-list-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header-basket-icon,
 .header-burger-icon {
   stroke: var(--black);
   fill: none;
-  /* transition: stroke var(--); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 :is(.header-basket-icon, .header-burger-icon):hover,
@@ -138,11 +128,7 @@
 }
 
 /* МЕДІА. ІКОНКИ: КОРЗИНА, РАДІІОБАТОН, БУРГЕР*/
-@media only screen and (max-width: 768px) {
-  .header-switch-icon {
-    display: none;
-  }
-}
+
 @media only screen and (min-width: 768px) {
   .header-burger-icon {
     display: none;
@@ -162,7 +148,7 @@
   width: 220px;
   height: 100%;
   overflow-y: auto;
-
+  pointer-events: none;
   /* background-color: var(--background-deep-violet-color); */
   /* z-index: 999; */
 
@@ -318,49 +304,54 @@
 
 /* MOBILE ICON-SWITCH */
 
-.mobile-tool-icon {
+.theme {
+  display: none;
+  position: relative;
+}
+@media only screen and (min-width: 768px) {
+  .theme {
+    display: block;
+  }
+}
+
+.switch-label {
   display: flex;
-  justify-content: flex-start;
-  gap: 18px;
-  margin-left: 20px;
-  margin-bottom: 20px;
+  align-items: center;
+  width: 46px;
+  height: 20px;
+  padding: 1px 0;
+
+  box-shadow: 7px 5px 15px rgba(160, 158, 160, 0.4);
+  background-color: #cecdcd;
+  border-radius: 10px;
+}
+.switch-span {
+  position: absolute;
+  top: 1px;
+  pointer-events: none;
+  display: block;
+  width: 18px;
+  height: 18px;
+
+  box-shadow: 4px 4px 15px rgba(243, 243, 243, 0.25);
+  border-radius: 50%;
+  background-color: var(--white-w);
+
+  transform: translateX(1px);
 }
 
-/* @media only screen and (min-width: 768px) {
-  .mobile-tool-icon {
-    margin-left: 32px;
-    margin-bottom: 24px;
-  }
-} */
-
-/* .mobile-tool-list-item {
-} */
-
-.mobile-tool-list-link {
-  display: flex;
-  /* transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+.switch-input:checked ~ .switch-span {
+  transform: translateX(27px);
 }
 
-/* mobile-tool-list-link:is(:hover, :focus) {
-  background-color: var(--ocean-button-color);
-} */
-
-.mobile-tool-list-icon {
-  stroke: var(--white-w);
-  width: 22px;
-  height: 22px;
-  /* transition: stroke var(--cubic-bezier); */
+.switch-input:checked + .switch-label {
+  background-color: var(--green);
 }
 
-/* @media only screen and (min-width: 768px) {
-  .mobile-tool-list-icon {
-    width: 24px;
-    height: 24px;
-  }
-} */
+.index ~ .index-color {
+  color: var(--green);
+}
 
-/* @media only screen and (max-width: 1199.9px) {
-  .mobile-tool-list-icon:is(:hover, :focus) {
-    stroke: var(--accent-orange-color);
-  }
-} */
+.favorites ~ .favorites-color {
+  color: var(--green);
+}

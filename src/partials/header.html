@@ -4,10 +4,12 @@
     <nav class="header-menu-nav">
       <ul class="header-menu-list">
         <li class="header-menu-item">
-          <a class="header-menu-link" href="#home">Home</a>
+          <a class="header-menu-link index-color" href="../index.html">Home</a>
         </li>
         <li class="header-menu-item">
-          <a class="header-menu-link" href="./favorites">Favorites</a>
+          <a class="header-menu-link favorites-color" href="../favorites.html"
+            >Favorites</a
+          >
         </li>
       </ul>
     </nav>
@@ -21,7 +23,7 @@
     <ul class="header-icon-list">
       <!-- BASKET -->
       <li class="header-icon-list-item">
-        <svg class="header-basket-icon" width="30" height="30">
+        <svg class="header-basket-icon">
           <use href="./img/icons.svg#basket"></use>
         </svg>
       </li>
@@ -38,17 +40,20 @@
         </button>
       </li>
       <!-- SWITCH -->
-      <li class="header-icon-list-item">
-        <svg class="header-switch-icon" width="30" height="30">
-          <use href="./img/icons.svg#switch"></use>
-        </svg>
+      <li class="header-icon-list-item theme">
+        <input
+          id="switch"
+          class="switch-input visually-hidden"
+          type="checkbox"
+        />
+        <label class="switch-label" for="switch"></label>
+        <span class="switch-span"></span>
       </li>
     </ul>
   </div>
 </header>
 
 <!-- MOBILE MENU -->
-
 <div class="menu-container js-menu-container" id="mobile-menu">
   <button class="menu-toggle js-close-menu">
     <svg class="menu-toggle-close-btn">
