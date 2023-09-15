@@ -1,6 +1,6 @@
 <header class="top-header" id="home">
   <div class="top-header-container container">
-    <!-- Навігація -->
+    <!-- НАВІГАЦІЯ -->
     <nav class="header-menu-nav">
       <ul class="header-menu-list">
         <li class="header-menu-item">
@@ -10,48 +10,38 @@
           <a class="header-menu-link" href="./favorites">Favorites</a>
         </li>
       </ul>
-      <!-- ЛОГОТИП -->
-      <a class="header-logo" href="./index.html">
-        <span class="header-logo-part">tasty</span>treats.
-      </a>
     </nav>
 
-    <!-- button-toggle -->
-    <button
-      class="menu-toggle js-open-menu"
-      aria-expanded="false"
-      aria-controls="mobile-menu"
-    >
-      <svg class="icon-burger-btn">
-        <use href="./img/icons.svg#burger"></use>
-      </svg>
-    </button>
+    <!-- ЛОГОТИП -->
+    <a class="header-logo" href="./index.html">
+      <span class="header-logo-part">tasty</span>treats.
+    </a>
 
     <!-- ІКОНКИ: КОРЗИНА і РАДІІОБАТОН -->
-    <ul class="header-icon-list list">
+    <ul class="header-icon-list">
+      <!-- BASKET -->
       <li class="header-icon-list-item">
-        <a
-          href=""
-          class="header-icon-list-link"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <svg class="header-list-icon" width="30" height="30">
-            <use href="./img/icons.svg#basket"></use>
-          </svg>
-        </a>
+        <svg class="header-basket-icon" width="30" height="30">
+          <use href="./img/icons.svg#basket"></use>
+        </svg>
       </li>
+      <!-- BURGER -->
       <li class="header-icon-list-item">
-        <a
-          href=""
-          class="header-icon-list-link"
-          target="_blank"
-          rel="noreferrer noopener"
+        <button
+          class="menu-toggle js-open-menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
         >
-          <svg class="header-list-icon" width="30" height="30">
-            <use href="./img/icons.svg#switch"></use>
+          <svg class="header-burger-icon">
+            <use href="./img/icons.svg#burger"></use>
           </svg>
-        </a>
+        </button>
+      </li>
+      <!-- SWITCH -->
+      <li class="header-icon-list-item">
+        <svg class="header-switch-icon" width="30" height="30">
+          <use href="./img/icons.svg#switch"></use>
+        </svg>
       </li>
     </ul>
   </div>
@@ -66,17 +56,17 @@
     </svg>
   </button>
 
-  <ul class="mobile-menu">
+  <!-- <ul class="mobile-menu">
     <li class="mobile-menu-items">
       <a href="./index.html" class="mobile-menu-link">Home</a>
     </li>
     <li class="mobile-menu-items">
       <a href="./favorites" class="mobile-menu-link">Favorites</a>
     </li>
-  </ul>
+  </ul> -->
 
-  <!-- MOBILE ICON/BUTON -->
-  <ul class="mobile-tool-icon">
+  <!-- MOBILE ICON-SWITCH -->
+  <!-- <ul class="mobile-tool-icon">
     <li class="mobile-tool-list-item">
       <a
         href=""
@@ -89,5 +79,5 @@
         </svg>
       </a>
     </li>
-  </ul>
+  </ul> -->
 </div>
