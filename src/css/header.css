@@ -21,6 +21,8 @@
 .top-header-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+
   /* min-height: 40px; */
 }
 
@@ -28,11 +30,11 @@
   display: none;
 }
 
-/* @media only screen and (max-width: 1199px) {
+@media only screen and (min-width: 768px) {
   .header-menu-nav {
-    display: none;
+    display: block;
   }
-} */
+}
 
 .header-menu-list {
   display: flex;
@@ -40,26 +42,15 @@
   align-items: center;
 
   gap: 16px;
-  /* margin-left: 188px; */
-  /* margin-right: 137px; */
 }
-
-/* @media only screen and (min-width: 1200px) {
-  .header-menu-link {
-    padding-top: 28px;
-    padding-bottom: 28px;
-  }
-} */
 
 .header-menu-link {
   position: relative;
 
-  font-family: Inter;
   font-style: normal;
-  font-weight: 400;
   font-size: 12px;
   line-height: normal;
-
+  font-weight: 400;
   display: flex;
   align-items: center;
   letter-spacing: -0.02em;
@@ -76,50 +67,49 @@
 
 .header-logo {
   display: flex;
-  /* align-items: center; */
-  /* justify-content: center; */
 
   font-family: Inter;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
-  line-height: 1.11;
-  letter-spacing: -0.72px;
+  line-height: 1.12;
+  letter-spacing: -0.64px;
 
   color: var(--black);
-  /* margin-left: auto; */
-  /* margin-right: auto; */
 }
 
 .header-logo-part {
   color: var(--green);
 }
 
-/* @media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 768px) {
   .header-logo {
-    font-weight: 700;
-    font-size: 18px;
     line-height: 1.11;
-
-    letter-spacing: -0.03em;
+    letter-spacing: -0.72px;
   }
-} */
+}
 
 /* ІКОНКИ: КОРЗИНА, РАДІІОБАТОН, БУРГЕР */
 
 .header-icon-list {
   display: flex;
-  align-items: baseline;
 
   gap: 14px;
-  margin-left: auto;
+}
+
+.header-icon-list-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header-basket-icon,
 .header-burger-icon {
   stroke: var(--black);
   fill: none;
-  /* transition: stroke var(--); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 :is(.header-basket-icon, .header-burger-icon):hover,
@@ -138,16 +128,12 @@
 }
 
 /* МЕДІА. ІКОНКИ: КОРЗИНА, РАДІІОБАТОН, БУРГЕР*/
-/* @media only screen and (max-width: 768px) {
-  .header-switch-icon {
-    display: none;
-  }
-}
+
 @media only screen and (min-width: 768px) {
   .header-burger-icon {
     display: none;
   }
-} */
+}
 
 /* MOBILE MENU */
 
@@ -360,4 +346,12 @@
 
 .switch-input:checked + .switch-label {
   background-color: var(--green);
+}
+
+.index ~ .index-color {
+  color: var(--green);
+}
+
+.favorites ~ .favorites-color {
+  color: var(--green);
 }
