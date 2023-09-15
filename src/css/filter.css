@@ -1,0 +1,30 @@
+/*  */
+
+.search-form-reset-icon {
+  stroke: var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*  */
+.filter-form {
+  max-width: 782px;
+  display: flex;
+}
+
+.filter-form-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.filter-form-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.filter-form-btn {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+}
