@@ -105,7 +105,7 @@
   }
 } */
 
-/* ІКОНКИ: КОРЗИНА і РАДІІОБАТОН */
+/* ІКОНКИ: КОРЗИНА, РАДІІОБАТОН, БУРГЕР */
 
 .header-icon-list {
   display: flex;
@@ -154,8 +154,8 @@
   /* background-color: var(--background-deep-violet-color); */
   /* z-index: 999; */
 
-  transform: translateX(100%);
-  transition: transform 400ms cubic-bezier(0.25, 0.01, 0, 1);
+  /* transform: translateX(100%);
+  transition: transform 400ms cubic-bezier(0.25, 0.01, 0, 1); */
 }
 
 /* @media only screen and (min-width: 768px) {
@@ -304,7 +304,7 @@
   color: var(--);
 }
 
-/* MOBILE ICON/BUTON */
+/* MOBILE ICON-SWITCH */
 
 .mobile-tool-icon {
   display: flex;
