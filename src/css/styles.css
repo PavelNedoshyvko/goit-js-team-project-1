@@ -4,61 +4,13 @@
   | default @import url()
   |============================
 */
-/* @import url('~node_modules/modern-normalize/modern-normalize.css'); */
+/* @import url('../node_modules/modern-normalize/modern-normalize.css'); */
+@import url('./fonts.css');
 @import url('./reset.css');
+@import url('./variables.css');
+@import url('./base-styles.css');
+@import url('./utils.css');
 @import url('./header.css');
-
-:root {
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-
-  /* font-synthesis: none; */
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-  scroll-behavior: smooth;
-
-  /* Dimensions */
-
-  --breakpoint-mobile: 375px;
-  --breakpoint-tablet: 768px;
-  --breakpoint-desktop: 1200px;
-
-  --min-width-mobile: 320px;
-  --outer-container-width-mobile: 375px;
-
-  --primary-container-width-tablet: 704px;
-  --outer-container-width-tablet: 768px;
-
-  --primary-container-width-desktop: 1136px;
-  --outer-container-width-desktop: 1200px;
-
-  /* Colors */
-
-  --background-main-color: #fafafa;
-  --background-deep-violet-color: #1e1823;
-  --black-color: #111111;
-  --accent-orange-color: #fd9222;
-  --white-full-color: #ffffff;
-  --text-section-color: rgba(255, 255, 255, 0.7);
-  --text-cards-color: rgba(17, 17, 17, 0.7);
-  --text-placeholder-color: rgba(64, 64, 64, 0.3);
-  --button-card-border-color: rgba(17, 17, 17, 0.1);
-  --card-box-shadow-color: rgba(215, 228, 249, 0.25);
-  --button-mobile-menu-close-bg-color: #fcf1e0;
-  --line-section-color: rgba(255, 255, 255, 0.5);
-  --line-footer-color: rgba(255, 255, 255, 0.1);
-  --input-border-color: rgba(17, 17, 17, 0.05);
-  --text-modal-color: #000000;
-
-  /* Transitions and animations */
-
-  --cubic-bezier: 300ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-
 
 /* ----------------popular-recipes-------------------- */
 
@@ -101,4 +53,4 @@
   text-overflow: ellipsis;
   -webkit-line-clamp: 3;
 }
-/* ---------------end-popular-recipes----------------- */
+
