@@ -1,15 +1,11 @@
-import { getSortedCategories } from './sort-categories';
 
 function createMarkupCategoriesList(arr) {
-  return getSortedCategories(arr)
-    .map(
-      category =>
+  return arr.map(({name}) =>
         ` <li class="category-item">
-        <button class="category-btn category-btn-js" type="button">${category}</button>
+        <button class="category-btn category-btn-js" type="button">${name}</button>
       </li>`
-    )
-    .join('');
-}
+    ).join('');
+};
 
 //HERO
 function createMarkupEvents(arr) {

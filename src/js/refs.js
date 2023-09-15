@@ -1,6 +1,6 @@
 const refs = {
   categoriesList: document.querySelector('.categories-list-js'),
-  categoryBtn: document.querySelector('.category-btn-js'),
+  allCategoriesBtn: document.querySelector('.categories-btn-js'),
   swiperDiv: document.querySelector('.js-hero-slider'),
 };
 
