@@ -65,7 +65,7 @@
   letter-spacing: -0.02em;
 
   color: var(--black);
-  transition: color var(--cubic-bezier);
+  transition: color var(--);
 }
 
 .header-menu-link:is(:hover, :focus) {
@@ -133,7 +133,7 @@
 .header-list-icon {
   stroke: rgba(5, 5, 5, 1);
   fill: none;
-  transition: stroke var(--cubic-bezier);
+  transition: stroke var(--);
 }
 
 .header-list-icon:is(:hover, :focus) {
@@ -154,8 +154,8 @@
   height: 100%;
   overflow-y: auto;
 
-  background-color: var(--background-deep-violet-color);
-  z-index: 999;
+  /* background-color: var(--background-deep-violet-color); */
+  /* z-index: 999; */
 
   transform: translateX(100%);
   transition: transform 400ms cubic-bezier(0.25, 0.01, 0, 1);
@@ -214,7 +214,7 @@
 }
 
 .menu-toggle-close-btn {
-  stroke: var(--white-full-color);
+  stroke: var(--);
   width: 28px;
   height: 28px;
   transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -222,7 +222,7 @@
 }
 
 .menu-toggle-close-btn:is(:hover, :focus) {
-  stroke: var(--accent-orange-color);
+  stroke: var(--);
   scale: 1.3;
 }
 
@@ -254,8 +254,8 @@
   align-items: center;
   letter-spacing: -0.02em;
 
-  color: var(--white-full-color);
-  transition: color var(--cubic-bezier), font-weight var(--cubic-bezier);
+  color: var(--black);
+  /* transition: color var(--cubic-bezier), font-weight var(--cubic-bezier); */
 }
 .mobile-menu-items:is(:hover, :focus) {
   color: var(--accent-orange-color);
@@ -282,24 +282,24 @@
 
   /* border-radius: 2px; */
 
-  background-color: var(--accent-orange-color);
+  background-color: var(--green);
   /* bottom: 1px; */
 }
 
 .mobile-menu-link:is(:hover, :focus)::after {
   /* color: var(--accent-orange-color); */
-  content: '';
+  /* content: ''; */
   position: relative;
-  bottom: -8px;
-  left: 0;
+  /* bottom: -8px; */
+  /* left: 0; */
 
   display: block;
   width: 50%;
-  height: 1px;
+  /* height: 1px; */
 
-  border-radius: 2px;
+  /* border-radius: 2px; */
 
-  background-color: var(--accent-orange-color);
+  /* background-color: var(--accent-orange-color); */
   /* transition: background-color var(--cubic-bezier); */
 }
 
@@ -341,10 +341,10 @@
 } */
 
 .mobile-tool-list-icon {
-  stroke: var(--white-full-color);
+  stroke: var(--white-w);
   width: 22px;
   height: 22px;
-  transition: stroke var(--cubic-bezier);
+  /* transition: stroke var(--cubic-bezier); */
 }
 
 /* @media only screen and (min-width: 768px) {
