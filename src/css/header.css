@@ -11,7 +11,7 @@
   }
 } */
 
-/* @media only screen and (min-width: 768px) and (max-width: 1199px) {
+/* @media only screen and (min-width: var (--breakpoint-tablet)) and (max-width: var(--breakpoint-desktop)) {
   .top-header {
     padding-top: 24px;
     padding-bottom: 24px;
