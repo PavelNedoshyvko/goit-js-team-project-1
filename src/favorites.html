@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./css/favorites.css" />
+  </head>
+  <body>
+    <header class="favorites-top-header" id="home">
+        <div class="top-header-container container">
+          <!-- НАВІГАЦІЯ -->
+          <nav class="header-menu-nav">
+            <ul class="header-menu-list">
+              <li class="header-menu-item">
+                <a class="header-menu-link index-color" href="../index.html">Home</a>
+              </li>
+              <li class="header-menu-item">
+                <a class="header-menu-link favorites-color" href="../favorites.html"
+                  >Favorites</a
+                >
+              </li>
+            </ul>
+          </nav>
+      
+          <!-- ЛОГОТИП -->
+          <a class="header-logo" href="./index.html">
+            <span class="header-logo-part">tasty</span>treats.
+          </a>
+      
+          <!-- ІКОНКИ: КОРЗИНА і РАДІІОБАТОН -->
+          <ul class="header-icon-list">
+            <!-- BASKET -->
+            <li class="header-icon-list-item">
+              <svg class="header-basket-icon">
+                <use href="./img/icons.svg#basket"></use>
+              </svg>
+            </li>
+            <!-- BURGER -->
+            <li class="header-icon-list-item">
+              <button
+                class="menu-toggle js-open-menu"
+                aria-expanded="false"
+                aria-controls="mobile-menu"
+              >
+                <svg class="header-burger-icon">
+                  <use href="./img/icons.svg#burger"></use>
+                </svg>
+              </button>
+            </li>
+            <!-- SWITCH -->
+            <li class="header-icon-list-item theme">
+              <input
+                id="switch"
+                class="switch-input visually-hidden"
+                type="checkbox"
+              />
+              <label class="switch-label" for="switch"></label>
+              <span class="switch-span"></span>
+            </li>
+          </ul>
+        </div>
+      </header>
+      
+    <main class="container">
+      <section class="favorites-hero-img">
+        <picture>
+          <source
+            media="(min-width:1158px)"
+            srcset="
+              ./img/favorites/dex-card@1x.webp 1x,
+              ./img/favorites/dex-card@2x.webp 2x
+            "
+            type="image/webp"
+          />
+          <source
+            media="(min-width:1158px )"
+            srcset="
+              ./img/favorites/dex-card@1x.jpg 1x,
+              ./img/favorites/dex-card@2x.jpg 2x
+            "
+            type="image/jpg"
+          />
+
+          <source
+            media="(min-width:768px )"
+            srcset="
+              ./img/favorites/tab-card@1x.webp 1x,
+              ./img/favorites/tab-card@2x.webp 2x
+            "
+            type="image/webp"
+          />
+          <source
+            media="(min-width:768px )"
+            srcset="
+              ./img/favorites/tab-card@1x.jpg 1x,
+              ./img/favorites/tab-card@2x.jpg 2x
+            "
+            type="image/jpg"
+          />
+
+          <source
+            media="(max-width:767.9px )"
+            srcset="
+              ./img/favorites/mob-card@1x.webp 1x,
+              ./img/favorites/mob-card@2x.webp 2x
+            "
+            type="image/webp"
+          />
+          <source
+            media="(max-width:767.9px )"
+            srcset="
+              ./img/favorites/mob-card@1x.jpg 1x,
+              ./img/favorites/mob-card@2x.jpg 2x
+            "
+            type="image/jpg"
+          />
+          <img
+            class="gallery-item-img"
+            src="./img/favorites/dex-card@1x.jpg"
+            alt="banking application interface"
+            min-width="355"
+            min-height="356"
+          />
+        </picture>
+      </section>
+      <section class="">
+
+      <div class="favorites-display-none">
+        <div class="favorites-block-icon">
+            <svg class="favorites-icon" width="97" height="83">
+                <use href="./img/icons.svg#toque"></use>
+              </svg>
+        </div>
+        <p class="favorites-taxt">
+          It appears that you haven't added any recipes to your favorites yet.
+          To get started, you can add recipes that you like to your favorites
+          for easier access in the future.
+        </p>
+      </div>
+      
+        <div id="tui-pagination-container" class="tui-pagination"></div>
+      </section>
+    </main>
+    <script src="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.js"></script>
+    <script src="./favorites.js"></script>
+  </body>
+</html>
