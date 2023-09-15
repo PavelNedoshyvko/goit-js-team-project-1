@@ -5,7 +5,7 @@
   padding: 0px;
 }
 
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 768px) {
   .categories {
     width: 176px;
     height: 546px;
@@ -32,7 +32,7 @@
   font-weight: 500;
 }
 
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 768px) {
   .categories-all-btn {
     padding: 14px 28px;
   }
@@ -75,11 +75,17 @@
   padding-left: 0;
 }
 
-.category-btn {
+.category-item {
   margin-bottom: 18px;
+  
+}
+
+.category-btn {
   font-size: 14px;
   font-weight: 500;
   color: var(--gray-ul-w);
+  border: 0;
+  background: var(--background-w);
 }
 
 /* Работает в Firefox */
