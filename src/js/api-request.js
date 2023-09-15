@@ -3,7 +3,7 @@ export { serviceAllRecipes };
 axios.defaults.baseURL = "https://tasty-treats-backend.p.goit.global/api/recipes";
 
 
-async function serviceAllRecipes(page = 1, limit = 288) {
+async function serviceAllRecipes(page = 1, limit = 6) {
 	const params = new URLSearchParams({
 		title: '',
 		category: '',
