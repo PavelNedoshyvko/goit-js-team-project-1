@@ -138,7 +138,7 @@
 }
 
 /* МЕДІА. ІКОНКИ: КОРЗИНА, РАДІІОБАТОН, БУРГЕР*/
-@media only screen and (max-width: 768px) {
+/* @media only screen and (max-width: 768px) {
   .header-switch-icon {
     display: none;
   }
@@ -147,7 +147,7 @@
   .header-burger-icon {
     display: none;
   }
-}
+} */
 
 /* MOBILE MENU */
 
@@ -162,7 +162,7 @@
   width: 220px;
   height: 100%;
   overflow-y: auto;
-
+  pointer-events: none;
   /* background-color: var(--background-deep-violet-color); */
   /* z-index: 999; */
 
@@ -318,49 +318,46 @@
 
 /* MOBILE ICON-SWITCH */
 
-.mobile-tool-icon {
+.theme {
+  display: none;
+  position: relative;
+}
+@media only screen and (min-width: 768px) {
+  .theme {
+    display: block;
+  }
+}
+
+.switch-label {
   display: flex;
-  justify-content: flex-start;
-  gap: 18px;
-  margin-left: 20px;
-  margin-bottom: 20px;
+  align-items: center;
+  width: 46px;
+  height: 20px;
+  padding: 1px 0;
+
+  box-shadow: 7px 5px 15px rgba(160, 158, 160, 0.4);
+  background-color: #cecdcd;
+  border-radius: 10px;
+}
+.switch-span {
+  position: absolute;
+  top: 1px;
+  pointer-events: none;
+  display: block;
+  width: 18px;
+  height: 18px;
+
+  box-shadow: 4px 4px 15px rgba(243, 243, 243, 0.25);
+  border-radius: 50%;
+  background-color: var(--white-w);
+
+  transform: translateX(1px);
 }
 
-/* @media only screen and (min-width: 768px) {
-  .mobile-tool-icon {
-    margin-left: 32px;
-    margin-bottom: 24px;
-  }
-} */
-
-/* .mobile-tool-list-item {
-} */
-
-.mobile-tool-list-link {
-  display: flex;
-  /* transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+.switch-input:checked ~ .switch-span {
+  transform: translateX(27px);
 }
 
-/* mobile-tool-list-link:is(:hover, :focus) {
-  background-color: var(--ocean-button-color);
-} */
-
-.mobile-tool-list-icon {
-  stroke: var(--white-w);
-  width: 22px;
-  height: 22px;
-  /* transition: stroke var(--cubic-bezier); */
+.switch-input:checked + .switch-label {
+  background-color: var(--green);
 }
-
-/* @media only screen and (min-width: 768px) {
-  .mobile-tool-list-icon {
-    width: 24px;
-    height: 24px;
-  }
-} */
-
-/* @media only screen and (max-width: 1199.9px) {
-  .mobile-tool-list-icon:is(:hover, :focus) {
-    stroke: var(--accent-orange-color);
-  }
-} */

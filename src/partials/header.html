@@ -38,17 +38,20 @@
         </button>
       </li>
       <!-- SWITCH -->
-      <li class="header-icon-list-item">
-        <svg class="header-switch-icon" width="30" height="30">
-          <use href="./img/icons.svg#switch"></use>
-        </svg>
+      <li class="header-icon-list-item theme">
+        <input
+          id="switch"
+          class="switch-input visually-hidden"
+          type="checkbox"
+        />
+        <label class="switch-label" for="switch"></label>
+        <span class="switch-span"></span>
       </li>
     </ul>
   </div>
 </header>
 
 <!-- MOBILE MENU -->
-
 <div class="menu-container js-menu-container" id="mobile-menu">
   <button class="menu-toggle js-close-menu">
     <svg class="menu-toggle-close-btn">
