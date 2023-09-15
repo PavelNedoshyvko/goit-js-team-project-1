@@ -3,6 +3,7 @@
   height: 322px;
   margin-left: 20px;
   padding: 0px;
+  
 }
 
 @media only screen and (min-width: 768px) {
@@ -30,6 +31,7 @@
   border: 1px solid var(--gray-border-w);
   color: var(--gray-title-w);
   font-weight: 500;
+  transition: all 250ms  cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 @media only screen and (min-width: 768px) {
@@ -37,14 +39,15 @@
     padding: 14px 28px;
   }
 }
-.categorie:hover,
-.categorie:focus {
+.category-btn:hover,
+.category-btn:focus {
   color: var(--green);
 }
 .categories-all-btn:hover,
 .categories-all-btn:focus {
   color: var(--white-w);
   background: var(--green);
+  border: 1px solid var(--green);
 }
 
 .categories-list-box {
@@ -77,6 +80,7 @@
 
 .category-item {
   margin-bottom: 18px;
+  
 }
 
 .category-btn {
@@ -85,6 +89,7 @@
   color: var(--gray-ul-w);
   border: 0;
   background: var(--background-w);
+  transition: all 250ms  cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 /* Работает в Firefox */
@@ -102,5 +107,5 @@
 .categories-list-box::-webkit-scrollbar-thumb {
   background-color: var(--gray-border-w);
   border-radius: 12px;
-  border: 1px solid var(--black);
+  
 }
