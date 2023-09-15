@@ -1,0 +1,14 @@
+/**
+  |============================
+  | include css partials with
+  | default @import url()
+  |============================
+*/
+@import url('./css/fonts.css');
+@import url('../node_modules/modern-normalize/modern-normalize.css');
+@import url('./css/reset.css');
+@import url('./css/variables.css');
+@import url('./css/base-styles.css');
+@import url('./css/utils.css');
+@import url('./css/header.css');
+@import url('./css/popular-recipes.css');
