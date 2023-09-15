@@ -133,11 +133,11 @@
 .header-list-icon {
   stroke: rgba(5, 5, 5, 1);
   fill: none;
-  transition: stroke var(--);
+  /* transition: stroke var(--); */
 }
 
 .header-list-icon:is(:hover, :focus) {
-  stroke: orange;
+  stroke: var(--green);
 }
 
 /* MOBILE MENU */
@@ -208,17 +208,12 @@
   }
 } */
 
-.menu-toggle:hover,
-.menu-toggle:focus {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
 .menu-toggle-close-btn {
   stroke: var(--);
   width: 28px;
   height: 28px;
-  transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    scale 250ms cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
 .menu-toggle-close-btn:is(:hover, :focus) {
@@ -258,7 +253,7 @@
   /* transition: color var(--cubic-bezier), font-weight var(--cubic-bezier); */
 }
 .mobile-menu-items:is(:hover, :focus) {
-  color: var(--accent-orange-color);
+  color: var(--green);
   font-weight: 600;
 }
 
@@ -309,7 +304,7 @@
 }
 
 .mobile-menu-items.active {
-  color: var(--accent-orange-color);
+  color: var(--);
 }
 
 /* MOBILE ICON/BUTON */
@@ -366,9 +361,14 @@
 
 .icon-burger-btn {
   stroke: black;
-  height: 28px;
-  width: 28px;
+  height: 32px;
+  width: 32px;
 }
+
+.icon-burger-btn:is(:hover, :focus) {
+  stroke: var(--green);
+}
+
 /* 
 @media only screen and (min-width: 768px) and (max-width: 1199px) {
   .icon-burger-btn {
