@@ -106,38 +106,35 @@
 } */
 
 /* ІКОНКИ: КОРЗИНА і РАДІІОБАТОН */
-/* @media only screen and (max-width: 1199px) {
-  .header-icon-list {
-    display: none;
-  }
-} */
 
 .header-icon-list {
   display: flex;
-  gap: 18px;
+  align-items: baseline;
+
+  gap: 14px;
   margin-left: auto;
 }
 
-/* @media only screen and (max-width: 1199px) {
-  .header-icon-list {
-    display: none;
-  }
-} */
-
-.header-icon-list-link {
-  display: flex;
-  /* align-items: center; */
-  /* justify-content: center; */
-}
-
-.header-list-icon {
-  stroke: rgba(5, 5, 5, 1);
+.header-basket-icon,
+.header-burger-icon {
+  stroke: var(--black);
   fill: none;
   /* transition: stroke var(--); */
 }
 
-.header-list-icon:is(:hover, :focus) {
+:is(.header-basket-icon, .header-burger-icon):hover,
+:is(.header-basket-icon, .header-burger-icon):focus {
   stroke: var(--green);
+}
+
+.header-basket-icon {
+  height: 24px;
+  width: 24px;
+}
+
+.header-burger-icon {
+  height: 32px;
+  width: 32px;
 }
 
 /* MOBILE MENU */
@@ -308,6 +305,7 @@
 }
 
 /* MOBILE ICON/BUTON */
+
 .mobile-tool-icon {
   display: flex;
   justify-content: flex-start;
@@ -352,27 +350,5 @@
 /* @media only screen and (max-width: 1199.9px) {
   .mobile-tool-list-icon:is(:hover, :focus) {
     stroke: var(--accent-orange-color);
-  }
-} */
-
-/* ===================/mobile-social-networks=================== */
-
-/* =======================/Mobile-menu ====================*/
-
-.icon-burger-btn {
-  stroke: black;
-  height: 32px;
-  width: 32px;
-}
-
-.icon-burger-btn:is(:hover, :focus) {
-  stroke: var(--green);
-}
-
-/* 
-@media only screen and (min-width: 768px) and (max-width: 1199px) {
-  .icon-burger-btn {
-    height: 32px;
-    width: 32px;
   }
 } */

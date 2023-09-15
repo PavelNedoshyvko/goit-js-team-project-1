@@ -18,43 +18,32 @@
     </a>
 
     <!-- ІКОНКИ: КОРЗИНА і РАДІІОБАТОН -->
-    <ul class="header-icon-list list">
+    <ul class="header-icon-list">
+      <!-- BASKET -->
       <li class="header-icon-list-item">
-        <a
-          href=""
-          class="header-icon-list-link"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <svg class="header-list-icon" width="30" height="30">
-            <use href="./img/icons.svg#basket"></use>
-          </svg>
-        </a>
+        <svg class="header-basket-icon" width="30" height="30">
+          <use href="./img/icons.svg#basket"></use>
+        </svg>
       </li>
-      <!-- <li class="header-icon-list-item">
-        <a
-          href=""
-          class="header-icon-list-link"
-          target="_blank"
-          rel="noreferrer noopener"
+      <!-- BURGER -->
+      <li class="header-icon-list-item">
+        <button
+          class="menu-toggle js-open-menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
         >
-          <svg class="header-list-icon" width="30" height="30">
-            <use href="./img/icons.svg#switch"></use>
+          <svg class="header-burger-icon">
+            <use href="./img/icons.svg#burger"></use>
           </svg>
-        </a>
-      </li> -->
+        </button>
+      </li>
+      <!-- SWITCH -->
+      <li class="header-icon-list-item">
+        <svg class="header-switch-icon" width="30" height="30">
+          <use href="./img/icons.svg#switch"></use>
+        </svg>
+      </li>
     </ul>
-
-    <!-- button-toggle -->
-    <button
-      class="menu-toggle js-open-menu"
-      aria-expanded="false"
-      aria-controls="mobile-menu"
-    >
-      <svg class="icon-burger-btn">
-        <use href="./img/icons.svg#burger"></use>
-      </svg>
-    </button>
   </div>
 </header>
 
@@ -76,7 +65,7 @@
     </li>
   </ul>
 
-  <!-- MOBILE ICON/BUTON -->
+  <!-- MOBILE ICON-SWITCH -->
   <ul class="mobile-tool-icon">
     <li class="mobile-tool-list-item">
       <a
