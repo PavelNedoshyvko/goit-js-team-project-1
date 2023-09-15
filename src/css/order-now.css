@@ -6,7 +6,7 @@
     width: 95%;
     max-width: 440px;
     height: 95%;
-    max-height: 632px;
+    max-height: 700px;
     border-radius: 15px;
     padding: 32px 24px;
     /* opacity: 0;
@@ -15,139 +15,41 @@
     z-index: 2;
     background-color: #ffffff;
   }
-  /* .input-name {
-    font-size: 14px;
-    color: #05050533;
-    border: 1px;
+  .btn-close {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    border: none;
+    background: none;
+  }
+  .btn-close-icon {
+    stroke: black;
+  }
+  .form-field {
+    margin-bottom: 15px;
+  }
+
+  .form-field label {
+    margin-bottom: 5px;
+    display: block;
+  }
+  .form-field input, .form-field textarea {
+    display: block;
+    width: 100%;
     border-radius: 15px;
-    padding: 14px, 169px, 14px, 18px;
-    border-color: rgba(5, 5, 5, 0.2);
- } */
+    padding: 14px 18px;
+    border: 1px solid rgba(5, 5, 5, 0.2)
+  }
+
+  .form-field textarea {
+    resize: none;
+  }
   
   .send {
+    border: none;
+    border-radius: 15px;
     color: #ffffff;
     background-color: #9BB537;
-    width: 360px;
+    width: 100%;
     height: 48px;
   }
-  .btn-send {
-    
-  }
-  /* @media only screen and (min-width: 768px) {
-    .review-modal-container {
-      max-width: 517px;
-      max-height: 628px;
-      padding: 48px;
-    }
-  }
-  
-  .review-modal-container .input-review-modal {
-    width: 100%;
-    height: 45px;
-    color: var(--text-modal-color);
-    font-size: 14px;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-    background-color: transparent;
-    transition: border-color var(--cubic-bezier);
-  }
-  
-  @media only screen and (min-width: 768px) {
-    .review-modal-container .input-review-modal {
-      height: 66px;
-      font-size: 18px;
-    }
-  }
-  
-  .review-modal-container .input-review-modal:hover {
-    border-color: var(--accent-orange-color);
-  }
-  
-  .review-modal-container .input-review-modal::placeholder {
-    color: var(--text-placeholder-color);
-  }
-  
-  .review-modal-container .text-input-review-modal {
-    width: 100%;
-    height: 91px;
-    padding-top: 14px;
-    padding-left: 18px;
-    color: var(--text-modal-color);
-    font-size: 14px;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-    border: 1.5px solid var(--input-border-color);
-    border-radius: 8px;
-    outline: none;
-    resize: none;
-    background-color: transparent;
-    transition: border-color var(--cubic-bezier);
-  }
-  
-  @media only screen and (min-width: 768px) {
-    .review-modal-container .text-input-review-modal {
-      height: 137px;
-      font-size: 18px;
-    }
-  }
-  
-  .review-modal-container .text-input-review-modal:hover {
-    border-color: var(--accent-orange-color);
-  }
-  
-  .review-modal-container .text-input-review-modal::placeholder {
-    color: var(--text-placeholder-color);
-  }
-  
-  .review-modal-container .title-review-modal-orange {
-    color: var(--accent-orange-color);
-  }
-  .review-modal-container .title-review-modal-black {
-    color: var(--black-color);
-    width: 255px;
-    text-align: left;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 1.2;
-    letter-spacing: -0.03em;
-  }
-  
-  @media only screen and (min-width: 768px) {
-    .review-modal-container .title-review-modal-black {
-      width: 298px;
-      font-size: 24px;
-      line-height: 1.17;
-    }
-  }
-  
-  .review-modal-container .review-window-modal-button {
-    position: absolute;
-    top: 14px;
-    right: 14px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    border: none;
-    stroke: var(--black-color);
-    background-color: transparent;
-    transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1),
-      scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  @media only screen and (min-width: 768px) {
-    .review-modal-container .review-window-modal-button {
-      top: 24px;
-      right: 24px;
-    }
-  }
-  
-  .review-modal-container .review-window-modal-button:hover,
-  .review-modal-container .review-window-modal-button:focus {
-    stroke: var(--accent-orange-color);
-    scale: 1.3;
-  }
-  
-  .input-container.tel-review {
-    position: relative;
-  } */
