@@ -6,7 +6,7 @@
 @media screen and (min-width: 768px) {
   .section-hero {
     padding-top: 93px;
-    max-width: 1280px;
+    max-width: 768px;
   }
 }
 @media screen and (min-width: 1280px) {
