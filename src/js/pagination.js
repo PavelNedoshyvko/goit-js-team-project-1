@@ -1,7 +1,7 @@
 import Pagination from 'tui-pagination';
 //import 'tui-pagination/dist/tui-pagination.css';
 
-const container = document.querySelector("#pagination")
+const container = document.querySelector('#pagination');
 // const container = document.getElementById('pagination');
 
 const options = {
@@ -31,4 +31,4 @@ const options = {
   };
 
   const pagination = new Pagination(container, options);
-  
+ 

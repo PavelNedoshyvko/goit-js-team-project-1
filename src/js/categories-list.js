@@ -1,13 +1,11 @@
 import { refs } from './refs';
-import { serviceAllRecipes } from './api-request';
+import { serviceAllCategories } from './api-requests';
 import { createMarkupCategoriesList } from './markup';
 
 async function categoriesList() {
   try {
-    const { results } = await serviceAllRecipes();
-    refs.categoriesList.insertAdjacentHTML(
-      'beforeend',
-      createMarkupCategoriesList(results)
+    const results = await serviceAllCategories();
+    refs.categoriesList.insertAdjacentHTML('beforeend',createMarkupCategoriesList(results)
     );
   } catch (err) {
     console.log(err);
