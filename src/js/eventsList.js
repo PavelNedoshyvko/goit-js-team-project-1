@@ -1,4 +1,4 @@
-import { allMasterDish } from './api-request';
+import { allMasterDish } from './api-requests';
 import { createMarkupEvents } from './markup';
 import { refs } from './refs';
 
