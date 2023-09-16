@@ -1,11 +1,13 @@
-
 function createMarkupCategoriesList(arr) {
-  return arr.map(({name}) =>
+  return arr
+    .map(
+      ({ name }) =>
         ` <li class="category-item">
         <button class="category-btn category-btn-js" type="button">${name}</button>
       </li>`
-    ).join('');
-};
+    )
+    .join('');
+}
 
 //HERO
 function createMarkupEvents(arr) {
@@ -23,14 +25,15 @@ function createMarkupEvents(arr) {
     <div class="dish" style="background-image: url(${topic.imgWebpUrl});">
     </div>
 		</div>
-		</div>`
-		})
+		</div>`;
+    })
     .join('');
-};
-
+}
 
 function createMarkupPopularRecipesList(arr) {
-  return arr.map(({title, description, preview}) =>
+  return arr
+    .map(
+      ({ title, description, preview }) =>
         ` <li class="blok-popular">
       <img
         class="img-popular-recipes"
@@ -48,7 +51,68 @@ function createMarkupPopularRecipesList(arr) {
         </p>
       </div>
     </li>`
-    ).join('');
-};
+    )
+    .join('');
+}
 
-export { createMarkupCategoriesList, createMarkupEvents, createMarkupPopularRecipesList };
+//Відмалювання Рецепту в модалці
+
+function getTags(tags) {
+  return tags
+    .map(tag => `<button class="btn-tag-recipe" type="button">#${tag}</button>`)
+    .join('');
+}
+
+function getIngredients(ingredients) {
+  return ingredients
+    .map(ingredient => {
+      const { name, measure } = ingredient;
+      return `
+    <p class="recipe-ingredient-name">${name}</p><p class="recipe-ingredient-measure">${measure}</p>
+    `;
+    })
+    .join('');
+}
+
+function recipeRendering(obj) {
+  const {
+    title,
+    category,
+    area,
+    instructions,
+    description,
+    thumb,
+    preview,
+    time,
+    youtube,
+    tags,
+    ingredients,
+    rating,
+    whoRated,
+  } = obj;
+
+  return `<h1 class="title">${title}</h1>
+    <li class="media-source">
+      <iframe
+        src="${youtube}"
+        width="460"
+        height="250"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </li>
+    <div class="tags-list">${getTags(tags)}</div>
+    <div class="ratingAndTime">
+      <li>${rating}</li>
+      <li>${time}</li>
+    </div>
+    <div class="ingredient-cover">${getIngredients(ingredients)}</div>
+    <p class="description-recipe">${instructions}</p>`;
+}
+
+export {
+  createMarkupCategoriesList,
+  createMarkupEvents,
+  createMarkupPopularRecipesList,
+};
