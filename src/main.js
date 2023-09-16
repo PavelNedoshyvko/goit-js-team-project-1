@@ -7,3 +7,4 @@ import './js/categories-list';
 import './js/popular-recipes-list';
 import './js/star';
 import './js/order-now';
+import './js/pagination';

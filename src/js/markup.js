@@ -114,5 +114,8 @@ function recipeRendering(obj) {
 export {
   createMarkupCategoriesList,
   createMarkupEvents,
-  createMarkupPopularRecipesList,
+	createMarkupPopularRecipesList, 
+	recipeRendering, 
+	getIngredients, 
+	getTags,
 };
