@@ -11,5 +11,5 @@ closebtn.addEventListener('click', () => {
 });
 
 // console.log(menuMob);
-console.dir(menuBox);
+// console.dir(menuBox);
 // console.log(closebtn);
