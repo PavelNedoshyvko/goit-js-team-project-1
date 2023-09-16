@@ -1,20 +1,17 @@
 /*  */
 
 .main-products-container {
-  width: 335px;
+  max-width: 335px;
 }
 @media only screen and (min-width: 768px) {
   .main-products-container {
-    width: 496px;
+    max-width: 496px;
   }
 }
 @media only screen and (min-width: 1280px) {
   .main-products-container {
-    width: 782px;
+    max-width: 782px;
   }
-}
-
-.filter-form-item {
 }
 
 .filter-label {
