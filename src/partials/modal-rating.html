@@ -1,0 +1,61 @@
+<!-- Modal Rating  -->
+<div id="ratingModal" class="rating-modal">
+  <div class="rating-modal-content">
+    <button type="button" class="rating-window-close" data-modal-close>
+      <svg class="close-icon" width="24" height="24">
+        <use href="../img/icons.svg#close"></use>
+      </svg>
+    </button>
+    <h2 class="modal-rating-title">Rating</h2>
+    <form id="ratingForm">
+      <div class="rating-stars">
+        <span id="rating-counter">0.0</span>
+        <label for="star1">
+          <input type="radio" name="rating" value="1" id="star1" />
+          <svg width="24" height="24">
+            <use href="../img/icons.svg#star"></use>
+          </svg>
+        </label>
+
+        <label for="star2">
+          <input type="radio" name="rating" value="2" id="star2" />
+          <svg width="24" height="24">
+            <use href="../img/icons.svg#star"></use>
+          </svg>
+        </label>
+
+        <label for="star3">
+          <input type="radio" name="rating" value="3" id="star3" />
+          <svg width="24" height="24">
+            <use href="../img/icons.svg#star"></use>
+          </svg>
+        </label>
+
+        <label for="star4">
+          <input type="radio" name="rating" value="4" id="star4" />
+          <svg width="24" height="24">
+            <use href="../img/icons.svg#star"></use>
+          </svg>
+        </label>
+
+        <label for="star5">
+          <input type="radio" name="rating" value="5" id="star5" />
+          <svg width="24" height="24">
+            <use href="../img/icons.svg#star"></use>
+          </svg>
+        </label>
+      </div>
+
+      <input
+        class="rating-modal-input"
+        type="email"
+        id="email"
+        placeholder="Enter email"
+        required
+      />
+      <button class="rating-modal-button" type="submit">
+        <span class="rating-modal-button-text">Send</span>
+      </button>
+    </form>
+  </div>
+</div>
