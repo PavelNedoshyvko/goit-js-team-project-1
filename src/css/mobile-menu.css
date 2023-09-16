@@ -13,7 +13,7 @@
 }
 
 .menu-mob.isOpen {
-  transform: translate(0);
+  transform: translateX(0);
 }
 
 .menu-mob-btn {
