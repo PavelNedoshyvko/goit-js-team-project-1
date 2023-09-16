@@ -32,6 +32,9 @@ async function allMasterDish() {
   return data;
 };
 
+async function servicePopularRecipes() {
+	const { data } = await axios(`${ALL_RECIPES}${POPULAR}`);
+  return data;
+};
 
-
-export { serviceAllCategories, allMasterDish };
+export { serviceAllCategories, allMasterDish, servicePopularRecipes };
