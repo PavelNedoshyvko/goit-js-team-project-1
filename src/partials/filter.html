@@ -1,14 +1,13 @@
-<div class="main-products container">
+<div class="main-products-container">
     <div class="filter-form" id="filter-form">
         <ul class="filter-form-list">
             <li class="filter-form-item">
-                <label for="search-input">
-
-                    Search</label>
-                <input type="text" name="search-input" autocomplete="off" placeholder="Enter text" />
+                <label class="filter-label" for="search-input">Search</label>
+                <input class="search-select" type="text" name="search-input" autocomplete="off"
+                    placeholder="Enter text" />
             </li>
             <li class="filter-form-item">
-                <label for="time-input">Time</label>
+                <label class="filter-label" for="time-input">Time</label>
                 <select class="time-select" name="time-input">
                     <option value="">0 min</option>
                     <option value="10">10 min</option>
@@ -19,13 +18,13 @@
                 </select>
             </li>
             <li class="filter-form-item">
-                <label for="area-input">Area</label>
+                <label class="filter-label" for="area-input">Area</label>
                 <select class="area-select" name="area-input">
                     <option value="">Region</option>
                 </select>
             </li>
             <li class="filter-form-item">
-                <label for="ingredients-input">Ingredients</label>
+                <label class="filter-label" for="ingredients-input">Ingredients</label>
                 <select class="ingredients-select" name="ingredients-input">
                     <option value="">Product</option>
                 </select>
@@ -34,7 +33,7 @@
         </ul>
     </div>
     <button class="filter-form-btn" type="button">
-        <svg class="search-form-reset-icon" width="17" height="17">
+        <svg class="search-form-reset-icon" width="16" height="16">
             <use href="./img/icons.svg#close"></use>
         </svg>
         Reset the filter
