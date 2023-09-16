@@ -72,5 +72,12 @@
 }
 
 .btn-order-now-container.isOpen {
-  transform: translate(0);
+  /* transform: translate(0); */
+  display: none;
 }
+
+/* .is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+} */
