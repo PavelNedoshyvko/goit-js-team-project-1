@@ -1,15 +1,11 @@
-import { getSortedCategories } from './sort-categories';
 
 function createMarkupCategoriesList(arr) {
-  return getSortedCategories(arr)
-    .map(
-      category =>
+  return arr.map(({name}) =>
         ` <li class="category-item">
-        <button class="category-btn category-btn-js" type="button">${category}</button>
+        <button class="category-btn category-btn-js" type="button">${name}</button>
       </li>`
-    )
-    .join('');
-}
+    ).join('');
+};
 
 //HERO
 function createMarkupEvents(arr) {
@@ -47,6 +43,29 @@ function createMarkupEvents(arr) {
       </div>`;
     })
     .join('');
-}
+};
 
-export { createMarkupCategoriesList, createMarkupEvents };
+
+function createMarkupPopularRecipesList(arr) {
+  return arr.map(({title, description, preview}) =>
+        ` <li class="blok-popular">
+      <img
+        class="img-popular-recipes"
+        src="${preview}"
+        alt="french-omelette"
+        width="64px"
+        height="64px"
+      />
+      <div class="col-popular-recipes">
+        <h3 class="sub-title-popular popular-recipes-text-transform">
+          ${title}
+        </h3>
+        <p class="text-popular-recipes">
+          ${description}
+        </p>
+      </div>
+    </li>`
+    ).join('');
+};
+
+export { createMarkupCategoriesList, createMarkupEvents, createMarkupPopularRecipesList };

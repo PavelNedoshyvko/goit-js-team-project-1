@@ -1,13 +1,13 @@
 import Pagination from 'tui-pagination';
 //import 'tui-pagination/dist/tui-pagination.css';
 
-const container = document.querySelector("#pagination")
+const container = document.querySelector('#pagination');
 // const container = document.getElementById('pagination');
 
 const options = {
-    totalItems: 15, //`${}`- приходит с бекенда
-    itemsPerPage: 6, //`${}` - для tablet 8, для desktop 9
-    visiblePages: 2, //`${}` - tablet и для desktop 3
+    totalItems: 15, //`${}`
+    itemsPerPage: 6,
+    visiblePages: 2,
     page: 1,
     centerAlign: false,
     firstItemClassName: 'tui-first-child',
@@ -26,9 +26,7 @@ const options = {
       moreButton:
         '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
           '<span class="tui-ico-ellip">...</span>' +
-        '</a>'
-    }
+        '</a>',
+    },
   };
-
   const pagination = new Pagination(container, options);
-  
