@@ -87,7 +87,7 @@
   text-transform: uppercase;
   margin-bottom: 8px;
 
-  color: var(--primary-text-CH-color-CardTitle-Description);
+  color: #f8f8f8;
 }
 
 .cards__text {
@@ -99,7 +99,7 @@
   line-height: calc(16 / 12);
   margin-bottom: 16px;
 
-  color: var(--primary-text-CH-color-CardTitle-Description);
+  color: #f8f8f8;
 }
 
 .cards__info {
@@ -132,7 +132,7 @@
 .rating__body::before {
   content: '★★★★★';
   display: block;
-  color: var(--primary-text-CH-color-STARS);
+  color: rgba(248,248,248,.1);
   font-size: 16px;
 }
 
@@ -171,5 +171,5 @@
   font-size: 14px;
   font-weight: 500;
   line-height: calc(18 / 14);
-  color: var(--primary-text-CH-color-RATING);
+  color: #f8f8f8;
 }
