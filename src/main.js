@@ -1,11 +1,6 @@
-import { serviceAllRecipes } from "./js/api-request";
 
-// async function requestApi() {
-// 	try {
-// 		const data = await serviceAllRecipes();
-// 		console.log(data);
-// 		} catch (err) {
-//     console.log(err);
-// 	};
-// }
-// requestApi();
+// import './js/pagination';
+
+import './js/categories-list';
+import './js/eventsList';
+import './js/mob-menu';
