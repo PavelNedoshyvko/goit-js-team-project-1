@@ -4,7 +4,7 @@ const refs = {
   popularRecipesList: document.querySelector('.popular-recipes-list-js'),
   allCategoriesBtn: document.querySelector('.categories-btn-js'),
   stars: document.querySelectorAll('.star-icon'),
-  starBox: document.querySelector('#starRating')
+  starBox: document.querySelector('#starRating'),
   swiperContainer: document.querySelector('.swiper-container'),
 };
 
