@@ -57,7 +57,7 @@ function createMarkupPopularRecipesList(arr) {
 
 //Відмалювання Рецепту в модалці
 // тимчасова змінна
-const list = document.querySelector('.detailInfoRecipe');
+const list = document.querySelector('.recipe-data-cover');
 
 const obj = {
   _id: '6462a8f74c3d0ddd28897fc1',
@@ -161,8 +161,7 @@ function recipeRendering(obj) {
     whoRated,
   } = obj;
 
-  return `<div class="recipe-data-cover">
-    <div class="recipe-media-source">
+  return `<div class="recipe-media-source">
       <iframe
         class="video-recipe"
         src="${youtube}"
