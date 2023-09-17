@@ -1,0 +1,11 @@
+@media only screen and (min-width: 768px) {
+  .main-section-container {
+    display: flex;
+    gap: 32px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .main-section-container {
+    gap: 64px;
+  }
+}
