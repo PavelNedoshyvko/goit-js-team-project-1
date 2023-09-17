@@ -1,0 +1,75 @@
+.detailInfoRecipe {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+
+  width: 95%;
+  max-width: 440px;
+
+  height: 95%;
+  max-height: 600px;
+
+  border-radius: 15px;
+  padding: 32px 24px;
+
+  overflow-y: auto;
+  z-index: 2;
+
+  background-color: var(--background-w);
+
+  transition: transform 2000ms var(--trns-general);
+  transform: translate(-50%, -50%);
+}
+
+/* icon close */
+.btn-close-recipe {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  border: none;
+  background: none;
+}
+
+.btn-close-icon-recipe {
+  stroke: black;
+}
+
+/* button Add to favorite */
+
+.btn-addFavorites {
+  border: none;
+  border-radius: 15px;
+  color: var(--white-w);
+  background-color: var(--green);
+  width: 120px;
+  height: 48px;
+  text-transform: uppercase;
+  font-size: 18px;
+  margin-bottom: 35px;
+}
+
+.btn-addFavorites:hover,
+.btn-addFavorites:focus {
+  color: black;
+}
+
+/* button Give a rating */
+.btn-giveRating {
+  border: none;
+  border-radius: 15px;
+  color: #ffffff;
+  background-color: #9bb537;
+  width: 120px;
+  height: 48px;
+}
+
+.btn-giveRating:hover,
+.btn-giveRating:focus {
+  color: black;
+}
+/* hiding modal window */
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
