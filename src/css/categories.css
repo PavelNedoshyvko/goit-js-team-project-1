@@ -103,3 +103,22 @@
   background-color: var(--gray-border-w);
   border-radius: 12px;
 }
+
+
+/**
+  |============================
+  | Gallery home
+  |============================
+*/
+.gallery-block-flex {
+  display: flex;
+}
+
+.gallery-home-js{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.gallery-home-recipe{
+max-width: 250px;
+}
