@@ -1,6 +1,8 @@
 // import './js/pagination';
 
 import './js/mob-menu';
+import './js/filter';
+
 import './js/eventsList';
 import './js/slider';
 import './js/categories-list';
