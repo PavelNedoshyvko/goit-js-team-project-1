@@ -11,12 +11,20 @@
   <body>
     <load src="partials/header.html" />
     <load src="partials/hero.html" />
-    <load scr="partials/order-now.html" />
-    <load src="partials/filter.html" />
-    <load scr="partials/categories.html" />
-    <load src="partials/popular-recipes.html" />
+
+    <div class="main-section-container container">
+      <div class="main-section-container-left">
+        <load scr="partials/categories.html" />
+        <load src="partials/popular-recipes.html" />
+      </div>
+      <div class="main-section-container-right">
+        <load src="partials/filter.html" />
+      </div>
+      <!-- GALLERY -->
+      <div id="pagination" class="tui-pagination"></div>
+    </div>
+
     <load scr="partials/star.html" />
-    <load scr="partials/pagination.html" />
     <load scr="partials/order-now.html" />
     <load scr="partials/modal-recipe.html" />
 
