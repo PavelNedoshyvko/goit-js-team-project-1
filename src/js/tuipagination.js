@@ -1,10 +1,7 @@
-console.log("Hello");
+import { refs } from './refs';
 import Pagination from 'tui-pagination';
-import 'tui-pagination/dist/tui-pagination.css';
-console.log("hrkki");
-const container = document.querySelector('#pagination');
-//const container = document.getElementById('pagination');
-console.log(container);
+//import 'tui-pagination/dist/tui-pagination.css';
+
 const options = {
   totalItems: 15, //`${}`
   itemsPerPage: 6, //8,9
@@ -31,7 +28,7 @@ const options = {
       '</a>'
   }
 }
-const instance = new Pagination(container, options);
+const instance = new Pagination(refs.container, options);
 console.log(instance);
 instance.getCurrentPage();
     

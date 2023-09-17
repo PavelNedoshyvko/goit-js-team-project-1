@@ -30,7 +30,7 @@
     width: 40px;
      height: 40px; 
     padding: 11px 0 7px; 
-    margin-left: 11px;
+    margin-left: 6px;
     color: var(---black);
    
     font-size: 18px;
@@ -63,17 +63,17 @@
 }
 
 .tui-pagination .tui-is-selected:hover {
-    background: var(--white-w);
+    background: var(--gray-ul-w);
     border: 1px solid var(--gray-ul-w);
 }
 
 .tui-pagination .tui-first-child.tui-is-selected, .tui-pagination strong.tui-first-child {
-    margin-left: 11
+    margin-left: 4px
 }
 
 .tui-pagination .tui-first-child, .tui-pagination .tui-prev-is-ellip {
    
-      margin-left: 11px;
+      margin-left: 4px;
 } 
 
 .tui-pagination .tui-first, .tui-pagination .tui-prev, .tui-pagination .tui-next, .tui-pagination .tui-last, .tui-pagination .tui-prev-is-ellip, .tui-pagination .tui-next-is-ellip {
@@ -88,19 +88,20 @@
     border: 1px solid var(--gray-ul-w);
 }
 
+.tui-pagination .tui-first, .tui-pagination .tui-prev, .tui-pagination .tui-next, .tui-pagination .tui-last {
+    background: var(--green);
+}
+
 @media only screen and (min-width: 768px) {
     .tui-pagination .tui-first, .tui-pagination .tui-prev, .tui-pagination .tui-next, .tui-pagination .tui-last, .tui-pagination .tui-prev-is-ellip, .tui-pagination .tui-next-is-ellip {
        
     height: 44px}
 }
 
-/* .tui-pagination .tui-prev-is-ellip {
-    border-right: 0
-} */
-
 .tui-pagination .tui-ico-first, .tui-pagination .tui-ico-prev, .tui-pagination .tui-ico-next, .tui-pagination .tui-ico-last, .tui-pagination .tui-ico-ellip {
-    background: url('./src/img/sp_btn.png')no-repeat 0 0; 
-    background: var(--white-w);
+    background: no-repeat url("/img/sp_btn.png"); 
+    background-position: 0 0;
+   
     display: inline-block;
     vertical-align: middle;
     font-size: 0px;
@@ -113,41 +114,40 @@
 }
 
 .tui-pagination .tui-prev {
-    margin-right: 24px;
+    margin-right: 10px;
 }
 
 .tui-pagination .tui-next {
-    margin-left: 24px;
+    margin-left: 14px;
 }
 
 .tui-pagination .tui-ico-first {
-    width: 24px;
-    height: 24px;
-    /* background-position: 0px 0px */
+    width: 11px;
+    height: 10px;
+    background-position: 0px 0px 
 }
 
 .tui-pagination .tui-ico-prev {
-    width: 15px;
-    height: 24px;
-    background-image: url(/src/img/icons.svg/#arrow-left);
-    /* background-position: -26px 0px */
+    width: 6px;
+    height: 10px;
+    background-position: -26px 0px 
 }
 
 .tui-pagination .tui-ico-next {
-    width: 15px;
-    height: 24px;
+    width: 6px;
+    height: 10px;
     background-position: -13px -24px
 }
 
 .tui-pagination .tui-ico-last {
-    width: 24px;
-    height: 24px;
+    width: 11px;
+    height: 10px;
     background-position: 0px -12px
 }
 
 .tui-pagination .tui-ico-ellip {
-    width: 24px;
-    height: 3px;
+    width: 10px;
+    height: 2px;
     margin-top: 26px;
     vertical-align: top;
     color: var(--black);
@@ -160,8 +160,12 @@
     cursor: default
 }
 
+.tui-pagination .tui-is-disabled {
+    background: var(--black);
+}
+
 .tui-pagination .tui-is-disabled .tui-ico-prev {
-    
+
     background-position: -26px -12px
 }
 
