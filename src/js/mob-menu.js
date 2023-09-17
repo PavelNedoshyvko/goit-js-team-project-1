@@ -1,5 +1,5 @@
-const menuMob = document.querySelector('.js-open-menu');
 const menuBox = document.querySelector('.menu-mob');
+const menuMob = document.querySelector('.js-open-menu');
 const closebtn = document.querySelector('.menu-mob-btn');
 
 menuMob.addEventListener('click', () => {
@@ -11,5 +11,5 @@ closebtn.addEventListener('click', () => {
 });
 
 // console.log(menuMob);
-console.dir(menuBox);
+// console.dir(menuBox);
 // console.log(closebtn);

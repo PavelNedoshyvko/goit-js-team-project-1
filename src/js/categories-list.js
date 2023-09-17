@@ -1,5 +1,5 @@
 import { refs } from './refs';
-import { serviceAllCategories } from './api-request';
+import { serviceAllCategories } from './api-requests';
 import { createMarkupCategoriesList } from './markup';
 
 async function categoriesList() {

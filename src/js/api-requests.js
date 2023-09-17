@@ -4,6 +4,7 @@ axios.defaults.baseURL = 'https://tasty-treats-backend.p.goit.global/api';
 const ALL_RECIPES = '/recipes';
 const EVENTS = '/events';
 const CATEGORIES = '/categories';
+const POPULAR = '/popular';
 
 // async function serviceAllRecipes(page = 1, limit = 6) {
 //   const params = new URLSearchParams({
@@ -31,4 +32,9 @@ async function allMasterDish() {
   return data;
 };
 
-export { serviceAllCategories, allMasterDish };
+async function servicePopularRecipes() {
+	const { data } = await axios(`${ALL_RECIPES}${POPULAR}`);
+  return data;
+};
+
+export { serviceAllCategories, allMasterDish, servicePopularRecipes };

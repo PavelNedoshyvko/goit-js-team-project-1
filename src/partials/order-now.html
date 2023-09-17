@@ -1,45 +1,30 @@
 <div class="btn-order-now-container">
-    <button type="button" class="btn-close">
-      <svg class="btn-close-icon" width="24" height="24">
-        <use href="/img/icons.svg#icon-x-close"></use>
-      </svg>
+  <button type="button" class="btn-close">
+    <svg class="btn-close-icon" width="24" height="24">
+      <use href="/img/icons.svg#icon-x-close"></use>
+    </svg>
+  </button>
+  <h2 class="order-now">Order now</h2>
+  <form>
+    <div class="form-field input-name">
+      <label for="name">Name</label>
+      <input type="text" name="name" />
+    </div>
+    <div class="form-field input-name">
+      <label for="number">Phone number</label>
+      <input type="tel" name="number" />
+    </div>
+    <div class="form-field input-name">
+      <label for="email">Email</label>
+      <input type="email" name="email" />
+    </div>
+    <div class="form-field form-comment input-name">
+      <label for="comment">Comment</label>
+      <textarea name="comment" cols="30" rows="5"></textarea>
+    </div>
+
+    <button class="send" type="send">
+      <span>Send</span>
     </button>
-    <h2 class="order-now">
-        Order now
-    </h2>
-    <form>
-        <div class="form-field input-name">
-            <label for="name">Name</label>
-            <input
-                type="text"
-                name="name"
-            />
-        </div>
-        <div class="form-field input-name">
-            <label for="number">Phone number</label>
-            <input
-            type="tel"
-            name="number"
-          />
-        </div>
-        <div class="form-field input-name">
-        <label for="email">Email</label>
-        <input
-            type="email"
-            name="email"
-          />
-      </div>
-      <div class="form-field form-comment input-name">
-        <label for="comment">Comment</label>
-        <textarea
-        name="comment"
-        cols="30"
-        rows="5"
-        ></textarea>
-      </div>
-      
-      <button class="send" type="send">
-        <span>Send</span>
-      </button>
-    </form>
+  </form>
 </div>
