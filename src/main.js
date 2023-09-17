@@ -14,3 +14,5 @@ import './js/order-now';
 import './js/tuipagination.js';
 
 import './js/product-gallery-ex';
+
+import './js/modal-recipe-control';
