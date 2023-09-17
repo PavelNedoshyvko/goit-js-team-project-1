@@ -161,7 +161,7 @@ function recipeRendering(obj) {
     whoRated,
   } = obj;
 
-  return `  <div class="recipe-data-cover">
+  return `<div class="recipe-data-cover">
     <div class="recipe-media-source">
       <iframe
         class="video-recipe"

@@ -52,13 +52,11 @@
 /* dynamic markup */
 .recipe-data-cover {
 }
-.title {
-}
 .recipe-media-source {
 }
 .video-recipe {
 }
-.tags-list {
+.title {
 }
 .rating-recipe {
 }
@@ -72,7 +70,18 @@
 }
 .recipe-time-cooking {
 }
-
+.ingredient-cover {
+}
+.recipe-ingredient-list {
+}
+.tags-cover {
+}
+.tags-list {
+}
+.description-cover {
+}
+.description-recipe {
+}
 /* end of dynamic markup */
 
 .btn-addFavorites:hover,
