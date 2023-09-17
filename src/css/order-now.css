@@ -19,6 +19,7 @@
   overflow-y: auto;
   z-index: 2;
   background-color: #ffffff;
+  transition: transform 2000ms var(--trns-general);
 }
 .btn-close {
   position: absolute;
@@ -71,13 +72,13 @@
   color: black;
 }
 
-.btn-order-now-container.isOpen {
-  /* transform: translate(0); */
+/* .btn-order-now-container.isOpen {
+  transform: translate(0);
   display: none;
-}
+} */
 
-/* .is-hidden {
+.is-hidden {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
-} */
+}
