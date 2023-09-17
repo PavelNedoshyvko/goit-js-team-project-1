@@ -1,0 +1,37 @@
+/*  необхідно змінити кольори в  .star-reiting {color: var(--white-w)} .star-icon {--gray-star-w} */
+
+.star-reiting-box {
+    display: flex;
+    width: 116px;
+    align-items: flex-start;
+    gap: 4px;
+
+}
+.star-reiting {
+   width: 22px;
+   height: 18px;
+   color: var(--black);
+   font-size: 14px;
+   font-weight: 500;
+}
+.star-icon-list {
+    display: flex;
+    min-height: 18px;
+  
+}
+
+.star {
+    height: 18px;
+}
+.star-icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    fill: var(--black);
+  }
+   
+  .star-icon.active {
+    fill: var(--yellow-star); 
+}
+ 
