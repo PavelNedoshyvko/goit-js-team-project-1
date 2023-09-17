@@ -1,3 +1,4 @@
+/* MODAL WINDOW */
 .detailInfoRecipe {
   position: fixed;
   top: 50%;
@@ -48,6 +49,32 @@
   margin-bottom: 35px;
 }
 
+/* dynamic markup */
+.recipe-data-cover {
+}
+.title {
+}
+.recipe-media-source {
+}
+.video-recipe {
+}
+.tags-list {
+}
+.rating-recipe {
+}
+.ratingAndTime-recipe-cover {
+}
+.star-recipe-reting {
+  fill: var(--yellow-star);
+  stroke: none;
+}
+.rating-recipe-value {
+}
+.recipe-time-cooking {
+}
+
+/* end of dynamic markup */
+
 .btn-addFavorites:hover,
 .btn-addFavorites:focus {
   color: black;
@@ -67,6 +94,7 @@
 .btn-giveRating:focus {
   color: black;
 }
+
 /* hiding modal window */
 .is-hidden {
   visibility: hidden;

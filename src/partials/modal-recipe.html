@@ -5,31 +5,11 @@
     </svg>
   </button>
   <div class="insertDataBackend"></div>
-  <!-- цей пустий дів є маркером. -->
-  <!-- тут буде відмальовуватися інфа з бекенду -->
-  <h1 class="title">${title}</h1>
-  <li class="media-source">
-    <iframe
-      src="${youtube}"
-      width="460"
-      height="250"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>
-  </li>
-  <div class="tags-list">${getTags(tags)}</div>
-  <div class="ratingAndTime">
-    <li>${rating}</li>
-    <li>${time}</li>
-  </div>
-  <div class="ingredient-cover">${getIngredients(ingredients)}</div>
-  <p class="description-recipe">${instructions}</p>
 
-  <button class="btn-addFavorites" type="send">
-    <span>Add to favorite</span>
-  </button>
-  <button class="btn-giveRating" type="send">
-    <span>Give a rating</span>
-  </button>
+  <div class="recipe-btn">
+    <button class="recipe-btn-addFavorites" type="button">
+      Add to favorite
+    </button>
+    <button class="recipe-btn-giveRating" type="button">Give a rating</button>
+  </div>
 </div>
