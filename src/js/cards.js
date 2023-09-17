@@ -1,40 +1,101 @@
-import { getAllRecipes } from '../AllRecipes';
-import { markUpRating } from '../markUpRating';
+import icons from '../img/icons.svg';
 
-const URL = 'https://tasty-treats-backend.p.goit.global/api/recipes';
-const recipeList = document.querySelector('.cards__list');
+const categoriesBtn = document.querySelector('.js-all-categories-btn');
+const cardsList = document.querySelector('.js-card-list');
 
-function clearRecipeList() {
-  recipeList.innerHTML = '';
+categoriesBtn.addEventListener('click', onAllCategoryButtonClick);
+
+loadAllCategories();
+
+const defaults = {
+  preview: '../img/no-image-icon.png',
+  title: 'no title',
+  description: 'no description',
+  rating: 'xx',
+};
+
+async function categoriesCardsSearch() {
+  const BASE_URL = 'https://tasty-treats-backend.p.goit.global/api';
+  const params = new URLSearchParams({
+    limit: 9,
+  });
+
+  const response = await fetch(`${BASE_URL}/recipes?${params}`);
+  if (!response.ok) {
+    throw new Error(response.statusText);
+  }
+  return await response.json();
 }
 
-async function createRecipeList(url, params = {}) {
+function allCategoriesMarkup(cards) {
+  const markup = cards.results
+    .map(({ preview, title, description, rating }) => {
+      const ratedStars = calculationOfRatedStars(rating);
+      const ratedStarsArray = Array.from(
+        { length: ratedStars },
+        () =>
+          `<svg class="svg-star rated">
+          <use href="../icons.svg#star"></use>
+        </svg>`
+      ).join('');
+
+      const notRatedStarsArray = Array.from(
+        { length: 5 - ratedStars },
+        () =>
+          `<svg class="svg-star">
+          <use href="../icons.svg#star"></use>
+        </svg>`
+      ).join('');
+
+      return `<li class="card-item">
+          <svg class="card-svg-heart" width="22px" height="22px">
+        <use href="../img/icons.svg#heart"></use>
+      </svg>
+      <div class="image-gradient">
+      <img class="card-img" src="${preview || defaults.preview}" alt="${
+        title || defaults.title
+      }"/>
+      </div>
+      <div class="card-text">
+      <h2 class="card-dish-name">${title || defaults.title}</h2>
+      <p class="card-dish-descr">${description || defaults.description}</p>
+      </div>
+      <div class="rating-btn-container">
+        
+          <p class="rating-number">${rating}</p>
+          <div class="rating-container">
+          ${ratedStarsArray}${notRatedStarsArray}
+        </div>
+        <button type="button" class="recipe-btn">See recipe</button>
+      </div>
+    </li>`;
+    })
+    .join('');
+  return markup;
+}
+
+function onAllCategoryButtonClick() {
+  categoriesCardsSearch()
+    .then(cards => {
+      const markup = allCategoriesMarkup(cards);
+      cardsList.innerHTML = markup;
+    })
+    .catch(() => {
+      console.log('Error', error.message);
+    });
+}
+
+async function loadAllCategories() {
   try {
-    const {
-      data: { results },
-    } = await getAllRecipes(url, params);
-    return results.reduce(
-      (markup, currentRecipe) => markup + generateMarkup(currentRecipe),
-      ''
-    );
+    const cards = await categoriesCardsSearch();
+    const markup = allCategoriesMarkup(cards);
+    cardsList.innerHTML = markup;
   } catch (error) {
-    MessageApi.onNetworkError();
+    console.log('Error', error.message);
   }
 }
 
-async function showRecipes(url, params = {}) {
-  const recipes = await createRecipeList(url, params);
-  clearRecipeList();
-  recipeList.insertAdjacentHTML('beforeend', recipes);
-  markUpRating();
+function calculationOfRatedStars(rating) {
+  const ratedStars = Math.floor(rating / 2);
+  return ratedStars;
 }
-
-showRecipes(URL, { limit: limitCount });
-
-export { showRecipes };
-
-recipeList.addEventListener('click', e => {
-  if (e.target.nodeName === 'BUTTON') {
-    finallInitPage(e.target.closest('.cards__item').dataset.id);
-  }
-});
