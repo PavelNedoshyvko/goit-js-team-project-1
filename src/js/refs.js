@@ -6,6 +6,7 @@ const refs = {
   stars: document.querySelectorAll('.star-icon'),
   starBox: document.querySelector('#starRating'),
   swiperContainer: document.querySelector('.swiper-container'),
+  container: document.querySelector('#pagination'),
 };
 
 export { refs };
