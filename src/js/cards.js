@@ -1,3 +1,4 @@
+import axios from 'axios';
 import icons from '../img/icons.svg';
 
 const categoriesBtn = document.querySelector('.js-all-categories-btn');
@@ -14,17 +15,12 @@ const defaults = {
   rating: 'xx',
 };
 
-async function categoriesCardsSearch() {
-  const BASE_URL = 'https://tasty-treats-backend.p.goit.global/api';
-  const params = new URLSearchParams({
-    limit: 9,
-  });
+export async function fetchSingleRecipe(id) {
+  const response = await axios.get(
+    `https://tasty-treats-backend.p.goit.global/api/recipes/${id}`
+  );
 
-  const response = await fetch(`${BASE_URL}/recipes?${params}`);
-  if (!response.ok) {
-    throw new Error(response.statusText);
-  }
-  return await response.json();
+  return response.data;
 }
 
 function allCategoriesMarkup(cards) {
