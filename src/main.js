@@ -10,4 +10,5 @@ import './js/popular-recipes-list';
 import './js/gallery-home';
 import './js/star';
 import './js/order-now';
-import './js/pagination';
+
+import './js/tuipagination.js';

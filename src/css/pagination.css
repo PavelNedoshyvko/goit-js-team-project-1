@@ -1,8 +1,3 @@
-.pagination-blok {
-    display: flex;
-    width: 335px;
-}
-
 .tui-pagination * {
     -moz-user-select: none;
     -webkit-user-select: none;
