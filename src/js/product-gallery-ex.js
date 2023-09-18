@@ -1,9 +1,6 @@
 import axios from 'axios';
+import { refs } from './refs';
 
-// крок 1. закинути ключ в refs.js; крок 2. імпортнути сюди refs.js
-const refs = {
-  mainList: document.querySelector('.main-products-filter-gallery-list'),
-};
 
 axios.defaults.baseURL = 'https://tasty-treats-backend.p.goit.global/api';
 const ALL_RECIPES = '/recipes/';

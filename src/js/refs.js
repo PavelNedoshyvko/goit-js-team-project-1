@@ -6,7 +6,8 @@ const refs = {
   stars: document.querySelectorAll('.star-icon'),
   starBox: document.querySelector('#starRating'),
   swiperContainer: document.querySelector('.swiper-container'),
-  container: document.querySelector('#pagination'),
+	container: document.querySelector('#pagination'),
+	mainList: document.querySelector('.main-products-filter-gallery-list'),
 };
 
 export { refs };
