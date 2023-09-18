@@ -1,6 +1,6 @@
 // import './js/pagination';
 
-import './js/modal-mob-menu-control';
+import './js/modal-control-mob-menu';
 import './js/filter';
 
 import './js/eventsList';
