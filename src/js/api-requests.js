@@ -20,9 +20,8 @@ const POPULAR = '/popular';
 //   return data;
 // };
 
-
 async function fetchAllRecipes(limit) {
-	const params = new URLSearchParams({
+  const params = new URLSearchParams({
     title: '',
     category: '',
     area: '',
@@ -31,29 +30,40 @@ async function fetchAllRecipes(limit) {
     page: 1,
     limit,
   });
-  const {data} = await axios(`${ALL_RECIPES}?${params}`);
+  const { data } = await axios(`${ALL_RECIPES}?${params}`);
   return data;
 }
 
-async function serviceAllCategories() {
-	const { data } = await axios(`${CATEGORIES}`);
+async function serviceAllRecipes() {
+  const { data } = await axios(`${ALL_RECIPES}`);
   return data;
-};
+}
 
+async function serviceGetRecipeById(id) {
+  const idReipe = await axios.get(`${ALL_RECIPES}/${id}`);
+  return idReipe.data;
+}
+
+async function serviceAllCategories() {
+  const { data } = await axios(`${CATEGORIES}`);
+  return data;
+}
 
 async function allMasterDish() {
   const { data } = await axios(`${EVENTS}`);
   return data;
-};
+}
 
 async function servicePopularRecipes() {
-	const { data } = await axios(`${ALL_RECIPES}${POPULAR}`);
+  const { data } = await axios(`${ALL_RECIPES}${POPULAR}`);
   return data;
-};
+}
 
 export {
-	fetchAllRecipes,
-	serviceAllCategories,
-	allMasterDish,
-	servicePopularRecipes,
+  fetchAllRecipes,
+  serviceAllRecipes,
+  serviceGetRecipeById,
+  serviceAllCategories,
+  allMasterDish,
+  servicePopularRecipes,
 };
