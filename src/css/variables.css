@@ -42,6 +42,9 @@
   --gray-descrip-w: rgba(5, 5, 5, 0.8);
   --yellow-star: #eea10c;
   --gray-star-w: rgba(248, 248, 248, 0.1);
+  /* ↓ для серця було відсутнє ↓ alt+25*/
+  --gray-star-w2: rgba(248, 248, 248, 1);
+  /* ↑ для серця було відсутнє ↑ alt+24*/
   --gray-star-modal: #d9d9d9;
   --gray-pagination-w: rgba(248, 248, 248, 0.5);
   --gray-radiobtn-w: #cecdcd;
