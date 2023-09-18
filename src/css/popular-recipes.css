@@ -13,6 +13,8 @@
 .img-popular-recipes {
   display: inline-block;
   margin-right: 10px;
+  border-radius: 7px;
+  
 }
 .col-popular-recipes {
   display: inline-block;
