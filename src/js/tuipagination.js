@@ -18,7 +18,6 @@ function getCardPerPage() {
      
 }  
 getCardPerPage()
-console.log(limit);
 
 const options = {
   totalItems: 35, //` ${totalCard}`,
