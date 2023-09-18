@@ -1,4 +1,3 @@
-
 const refs = {
   categoriesList: document.querySelector('.categories-list-js'),
   popularRecipesList: document.querySelector('.popular-recipes-list-js'),
@@ -7,12 +6,7 @@ const refs = {
   starBox: document.querySelector('#starRating'),
   swiperContainer: document.querySelector('.swiper-container'),
   
-	
-	
-	
-	
-	
-	container: document.querySelector('#pagination'),
+  container: document.querySelector('#pagination'),
 
   mainList: document.querySelector('.main-products-filter-gallery-list'), //carsListGlobal
   modalFullWindows: document.querySelector('.detailInfoRecipe'), //modal full window
