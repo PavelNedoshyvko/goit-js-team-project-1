@@ -1,6 +1,7 @@
 // import './js/pagination';
 
 import './js/modal-control-mob-menu';
+import './js/modal';
 import './js/filter';
 
 import './js/eventsList';
@@ -9,7 +10,6 @@ import './js/categories-list';
 import './js/popular-recipes-list';
 // import './js/gallery-home';
 import './js/star';
-import './js/modal-control-order-now';
 
 import './js/tuipagination.js';
 
