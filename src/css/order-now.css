@@ -14,13 +14,17 @@
   max-height: 600px;
   border-radius: 15px;
   padding: 32px 24px;
-  /* opacity: 0;
-    visibility: hidden; */
-  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  scale: 1.1;
   z-index: 2;
-  background-color: #ffffff;
-  transition: transform 2000ms var(--trns-general);
+  overflow-y: auto;
+  background-color: var(--background-w);
+  transition: opacity var(--trns-modal), visibility var(--trns-modal),
+    scale var(--trns-modal);
 }
+
 .btn-close {
   position: absolute;
   right: 10px;
@@ -28,9 +32,16 @@
   border: none;
   background: none;
 }
+
 .btn-close-icon {
   stroke: black;
+  transition: scale var(--trns-general);
 }
+
+.btn-close-icon:hover {
+  scale: 1.4;
+}
+
 .form-field {
   margin-bottom: 15px;
 }
@@ -66,10 +77,11 @@
   background-color: #9bb537;
   width: 100%;
   height: 48px;
+  transition: color var(--trns-modal);
 }
 .send:hover,
 .send:focus {
-  color: black;
+  color: var(--black);
 }
 
 /* .btn-order-now-container.isOpen {
@@ -77,8 +89,9 @@
   display: none;
 } */
 
-.is-hidden {
+/* .is-hidden {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
-}
+  scale: 1.05;
+} */

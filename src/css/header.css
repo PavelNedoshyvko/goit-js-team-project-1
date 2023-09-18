@@ -104,6 +104,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: stroke var(--trns-general);
 }
 
 :is(.header-basket-icon, .header-burger-icon):hover,
