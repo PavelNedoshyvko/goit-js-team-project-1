@@ -3,12 +3,12 @@ import { recipeRendering } from './markup'; //розмітка
 import { productGalleryList } from './product-gallery-ex';
 import { refs } from './refs';
 
-async function dataTest() {
+async function insertMarkup() {
   let dataRecipe = await productGalleryList();
   refs.mainList.innerHTML = dataRecipe;
   setListenner('.btn-detail-info');
 }
-dataTest();
+insertMarkup();
 
 function setListenner(btnIdSeeinfo) {
   let items = document.querySelectorAll(btnIdSeeinfo);
