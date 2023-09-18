@@ -1,6 +1,4 @@
-//' tags.rating'
-  
-   
+
 
 import { refs } from './refs';
  
@@ -14,7 +12,6 @@ import { refs } from './refs';
     } else {
         star.classList.remove('active');
     }
-  
   });
 }
  showReiting();
