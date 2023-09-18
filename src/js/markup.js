@@ -1,4 +1,4 @@
-const list = document.querySelector('.recipe-data-cover');
+
 
 function createMarkupCategoriesList(arr) {
   return arr
