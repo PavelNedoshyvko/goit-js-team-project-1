@@ -1,42 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tasty treats</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>tasty treats</title>
-  <link rel="stylesheet" href="./styles.css" />
-</head>
+  <body>
+    <load src="partials/header.html" />
+    <load src="partials/hero.html" />
 
-<body>
-  <load src="partials/header.html" />
-  <load src="partials/hero.html" />
+    <div class="main-section-container container">
+      <div class="main-section-container-left">
+        <load scr="partials/categories.html" />
+        <load src="partials/popular-recipes.html" />
+      </div>
+      <div class="main-section-container-right">
+        <load src="partials/filter.html" />
 
-  <div class="main-section-container container">
-    <div class="main-section-container-left">
-      <load scr="partials/categories.html" />
-      <load src="partials/popular-recipes.html" />
+        <!-- GALLERY -->
+
+        <load src="partials/product-galerry-ex.html" />
+
+        <load src="partials/pagination.html" />
+      </div>
     </div>
-    <div class="main-section-container-right">
-      <load src="partials/filter.html" />
-      <!-- GALLERY -->
-      <load src="partials/product-galerry-ex.html" />
-      <load src="partials/pagination.html" />
-    </div>
-  </div>
 
-  <load scr="partials/star.html" />
-  <load scr="partials/order-now.html" />
-  <load scr="partials/modal-recipe.html" />
+    <load scr="partials/star.html" />
+    <load scr="partials/order-now.html" />
+    <load scr="partials/modal-recipe.html" />
 
-  <div class="overlay js-overlay-modal"></div>
+    <div class="overlay js-overlay-modal"></div>
 
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
-    integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
-    crossorigin="anonymous"></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+      integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+      crossorigin="anonymous"
+    ></script>
 
-  <script type="module" src="./main.js"></script>
-</body>
-
+    <script type="module" src="./main.js"></script>
+  </body>
 </html>

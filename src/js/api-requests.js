@@ -13,13 +13,27 @@ const POPULAR = '/popular';
 //     area: '',
 //     ingredient: '',
 //     time: '',
-//     page,
-//     limit,
+//     page: 1,
+//     limit: 6,
 //   });
 //   const { data } = await axios(`${ALL_RECIPES}?${params}`);
 //   return data;
 // };
 
+
+async function fetchAllRecipes(limit) {
+	const params = new URLSearchParams({
+    title: '',
+    category: '',
+    area: '',
+    ingredient: '',
+    time: '',
+    page: 1,
+    limit,
+  });
+  const {data} = await axios(`${ALL_RECIPES}?${params}`);
+  return data;
+}
 
 async function serviceAllCategories() {
 	const { data } = await axios(`${CATEGORIES}`);
@@ -37,4 +51,13 @@ async function servicePopularRecipes() {
   return data;
 };
 
-export { serviceAllCategories, allMasterDish, servicePopularRecipes };
+export {
+	fetchAllRecipes,
+	serviceAllCategories,
+	allMasterDish,
+	servicePopularRecipes,
+	ALL_RECIPES,
+	EVENTS,
+	CATEGORIES,
+	POPULAR
+};
