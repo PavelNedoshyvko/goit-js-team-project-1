@@ -56,8 +56,4 @@ export {
 	serviceAllCategories,
 	allMasterDish,
 	servicePopularRecipes,
-	ALL_RECIPES,
-	EVENTS,
-	CATEGORIES,
-	POPULAR
 };

@@ -1,3 +1,5 @@
+
+
 function createMarkupCategoriesList(arr) {
   return arr
     .map(
@@ -55,6 +57,7 @@ function createMarkupPopularRecipesList(arr) {
     .join('');
 }
 
+
 //Відмалювання Рецепту в модалці
 // тимчасова змінна
 const list = document.querySelector('.recipe-data-cover');
@@ -75,7 +78,6 @@ function handlerReceiveRecipeId(evt) {
 
 async function processingReceptionId() {
   const resp = await axios(
-    // `https://tasty-treats-backend.p.goit.global/api/recipes/6462a8f74c3d0ddd28897fc1`
     `https://tasty-treats-backend.p.goit.global/api/recipes/`
   );
   return resp.data;
@@ -144,7 +146,6 @@ const obj = {
   whoRated: 187,
 };
 
-//перебір теггів
 function getTags(tags) {
   return tags
     .map(
@@ -154,7 +155,6 @@ function getTags(tags) {
     .join('');
 }
 
-//перебір ігредієнтів і міри його
 function getIngredients(ingredients) {
   return ingredients
     .map(ingredient => {
@@ -168,6 +168,7 @@ function getIngredients(ingredients) {
 
 function recipeRendering(obj) {
   const {
+    _id,
     title,
     category,
     area,
@@ -181,8 +182,7 @@ function recipeRendering(obj) {
     ingredients,
     rating,
     whoRated,
-	} = obj;
-	
+  } = obj;
 
   return `<div class="recipe-media-source">
       <iframe
@@ -237,10 +237,18 @@ function recipeRendering(obj) {
     <div class="description-cover">
       <p class="description-recipe">${instructions}</p>
     </div>
+  </div>
+  
+    <div class="recipe-btn">
+    <button data-id=${_id} class="recipe-btn-addFavorites" type="button">
+      Add to favorite
+    </button>
+    <button data-id=${_id} class="recipe-btn-giveRating" type="button">Give a rating</button>
   </div>`;
 }
 
 list.insertAdjacentHTML('beforeend', recipeRendering(obj));
+
 
 
 export {
