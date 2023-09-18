@@ -21,15 +21,16 @@ const POPULAR = '/popular';
 // };
 
 
-async function fetchAllRecipes(limit) {
+async function fetchAllRecipes(filters) {
+  console.log(filters);
 	const params = new URLSearchParams({
-    title: '',
+    title: filters.title || '',
     category: '',
     area: '',
     ingredient: '',
     time: '',
     page: 1,
-    limit,
+    limit: filters.limit || '',
   });
   const {data} = await axios(`${ALL_RECIPES}?${params}`);
   return data;
@@ -50,6 +51,8 @@ async function servicePopularRecipes() {
 	const { data } = await axios(`${ALL_RECIPES}${POPULAR}`);
   return data;
 };
+
+
 
 export {
 	fetchAllRecipes,

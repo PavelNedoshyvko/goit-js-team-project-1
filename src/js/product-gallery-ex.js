@@ -14,7 +14,7 @@ async function productGalleryList() {
 				limit = 9;
 		}
 		
-		const result = await fetchAllRecipes(limit);
+		const result = await fetchAllRecipes({limit: limit});
 		createMarkupRecipes(result);
 		
   } catch (err) {
@@ -91,4 +91,7 @@ function createMarkupRecipes(data) {
  */
 
 
-export { productGalleryList };
+export { 
+  productGalleryList,
+  createMarkupRecipes 
+};
