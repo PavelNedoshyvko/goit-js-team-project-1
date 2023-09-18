@@ -29,6 +29,5 @@ const options = {
   }
 }
 const instance = new Pagination(refs.container, options);
-console.log(instance);
 instance.getCurrentPage();
     
