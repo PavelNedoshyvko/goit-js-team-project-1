@@ -66,7 +66,7 @@ const list = document.querySelector('.recipe-data-cover');
 let unicalIdRecipe = '';
 
 const btnTest = document.querySelector('.recipe-btn-addFavorites');
-console.log(btnTest.textContent);
+
 
 function handlerReceiveRecipeId(evt) {
   unicalIdRecipe = evt.textContent;
@@ -241,7 +241,7 @@ function recipeRendering(obj) {
 }
 
 list.insertAdjacentHTML('beforeend', recipeRendering(obj));
-console.log(recipeRendering(obj));
+
 
 export {
   createMarkupCategoriesList,
