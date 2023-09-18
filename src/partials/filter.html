@@ -1,83 +1,51 @@
-<div class="main-products-container">
-  <div class="main-products-filter-form" id="main-products-filter-form">
-    <ul class="main-products-filter-form-list">
-      <li class="main-products-filter-form-item">
-        <label
-          class="main-products-filter-label"
-          for="main-products-filter-search-input"
-          >Search</label
-        >
-        <input
-          class="main-products-filter-search-select"
-          type="text"
-          name="main-products-filter-search-input"
-          autocomplete="off"
-          placeholder="Enter text"
-        />
-      </li>
-      <li class="main-products-filter-form-item">
-        <label
-          class="main-products-filter-label"
-          for="main-products-filter-time-input"
-          >Time</label
-        >
-        <select
-          class="main-products-fiter-time-select"
-          name="main-products-filter-time-input"
-        >
-          <option value="">0 min</option>
-          <option value="10">10 min</option>
-          <option value="20">20 min</option>
-          <option value="30">30 min</option>
-          <option value="40">40 min</option>
-          <option value="50">50 min</option>
-          <option value="60">60 min</option>
-          <option value="70">> 1 hr</option>
-        </select>
-      </li>
-      <li class="main-products-filter-form-item">
-        <label
-          class="main-products-filter-label"
-          for="main-products-filter-area-input"
-          >Area</label
-        >
-        <select
-          class="main-products-filter-area-select"
-          name="main-products-filter-area-input"
-        >
-          <option value="">Region</option>
-        </select>
-      </li>
-      <li class="main-products-filter-form-item">
-        <label
-          class="main-products-filter-label"
-          for="main-products-filter-ingredients-input"
-          >Ingredients</label
-        >
-        <select
-          class="main-products-filter-ingredients-select"
-          name="main-products-filter-ingredients-input"
-        >
-          <option value="">Product</option>
-          <option value="">Tomato</option>
-          <option value="">Cabbage</option>
-          <option value="">Cucumber</option>
-          <option value="">Corn</option>
-          <option value="">Redish</option>
-          <option value="">Parsley</option>
-          <option value="">Peaches</option>
-          <option value="">Prosciutto</option>
-        </select>
-      </li>
-    </ul>
-  </div>
-  <button
-    class="main-products-filter-form-reset-btn js-modal-recipe"
-    type="button"
-  >
-    <svg class="main-products-search-form-reset-icon" width="16" height="16">
-      <use href="./img/icons.svg#close"></use>
-    </svg>
-    Reset the filter
-  </button>
-</div>
+<form class="main-products-container">
+    <div class="main-products-filter-form" id="main-products-filter-form">
+        <ul class="main-products-filter-form-list">
+            <li class="main-products-filter-form-item">
+                <label class="main-products-filter-label" for="main-products-filter-search-input">Search</label>
+                <input class="main-products-filter-search-select" type="text" name="main-products-filter-search-input"
+                    autocomplete="off" placeholder="Enter text" />
+            </li>
+            <li class="main-products-filter-form-item">
+                <label class="main-products-filter-label" for="main-products-filter-time-input">Time</label>
+                <select class="main-products-fiter-time-select" name="main-products-filter-time-input">
+                    <option value="">0 min</option>
+                    <option value="10">10 min</option>
+                    <option value="20">20 min</option>
+                    <option value="30">30 min</option>
+                    <option value="40">40 min</option>
+                    <option value="50">50 min</option>
+                    <option value="60">60 min</option>
+                    <option value="70">> 1 hr</option>
+                </select>
+            </li>
+            <li class="main-products-filter-form-item">
+                <label class="main-products-filter-label" for="main-products-filter-area-input">Area</label>
+                <select class="main-products-filter-area-select" name="main-products-filter-area-input">
+                    <option value="">Region</option>
+                </select>
+            </li>
+            <li class="main-products-filter-form-item">
+                <label class="main-products-filter-label"
+                    for="main-products-filter-ingredients-input">Ingredients</label>
+                <select class="main-products-filter-ingredients-select" name="main-products-filter-ingredients-input">
+                    <option value="">Product</option>
+                    <option value="">Tomato</option>
+                    <option value="">Cabbage</option>
+                    <option value="">Cucumber</option>
+                    <option value="">Corn</option>
+                    <option value="">Redish</option>
+                    <option value="">Parsley</option>
+                    <option value="">Peaches</option>
+                    <option value="">Prosciutto</option>
+                </select>
+            </li>
+        </ul>
+    </div>
+    <button class="main-products-filter-form-reset-btn js-modal-recipe" type="button">
+        <svg class="main-products-search-form-reset-icon" width="16" height="16">
+            <use href="./img/icons.svg#close"></use>
+        </svg>
+        Reset the filter
+    </button>
+</form>

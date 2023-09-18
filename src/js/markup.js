@@ -57,6 +57,25 @@ function createMarkupPopularRecipesList(arr) {
     .join('');
 }
 
+
+//Відмалювання Рецепту в модалці
+// тимчасова змінна
+const list = document.querySelector('.recipe-data-cover');
+// const eventClickBtnReceiveId = document.querySelector('.btn-see-detail-recipe');
+
+// eventClickBtnReceiveId.addEventListener('click', handlerReceiveRecipeId);
+
+// test prototype btn
+let unicalIdRecipe = '';
+
+const btnTest = document.querySelector('.recipe-btn-addFavorites');
+
+
+function handlerReceiveRecipeId(evt) {
+  unicalIdRecipe = evt.textContent;
+}
+//end test prototype btn
+
 async function processingReceptionId() {
   const resp = await axios(
     `https://tasty-treats-backend.p.goit.global/api/recipes/`
@@ -229,6 +248,8 @@ function recipeRendering(obj) {
 }
 
 list.insertAdjacentHTML('beforeend', recipeRendering(obj));
+
+
 
 export {
   createMarkupCategoriesList,

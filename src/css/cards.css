@@ -103,7 +103,8 @@
 }
 
 .card-dish-name {
-  color: var(--dt-text-color);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 1);
   text-align: left;
   font-family: Inter;
   font-size: 14px;
@@ -127,9 +128,8 @@
   height: 32px;
 
   overflow: hidden;
-  color: var(--dt-text-color);
+  color: rgba(255, 255, 255, 1);
   text-overflow: ellipsis;
-  /* white-space: nowrap; */
   font-family: Inter;
   font-size: 12px;
   font-style: normal;
@@ -183,7 +183,7 @@
 }
 
 .rating-number {
-  color: var(--dt-text-color);
+  color: rgba(255, 255, 255, 1);
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
@@ -204,10 +204,10 @@
   min-width: 89px;
 
   border-radius: 8px;
-  background: var(--brand-color);
+  background: rgba(155, 181, 55, 1);
   border: none;
 
-  color: var(--dt-text-color);
+  color: rgba(255, 255, 255, 1);
   font-family: Inter;
   font-size: 12px;
   font-style: normal;

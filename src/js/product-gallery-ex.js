@@ -1,43 +1,35 @@
-import axios from 'axios';
 import { refs } from './refs';
+import { fetchAllRecipes } from './api-requests';
 
 
-axios.defaults.baseURL = 'https://tasty-treats-backend.p.goit.global/api';
-const ALL_RECIPES = '/recipes/';
-
-async function fetchAllRecipes(page, limit) {
-  const response = await axios.get(
-    `${ALL_RECIPES}?page=${page}&limit=${limit}`
-  );
-  const data = response.data;
-  // console.log(data);
-  return data;
-}
-
-async function recipesList() {
+async function productGalleryList() {
   try {
-    const page = 1;
-    const limit = 9;
-
-    const results = await fetchAllRecipes(page, limit);
-    createMarkupRecipes(results);
+		let limit;
+	
+		if (window.innerWidth < 768) {
+				limit = 6;
+			} else if (window.innerWidth < 1280) {
+				limit = 8;
+			} else {
+				limit = 9;
+		}
+		
+		const result = await fetchAllRecipes(limit);
+		createMarkupRecipes(result);
+		
   } catch (err) {
     console.log(err);
   }
 }
 
-recipesList();
+productGalleryList();
 
 // need to replace html
 
 function createMarkupRecipes(data) {
   const recipesList = data.results
-    .map(({ _id, title, description, thumb, rating }) =>
-      // `<li class="recipes-item">
-      //     <img src="${thumb}" alt="${title}" width="250" loading="lazy" />
-      //  </li>`
-      {
-        return `<li class="card-item">
+    .map(({ _id, title, description, thumb, rating }) =>{
+        return `<li class="recipes-item">
   <div class="photo-thumb">
     <img class="pic-recipe" src="${thumb}" alt="${title}" loading="lazy" />
   </div>
@@ -70,14 +62,17 @@ function createMarkupRecipes(data) {
         </svg>
       </div>
     </div>
-    <button class="btn-detail-info">See recipe</button>
+    <button class="btn-detail-info" type="button" data-id=${_id}>See recipe</button>
   </div>
-</li>`;
-      }
-    )
-    .join('');
+</li>`}).join('');
+	
   refs.mainList.innerHTML = recipesList;
-}
+};
+
+
+
+
+
 /* FULL CARD WITCHOUT CSS
 
 <li class="recipes-item"${_id}>
@@ -88,3 +83,6 @@ function createMarkupRecipes(data) {
                <button>see recipe</button>
             </li>`
  */
+
+
+export { productGalleryList };

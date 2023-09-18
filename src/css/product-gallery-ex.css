@@ -1,11 +1,13 @@
 /* gallery */
-/* .main-products-filter-gallery-list {
-} */
+.main-products-filter-gallery-list {
+  margin-bottom: 40px;
+}
 @media only screen and (min-width: 768px) {
   .main-products-filter-gallery-list {
     display: flex;
     flex-wrap: wrap;
     gap: 32px 16px;
+    margin-bottom: 64px;
   }
 }
 

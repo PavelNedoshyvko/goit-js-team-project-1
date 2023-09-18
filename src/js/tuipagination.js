@@ -2,11 +2,30 @@ import { refs } from './refs';
 import Pagination from 'tui-pagination';
 //import 'tui-pagination/dist/tui-pagination.css';
 
+
+let limit = 6;
+let targetInnerWingt = window.outerWidth;
+let visibleCard = (targetInnerWingt < 768)?2:3;
+let page = 1;
+
+
+
+function getCardPerPage() {
+  window.addEventListener('resize',() => {
+    if(targetInnerWingt > 768 && targetInnerWingt < 1280) {limit = 8} else
+     {limit = 9};
+   })
+     
+}  
+getCardPerPage()
+console.log(limit);
+
 const options = {
-  totalItems: 15, //`${}`
-  itemsPerPage: 6, //8,9
-  visiblePages: 2, //3
-  page: 1,
+  totalItems: 35, //` ${totalCard}`,
+  itemsPerPage: `${limit}`, 
+  visiblePages:  `${visibleCard}`, 
+  page: `${page}`,
+
   centerAlign: false,
   firstItemClassName: 'tui-first-child',
   lastItemClassName: 'tui-last-child',
