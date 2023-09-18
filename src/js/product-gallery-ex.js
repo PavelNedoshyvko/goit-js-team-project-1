@@ -21,15 +21,4 @@ async function productGalleryList() {
   }
 }
 
-/* FULL CARD WITCHOUT CSS
-
-<li class="recipes-item"${_id}>
-               <img src="${thumb}" alt="${title}" width="250" loading="lazy" />
-               <p>${title}</p>
-               <p>${description}</p>
-               <p>${rating}</p>
-               <button>see recipe</button>
-            </li>`
- */
-
 export { productGalleryList };
