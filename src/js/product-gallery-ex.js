@@ -62,7 +62,7 @@ function createMarkupRecipes(data) {
         </svg>
       </div>
     </div>
-    <button class="btn-detail-info">See recipe</button>
+    <button class="btn-detail-info" type="button" data-id=${_id}>See recipe</button>
   </div>
 </li>`}).join('');
 	
