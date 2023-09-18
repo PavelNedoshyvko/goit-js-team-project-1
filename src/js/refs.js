@@ -5,9 +5,10 @@ const refs = {
   stars: document.querySelectorAll('.star-icon'),
   starBox: document.querySelector('#starRating'),
   swiperContainer: document.querySelector('.swiper-container'),
-  
   container: document.querySelector('#pagination'),
-
+  categoryList: document.querySelector('.categories-list-js'),
+  categoryContainer: document.querySelector('.categories'),
+  allCategoryButton: document.querySelector('.categories-all-btn-js'),
   mainList: document.querySelector('.main-products-filter-gallery-list'), //carsListGlobal
   modalFullWindows: document.querySelector('.detailInfoRecipe'), //modal full window
   modalDetailRecipe: document.querySelector('.recipe-data-cover'), //  modal-window-detail-recipe
