@@ -1,35 +1,29 @@
 import { refs } from './refs';
 import { fetchAllRecipes } from './api-requests';
 
-
 async function productGalleryList() {
   try {
-		let limit;
-	
-		if (window.innerWidth < 768) {
-				limit = 6;
-			} else if (window.innerWidth < 1280) {
-				limit = 8;
-			} else {
-				limit = 9;
-		}
-		
-		const result = await fetchAllRecipes(limit);
-		createMarkupRecipes(result);
-		
+    let limit;
+
+    if (window.innerWidth < 768) {
+      limit = 6;
+    } else if (window.innerWidth < 1280) {
+      limit = 8;
+    } else {
+      limit = 9;
+    }
+
+    const result = await fetchAllRecipes(limit);
+    return createMarkupRecipes(result);
   } catch (err) {
     console.log(err);
   }
 }
 
-productGalleryList();
-
-// need to replace html
-
 function createMarkupRecipes(data) {
   const recipesList = data.results
-    .map(({ _id, title, description, thumb, rating }) =>{
-        return `<li class="recipes-item">
+    .map(({ _id, title, description, thumb, rating }) => {
+      return `<li class="recipes-item">
   <div class="photo-thumb">
     <img class="pic-recipe" src="${thumb}" alt="${title}" loading="lazy" />
   </div>
@@ -64,14 +58,11 @@ function createMarkupRecipes(data) {
     </div>
     <button class="btn-detail-info" type="button" data-id=${_id}>See recipe</button>
   </div>
-</li>`}).join('');
-	
-  refs.mainList.innerHTML = recipesList;
-};
-
-
-
-
+</li>`;
+    })
+    .join('');
+  return recipesList;
+}
 
 /* FULL CARD WITCHOUT CSS
 
@@ -83,6 +74,5 @@ function createMarkupRecipes(data) {
                <button>see recipe</button>
             </li>`
  */
-
 
 export { productGalleryList };
