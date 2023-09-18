@@ -8,3 +8,35 @@
     gap: 32px 16px;
   }
 }
+
+/* newStyle */
+.card-item {
+}
+.photo-thumb {
+}
+.pic-recipe {
+}
+.btn-favorite {
+  border: none;
+  /* opacity: 0; */
+}
+.icon-favorite {
+  fill: none;
+  stroke: var(--gray-star-w2);
+}
+.description-recipe-cover {
+}
+.description-recipe-title {
+}
+.description-recipe-text {
+}
+.div-popular-recipe {
+}
+.div-popular-recipe-rating {
+}
+.star-recipe-cover-preview {
+}
+.star-recipe-reting {
+}
+.btn-detail-info {
+}
