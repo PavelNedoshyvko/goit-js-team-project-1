@@ -36,8 +36,8 @@ function createMarkupEvents(arr) {
 function createMarkupPopularRecipesList(arr) {
   return arr
     .map(
-      ({ title, description, preview }) =>
-        ` <li class="blok-popular">
+      ({_id, title, description, preview }) =>
+        ` <li class="blok-popular" data-id="${_id}">
       <img
         class="img-popular-recipes"
         src="${preview}"
@@ -146,7 +146,7 @@ function createMarkupRecipes(data) {
   <div class="photo-thumb">
     <img class="pic-recipe" src="${thumb}" alt="${title}" loading="lazy" />
   </div>
-  <button type="button" class="btn-favorite">
+  <button type="button" class="btn-favorite" data-id=${_id}>
     <svg class="icon-favorite" width="22" height="22">
       <use href="./img/icons.svg#heart"></use>
     </svg>
