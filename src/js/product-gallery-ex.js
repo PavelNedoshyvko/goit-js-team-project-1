@@ -41,10 +41,11 @@ function createMarkupRecipes(data) {
   <div class="description-recipe-cover">
     <p class="description-recipe-title">${title}</p>
     <p class="description-recipe-text">${description}</p>
-
-    <div class="div-popular-recipe">
-      <p class="div-popular-recipe-rating">${rating}</p>
-      <div class="star-recipe-cover-preview">
+    <div class="popular-recept-box"
+      <div class="div-popular-recipe">
+        <div class"star-block"
+        <p class="div-popular-recipe-rating">${rating}</p>
+        <div class="star-recipe-cover-preview">
         <svg class="star-recipe-reting" width="24" height="24">
           <use href="/img/icons.svg#star"></use>
         </svg>
@@ -58,11 +59,13 @@ function createMarkupRecipes(data) {
           <use href="/img/icons.svg#star"></use>
         </svg>
         <svg class="star-recipe-reting" width="24" height="24">
-          <use href="/img/icons.svg#star"></use>
+        <use href="/img/icons.svg#star"></use>
         </svg>
+      </div>
       </div>
     </div>
     <button class="btn-detail-info">See recipe</button>
+    </div>
   </div>
 </li>`}).join('');
 	
