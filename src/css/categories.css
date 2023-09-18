@@ -2,12 +2,14 @@
   width: 326px;
   height: 322px;
   padding: 0px;
+  margin-bottom: 40px;
 }
 
 @media only screen and (min-width: 768px) {
   .categories {
     width: 176px;
     height: 546px;
+    margin-bottom: 64px;
   }
 }
 @media only screen and (min-width: 1280px) {
