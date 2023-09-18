@@ -1,3 +1,7 @@
+.main-section-container {
+  margin-top: 80px;
+}
+
 @media only screen and (min-width: 768px) {
   .main-section-container {
     display: flex;
@@ -7,5 +11,20 @@
 @media only screen and (min-width: 1280px) {
   .main-section-container {
     gap: 64px;
+    margin-top: 100px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .main-section-container-left {
+    padding-top: 26px;
+  }
+}
+
+.main-section-container-right {
+  margin-top: 40px;
+}
+@media only screen and (min-width: 768px) {
+  .main-section-container-right {
+    margin-top: 0px;
   }
 }

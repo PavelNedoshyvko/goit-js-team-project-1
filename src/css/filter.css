@@ -12,11 +12,7 @@
   }
 }
 
-
 .main-products-filter-label {
-
-
-
   color: var(--gray-title-w);
   font-size: 12px;
   line-height: 1.16;
@@ -167,7 +163,7 @@
   background-color: var(--gray-star-w);
   border: none;
   margin-top: 14px;
-  margin-bottom: 14px;
+  margin-bottom: 20px;
 
   color: var(--gray-title-w);
 
@@ -178,17 +174,15 @@
   height: 16px;
   outline: none;
 }
+@media only screen and (min-width: 768px) {
+  .main-products-filter-form-reset-btn {
+    margin-bottom: 20px;
+  }
+}
+
 .main-products-search-form-reset-icon {
   stroke: var(--green);
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-/* .main-products-filter-gallery-list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  row-gap: 32px;
-  column-gap: 16px;
-} */
