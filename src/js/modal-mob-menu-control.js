@@ -1,15 +1,26 @@
-const menuBox = document.querySelector('.menu-mob');
-const menuMob = document.querySelector('.js-open-menu');
-const closebtn = document.querySelector('.menu-mob-btn');
+(() => {
+  const mobileMenu = document.querySelector('.js-menu-container');
+  const openMenuBtn = document.querySelector('.js-open-menu');
+  const closeMenuBtn = document.querySelector('.js-close-menu');
 
-menuMob.addEventListener('click', () => {
-  menuBox.classList.add('isOpen');
+  const toggleMenu = () => {
+    const isMenuOpen =
+      openMenuBtn.getAttribute('aria-expanded') === 'true' || false;
+    openMenuBtn.setAttribute('aria-expanded', !isMenuOpen);
+    mobileMenu.classList.toggle('is-open');
+
+    const scrollLockMethod = !isMenuOpen
+      ? 'disableBodyScroll'
+      : 'enableBodyScroll';
+    bodyScrollLock[scrollLockMethod](document.body);
+  };
+
+  openMenuBtn.addEventListener('click', toggleMenu);
+  closeMenuBtn.addEventListener('click', toggleMenu);
+
+	window.addEventListener('resize',() => {
+		if (window.innerWidth > 768) {
+	 mobileMenu.classList.remove('is-open');
+ }
 });
-
-closebtn.addEventListener('click', () => {
-  menuBox.classList.remove('isOpen');
-});
-
-// console.log(menuMob);
-// console.dir(menuBox);
-// console.log(closebtn);
+})();

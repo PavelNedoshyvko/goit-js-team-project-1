@@ -3,16 +3,16 @@
   height: 100%;
   padding: 200px 74px 0 74px;
 
-  position: absolute;
+  position: fixed;
   background-color: rgba(155, 181, 55, 1);
   z-index: 10;
   right: 0;
   top: 0;
   transform: translate(100%);
-  transition: transform 2000ms var(--trns-general);
+  transition: transform var(--trns-modal);
 }
 
-.menu-mob.isOpen {
+.menu-mob.is-open {
   transform: translate(0);
 }
 
