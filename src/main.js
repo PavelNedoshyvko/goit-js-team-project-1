@@ -16,4 +16,4 @@ import './js/tuipagination.js';
 
 
 
-// import './js/modal-control-recipe';
+import './js/modal-control-recipe';
