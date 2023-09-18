@@ -22,8 +22,8 @@ async function filterRecipesByCategory(categoryName) {
             { "_id": "6462a6cd4c3d0ddd28897f92", "name": "Vegetarian" }
         ];
 
-        const category = categories.find(cat => cat.name === categoryName);
-
+			const category = categories.find(cat => cat.name === categoryName);
+			
         if (!category) {
             throw new Error('Category not found');
         }
@@ -39,3 +39,6 @@ async function filterRecipesByCategory(categoryName) {
     }
 }
 
+filterRecipesByCategory('Breakfast').then(resp=>console.log(resp))
+
+export { filterRecipesByCategory };
