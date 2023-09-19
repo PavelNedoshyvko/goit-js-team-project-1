@@ -1,6 +1,8 @@
 import { serviceGetRecipeById } from './api-requests'; //на бекент
 import { recipeRendering } from './markup'; //розмітка
+import { popularRecipesList } from './popular-recipes-list';
 import { productGalleryList } from './product-gallery-ex';
+
 import { refs } from './refs';
 
 async function insertMarkup() {
@@ -21,3 +23,18 @@ function setListenner(btnIdSeeinfo) {
     })
   );
 }
+
+function setPopularRecipeListener() {
+  let item = document.querySelector('.popular-recipes-list-js');
+  item.addEventListener('click', async event => {
+    let recipeId = event.target.dataset.id;
+    if (recipeId) {
+      let dataRecipe = await serviceGetRecipeById(recipeId);
+      let renderData = recipeRendering(dataRecipe);
+      refs.modalDetailRecipe.innerHTML = renderData;
+      refs.modalFullWindows.classList.remove('is-hidden');
+    }
+  });
+}
+
+export { setListenner, setPopularRecipeListener };
