@@ -36,20 +36,22 @@ function createMarkupEvents(arr) {
 function createMarkupPopularRecipesList(arr) {
   return arr
     .map(
-      ({_id, title, description, preview }) =>
+      ({ _id, title, description, preview }) =>
         ` <li class="blok-popular" data-id="${_id}">
+        <div>
       <img
-        class="img-popular-recipes"
+        class="img-popular-recipes" data-id="${_id}"
         src="${preview}"
         alt="french-omelette"
         width="64px"
         height="64px"
       />
+        </div>
       <div class="col-popular-recipes">
-        <h3 class="sub-title-popular popular-recipes-text-transform">
+        <h3 class="sub-title-popular popular-recipes-text-transform" data-id="${_id}">
           ${title}
         </h3>
-        <p class="text-popular-recipes">
+        <p class="text-popular-recipes" data-id="${_id}">
           ${description}
         </p>
       </div>
@@ -79,7 +81,7 @@ function recipeRendering(obj) {
   return `<div class="recipe-media-source">
       <iframe
         class="video-recipe"
-        src="${youtube}"
+        src="${youtube.replace('watch?v=', 'embed/')}"
         frameborder="0"
         allow="autoplay; encrypted-media; fullscreen"
       ></iframe>
@@ -188,16 +190,15 @@ function createMarkupRecipes(data) {
     </div>
     </div>
   </div>
-</li>`
+</li>`;
     })
     .join('');
   return recipesList;
-};
-
+}
 
 function createMarkupRecipesByCategory(recipe) {
-	const { _id, title, description, thumb, rating } = recipe;
-	return `<li class="recipes-item">
+  const { _id, title, description, thumb, rating } = recipe;
+  return `<li class="recipes-item">
   <div class="photo-thumb">
     <img class="pic-recipe" src="${thumb}" alt="${title}" loading="lazy" />
   </div>
@@ -238,19 +239,16 @@ function createMarkupRecipesByCategory(recipe) {
     <button class="btn-detail-info" type="button" data-id=${_id}>See recipe</button>
 
   </div>
-</li>`  
-	// console.log(markup);
-	// return markup.join('');
-};
-
-
-
+</li>`;
+  // console.log(markup);
+  // return markup.join('');
+}
 
 export {
   createMarkupCategoriesList,
   createMarkupEvents,
   createMarkupPopularRecipesList,
   recipeRendering,
-	createMarkupRecipes,
-	createMarkupRecipesByCategory,
+  createMarkupRecipes,
+  createMarkupRecipesByCategory,
 };

@@ -13,7 +13,7 @@ async function productGalleryList() {
       limit = 9;
     }
 
-		const data = await fetchAllRecipes(limit);
+    const data = await fetchAllRecipes(limit);
     return createMarkupRecipes(data);
   } catch (err) {
     console.log(err);
