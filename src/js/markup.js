@@ -134,7 +134,7 @@ function recipeRendering(obj) {
   </div>
   
     <div class="recipe-btn">
-    <button data-id=${_id} class="recipe-btn-addFavorites" type="button">
+    <button data-id=${_id} data-title data-description data-thumb data-rating class="recipe-btn-addFavorites" type="button" >
       Add to favorite
     </button>
     <button data-id=${_id} class="recipe-btn-giveRating" type="button">Give a rating</button>
@@ -154,35 +154,34 @@ function createMarkupRecipes(data) {
   <div class="description-recipe-cover">
     <p class="description-recipe-title">${title}</p>
     <p class="description-recipe-text">${description}</p>
-    <div class="popular-recept-box"
+    <div class="popular-recept-box">
       <div class="div-popular-recipe">
       <div class="star-reiting-box" id="starRating">
-      <ul class="star-icon-list">
-       <li class = "star-recipe-reting">${rating}</li>
-       <li class="star">
+
+       <p class = "star-recipe-reting">${rating}</p>
+
            <svg class="star-icon" data-value="1">
            <use href="./img/icons.svg#star"></use>
-         </svg></li>
-       <li class="star">
+         </svg>
+
            <svg class="star-icon" data-value="2">
            <use href="./img/icons.svg#star"></use>
-         </svg></li>
-       <li class="star">
+         </svg>
+
            <svg class="star-icon" data-value="3">
                <use href="./img/icons.svg#star"></use>
              </svg>
-       </li>
-       <li class="star">
+
            <svg class="star-icon" data-value="4">
                <use href="./img/icons.svg#star"></use>
              </svg>
-       </li>
-       <li class="star">
+
+
            <svg class="star-icon" data-value="5">
                <use href="./img/icons.svg#star"></use>
              </svg>
-       </li>
-      </ul>
+
+
      </div>   
     
     <button class="btn-detail-info" type="button" data-id=${_id}>See recipe</button>
