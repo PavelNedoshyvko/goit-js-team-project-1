@@ -156,32 +156,37 @@ function createMarkupRecipes(data) {
     <p class="description-recipe-text">${description}</p>
     <div class="popular-recept-box"
       <div class="div-popular-recipe">
-        <div class"star-block"
-        <p class="div-popular-recipe-rating">${rating}</p>
-        <div class="star-recipe-cover-preview">
-        <svg class="star-recipe-reting" width="24" height="24">
-          <use href="/img/icons.svg#star"></use>
-        </svg>
-        <svg class="star-recipe-reting" width="24" height="24">
-          <use href="/img/icons.svg#star"></use>
-        </svg>
-        <svg class="star-recipe-reting" width="24" height="24">
-          <use href="/img/icons.svg#star"></use>
-        </svg>
-        <svg class="star-recipe-reting" width="24" height="24">
-          <use href="/img/icons.svg#star"></use>
-        </svg>
-        <svg class="star-recipe-reting" width="24" height="24">
-        <use href="/img/icons.svg#star"></use>
-        </svg>
-      </div>
-      </div>
-    </div>
- 
-    </div>
-
+      <div class="star-reiting-box" id="starRating">
+      <ul class="star-icon-list">
+       <li class="star">
+           <svg class="star-icon" data-value="1">
+           <use href="./img/icons.svg#star"></use>
+         </svg></li>
+       <li class="star">
+           <svg class="star-icon" data-value="2">
+           <use href="./img/icons.svg#star"></use>
+         </svg></li>
+       <li class="star">
+           <svg class="star-icon" data-value="3">
+               <use href="./img/icons.svg#star"></use>
+             </svg>
+       </li>
+       <li class="star">
+           <svg class="star-icon" data-value="4">
+               <use href="./img/icons.svg#star"></use>
+             </svg>
+       </li>
+       <li class="star">
+           <svg class="star-icon" data-value="5">
+               <use href="./img/icons.svg#star"></use>
+             </svg>
+       </li>
+      </ul>
+     </div>   
+    
     <button class="btn-detail-info" type="button" data-id=${_id}>See recipe</button>
-
+    </div>
+    </div>
   </div>
 </li>`
     })
