@@ -1,5 +1,5 @@
 //*star
-import { forEach } from 'lodash';
+// import { forEach } from 'lodash';
 import { refs } from './refs';
  
  export  function showReiting(obj) {
