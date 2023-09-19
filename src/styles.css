@@ -14,7 +14,7 @@
 @import url('./css/header.css');
 @import url('./css/hero.css');
 @import url('./css/categories.css');
-@import url('./css/popular-recipes.css');
+/* @import url('./css/popular-recipes.css'); */
 @import url('./css/order-now.css');
 @import url('./css/cards.css');
 @import url('./css/filter.css');
@@ -26,3 +26,4 @@
 @import url('./css/modal-recipe.css');
 @import url('./css/main-div.css');
 @import url('./css/product-gallery-ex.css');
+@import url('./css/popular-recipes2.css');
