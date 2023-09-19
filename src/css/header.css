@@ -105,6 +105,7 @@
   justify-content: center;
   align-items: center;
   transition: stroke var(--trns-general);
+  cursor: pointer;
 }
 
 :is(.header-basket-icon, .header-burger-icon):hover,
