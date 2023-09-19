@@ -244,8 +244,6 @@ function createMarkupRecipesByCategory(recipe) {
     </div>
   </div>
 </li>`;
-  // console.log(markup);
-  // return markup.join('');
 }
 
 export {
