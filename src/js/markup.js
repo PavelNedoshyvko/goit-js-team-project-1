@@ -146,7 +146,7 @@ function createMarkupRecipes(data) {
     .map(({ _id, title, description, thumb, rating }) => {
       return `<li class="recipes-item">
   <div class="photo-thumb pic-recipe">
-    
+    <img class="pic-recipe" src="${thumb}" alt="${title}" loading="lazy" />
   </div>
   <button type="button" class="btn-favorite" data-id=${_id}>
     <svg class="icon-favorite" width="22" height="22">
