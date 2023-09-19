@@ -1,10 +1,35 @@
-import { fetchAllRecipes } from "./api-requests";
-import { createMarkupRecipesByCategory } from "./markup";
+import { fetchAllRecipes, serviceAllCategories } from "./api-requests";
+import { createMarkupRecipes, createMarkupRecipesByCategory } from "./markup";
+import { productGalleryList } from "./product-gallery-ex";
 import { refs } from "./refs";
 
+refs.allCategoryButton.addEventListener('click', onAllCategoryButtonClick);
 refs.categoryContainer.addEventListener('click', onBtnCLick);
 
 let lastClickedBtn = null;
+
+async function onAllCategoryButtonClick() {
+	try {
+		let limit;
+		refs.mainList.innerHTML = '';
+    if (window.innerWidth < 768) {
+      limit = 6;
+    } else if (window.innerWidth < 1280) {
+      limit = 8;
+    } else {
+      limit = 9;
+    }
+
+		const data = await fetchAllRecipes(limit);
+		const { results } = data;
+		results.map((recipe) => {
+			refs.mainList.insertAdjacentHTML("beforeend", createMarkupRecipesByCategory(recipe));
+		});
+	} catch (err) {
+    console.log(err);
+  }
+	
+};
 
 function onBtnCLick(event) {
   const btn = event.target;
@@ -63,5 +88,5 @@ async function getRecipesByCategory(categoryName){
 	} catch (err) {
     console.log(err);
   }
-}
+};
 

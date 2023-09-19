@@ -10,7 +10,7 @@ async function categoriesList() {
   } catch (err) {
     console.log(err);
   }
-}
+};
 
 categoriesList();
 
