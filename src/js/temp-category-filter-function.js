@@ -1,9 +1,9 @@
-import { fetchAllRecipes } from './api-requests'; 
+import { fetchAllRecipes, serviceAllRecipes } from './api-requests'; 
 
 // Функция для фильтрации рецептов по категории
 async function filterRecipesByCategory(categoryName) {
     try {
-        const allRecipes = await fetchAllRecipes();
+        const allRecipes = await serviceAllRecipes();
         const categories = [
             { "_id": "6462a6cd4c3d0ddd28897f8e", "name": "Beef" },
             { "_id": "6462a6cd4c3d0ddd28897f95", "name": "Breakfast" },
@@ -22,8 +22,8 @@ async function filterRecipesByCategory(categoryName) {
             { "_id": "6462a6cd4c3d0ddd28897f92", "name": "Vegetarian" }
         ];
 
-        const category = categories.find(cat => cat.name === categoryName);
-
+			const category = categories.find(cat => cat.name === categoryName);
+			
         if (!category) {
             throw new Error('Category not found');
         }
@@ -39,3 +39,6 @@ async function filterRecipesByCategory(categoryName) {
     }
 }
 
+filterRecipesByCategory('Breakfast').then(resp=>console.log(resp))
+
+export { filterRecipesByCategory };

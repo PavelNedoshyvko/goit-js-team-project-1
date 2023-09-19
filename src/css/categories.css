@@ -48,6 +48,16 @@
   border: 1px solid var(--green);
 }
 
+.category-btn.active {
+  color: var(--green);
+}
+
+.categories-all-btn.active {
+  color: var(--white-w);
+  background: var(--green);
+  border: 1px solid var(--green);
+}
+
 .categories-list-box {
   margin-top: 24px;
   overflow-y: scroll;
@@ -106,7 +116,6 @@
   border-radius: 12px;
 }
 
-
 /**
   |============================
   | Gallery home
@@ -116,11 +125,11 @@
   display: flex;
 }
 
-.gallery-home-js{
+.gallery-home-js {
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
 }
-.gallery-home-recipe{
-max-width: 250px;
+.gallery-home-recipe {
+  max-width: 250px;
 }

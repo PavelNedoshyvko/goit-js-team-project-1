@@ -1,4 +1,5 @@
-
+import { getIngredients } from './rendering-ingredients';
+import { getTags } from './rendering-tags';
 
 function createMarkupCategoriesList(arr) {
   return arr
@@ -35,134 +36,27 @@ function createMarkupEvents(arr) {
 function createMarkupPopularRecipesList(arr) {
   return arr
     .map(
-      ({ title, description, preview }) =>
-        ` <li class="blok-popular">
+      ({ _id, title, description, preview }) =>
+        ` <li class="blok-popular" data-id="${_id}">
+        <div>
       <img
-        class="img-popular-recipes"
+        class="img-popular-recipes" data-id="${_id}"
         src="${preview}"
         alt="french-omelette"
         width="64px"
         height="64px"
       />
+        </div>
       <div class="col-popular-recipes">
-        <h3 class="sub-title-popular popular-recipes-text-transform">
+        <h3 class="sub-title-popular popular-recipes-text-transform" data-id="${_id}">
           ${title}
         </h3>
-        <p class="text-popular-recipes">
+        <p class="text-popular-recipes" data-id="${_id}">
           ${description}
         </p>
       </div>
     </li>`
     )
-    .join('');
-}
-
-
-//Відмалювання Рецепту в модалці
-// тимчасова змінна
-const list = document.querySelector('.recipe-data-cover');
-// const eventClickBtnReceiveId = document.querySelector('.btn-see-detail-recipe');
-
-// eventClickBtnReceiveId.addEventListener('click', handlerReceiveRecipeId);
-
-// test prototype btn
-let unicalIdRecipe = '';
-
-const btnTest = document.querySelector('.recipe-btn-addFavorites');
-
-
-function handlerReceiveRecipeId(evt) {
-  unicalIdRecipe = evt.textContent;
-}
-//end test prototype btn
-
-async function processingReceptionId() {
-  const resp = await axios(
-    `https://tasty-treats-backend.p.goit.global/api/recipes/`
-  );
-  return resp.data;
-}
-
-const obj = {
-  _id: '6462a8f74c3d0ddd28897fc1',
-  title: 'Chocolate Gateau',
-  category: 'Dessert',
-  area: 'French',
-  instructions:
-    'Preheat the oven to 180°C/350°F/Gas Mark 4. Grease and line the base of an 8 in round spring form cake tin with baking parchment\r\nBreak the chocolate into a heatproof bowl and place over a saucepan of gently simmering water and stir until it melts. (or melt in the microwave for 2-3 mins stirring occasionally)\r\nPlace the butter and sugar in a mixing bowl and cream together with a wooden spoon until light and fluffy. Gradually beat in the eggs, adding a little flour if the mixture begins to curdle. Fold in the remaining flour with the cooled, melted chocolate and milk. Mix until smooth.\r\nSpread the mixture into the cake tin and bake for 50-55 mins or until firm in the centre and a skewer comes out cleanly. Cool for 10 minutes, then turn out and cool completely.',
-  description:
-    'A French dessert consisting of layers of chocolate sponge cake and chocolate ganache, typically topped with chocolate glaze and chocolate decorations.',
-  thumb: 'https://www.themealdb.com/images/media/meals/tqtywx1468317395.jpg',
-  preview:
-    'https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678560403/zyahxajhkglf8sisiqlh.jpg',
-  time: '75',
-  youtube: 'https://www.youtube.com/watch?v=dsJtgmAhFF4',
-  tags: ['Cake', 'Chocolate', 'Desert', 'Pudding'],
-  ingredients: [
-    {
-      id: '640c2dd963a319ea671e3742',
-      measure: '250g',
-      name: 'Plain Chocolate',
-      desc: 'Plain chocolate, also known as dark chocolate, is made from cocoa solids, sugar, and cocoa butter. It has a higher percentage of cocoa solids than milk chocolate, and has a bittersweet taste. It is often used in baking, or enjoyed on its own as a treat.',
-      img: 'https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678564854/qmuma4viupigb574izg6.png',
-    },
-    {
-      id: '640c2dd963a319ea671e367e',
-      measure: '175g',
-      name: 'Butter',
-      desc: 'A dairy product made from churning cream or milk, with a high fat content and a creamy, rich flavor that is often used in cooking and baking.',
-      img: 'https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678564674/ovea5weymaecrnbwxuq9.png',
-    },
-    {
-      id: '640c2dd963a319ea671e371f',
-      measure: '2 tablespoons',
-      name: 'Milk',
-      desc: 'A white liquid produced by mammals as food for their young, commonly used as a drink or ingredient in cooking and baking.',
-      img: 'https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678564854/ly0kwisb5ripennlkqma.png',
-    },
-    {
-      id: '640c2dd963a319ea671e36ca',
-      measure: '5',
-      name: 'Eggs',
-      desc: 'A reproductive cell laid by female animals, often used in baking and cooking as a binding agent or to add texture and flavor',
-      img: 'https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678564742/iaphxkd4vqyfn7xixnqw.png',
-    },
-    {
-      id: '640c2dd963a319ea671e36ee',
-      measure: '175g',
-      name: 'Granulated Sugar',
-      desc: 'A common sweetener made from sugar cane or sugar beet that has been refined and granulated.',
-      img: 'https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678564797/gywjatzz1ourjbtpjjtw.png',
-    },
-    {
-      id: '640c2dd963a319ea671e36d7',
-      measure: '125g',
-      name: 'Flour',
-      desc: 'A fine powder made from grinding grains, nuts, seeds, or roots. Used as a main ingredient in baking, cooking, and thickening sauces and soups.',
-      img: 'https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678564797/hwex2zzwxbv7a5gi9iuh.png',
-    },
-  ],
-  rating: 4.28,
-  whoRated: 187,
-};
-
-function getTags(tags) {
-  return tags
-    .map(
-      tag =>
-        `<li class="tags-list-item"><button class="btn-tag-recipe" type="button">#${tag}</button></li>`
-    )
-    .join('');
-}
-
-function getIngredients(ingredients) {
-  return ingredients
-    .map(ingredient => {
-      const { name, measure } = ingredient;
-      return `
-   <li class="recipe-ingredient-list-item"><p class="recipe-ingredient-name">${name}</p><p class="recipe-ingredient-measure">${measure}</p></li>
-    `;
-    })
     .join('');
 }
 
@@ -187,7 +81,7 @@ function recipeRendering(obj) {
   return `<div class="recipe-media-source">
       <iframe
         class="video-recipe"
-        src="${youtube}"
+        src="${youtube.replace('watch?v=', 'embed/')}"
         frameborder="0"
         allow="autoplay; encrypted-media; fullscreen"
       ></iframe>
@@ -247,15 +141,120 @@ function recipeRendering(obj) {
   </div>`;
 }
 
-list.insertAdjacentHTML('beforeend', recipeRendering(obj));
+function createMarkupRecipes(data) {
+  const recipesList = data.results
+    .map(({ _id, title, description, thumb, rating }) => {
+      return `<li class="recipes-item">
+  <div class="photo-thumb pic-recipe">
+    
+  </div>
+  <button type="button" class="btn-favorite" data-id=${_id}>
+    <svg class="icon-favorite" width="22" height="22">
+      <use href="./img/icons.svg#heart"></use>
+    </svg>
+  </button>
+  <div class="description-recipe-cover">
+    <p class="description-recipe-title">${title}</p>
+    <p class="description-recipe-text">${description}</p>
+    <div class="popular-recept-box"
+      <div class="div-popular-recipe">
+      <div class="star-reiting-box" id="starRating">
+      <ul class="star-icon-list">
+       <li class = "star-recipe-reting">${rating}</li>
+       <li class="star">
+           <svg class="star-icon" data-value="1">
+           <use href="./img/icons.svg#star"></use>
+         </svg></li>
+       <li class="star">
+           <svg class="star-icon" data-value="2">
+           <use href="./img/icons.svg#star"></use>
+         </svg></li>
+       <li class="star">
+           <svg class="star-icon" data-value="3">
+               <use href="./img/icons.svg#star"></use>
+             </svg>
+       </li>
+       <li class="star">
+           <svg class="star-icon" data-value="4">
+               <use href="./img/icons.svg#star"></use>
+             </svg>
+       </li>
+       <li class="star">
+           <svg class="star-icon" data-value="5">
+               <use href="./img/icons.svg#star"></use>
+             </svg>
+       </li>
+      </ul>
+     </div>   
+    
+    <button class="btn-detail-info" type="button" data-id=${_id}>See recipe</button>
+    </div>
+    </div>
+  </div>
+</li>`;
+    })
+    .join('');
+  return recipesList;
+}
 
-
+function createMarkupRecipesByCategory(recipe) {
+  const { _id, title, description, thumb, rating } = recipe;
+  return `<li class="recipes-item">
+  <div class="photo-thumb">
+    <img class="pic-recipe" src="${thumb}" alt="${title}" loading="lazy" />
+  </div>
+  <button type="button" class="btn-favorite" data-id=${_id}>
+    <svg class="icon-favorite" width="22" height="22">
+      <use href="./img/icons.svg#heart"></use>
+    </svg>
+  </button>
+  <div class="description-recipe-cover">
+    <p class="description-recipe-title">${title}</p>
+    <p class="description-recipe-text">${description}</p>
+    <div class="popular-recept-box"
+      <div class="div-popular-recipe">
+      <div class="star-reiting-box" id="starRating">
+      <ul class="star-icon-list">
+       <li class="star">
+           <svg class="star-icon" data-value="1">
+           <use href="./img/icons.svg#star"></use>
+         </svg></li>
+       <li class="star">
+           <svg class="star-icon" data-value="2">
+           <use href="./img/icons.svg#star"></use>
+         </svg></li>
+       <li class="star">
+           <svg class="star-icon" data-value="3">
+               <use href="./img/icons.svg#star"></use>
+             </svg>
+       </li>
+       <li class="star">
+           <svg class="star-icon" data-value="4">
+               <use href="./img/icons.svg#star"></use>
+             </svg>
+       </li>
+       <li class="star">
+           <svg class="star-icon" data-value="5">
+               <use href="./img/icons.svg#star"></use>
+             </svg>
+       </li>
+      </ul>
+     </div>   
+    
+    <button class="btn-detail-info" type="button" data-id=${_id}>See recipe</button>
+    </div>
+    </div>
+  </div>
+</li>`;
+  // console.log(markup);
+  // return markup.join('');
+}
 
 export {
   createMarkupCategoriesList,
   createMarkupEvents,
   createMarkupPopularRecipesList,
   recipeRendering,
-  getIngredients,
-  getTags,
+  createMarkupRecipes,
+  createMarkupRecipesByCategory,
 };

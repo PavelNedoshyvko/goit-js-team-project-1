@@ -5,12 +5,19 @@ import Pagination from 'tui-pagination';
 
 let limit = 6;
 let targetInnerWingt = window.outerWidth;
-let visibleCard = (targetInnerWingt < 768)?2:3;
+let visibleCard = 2;
 let page = 1;
 
+export function getvisiblerCard() {
+  window.addEventListener('resize',() => {
+    if(targetInnerWingt > 768) {visibleCard = 3} else
+     {limit = 9};
+   })
+     
+}
 
 
-function getCardPerPage() {
+export function getCardPerPage() {
   window.addEventListener('resize',() => {
     if(targetInnerWingt > 768 && targetInnerWingt < 1280) {limit = 8} else
      {limit = 9};
@@ -18,7 +25,6 @@ function getCardPerPage() {
      
 }  
 getCardPerPage()
-console.log(limit);
 
 const options = {
   totalItems: 35, //` ${totalCard}`,
@@ -49,4 +55,3 @@ const options = {
 }
 const instance = new Pagination(refs.container, options);
 instance.getCurrentPage();
-    

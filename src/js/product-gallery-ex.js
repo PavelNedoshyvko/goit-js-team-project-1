@@ -1,9 +1,9 @@
-import { refs } from './refs';
 import { fetchAllRecipes } from './api-requests';
-
+import { createMarkupRecipes } from './markup';
 
 async function productGalleryList() {
   try {
+
 		let limit;
 	
 		if (window.innerWidth < 768) {
@@ -17,6 +17,9 @@ async function productGalleryList() {
 		const result = await fetchAllRecipes({limit: limit});
 		createMarkupRecipes(result);
 		
+
+   
+
   } catch (err) {
     console.log(err);
   }
