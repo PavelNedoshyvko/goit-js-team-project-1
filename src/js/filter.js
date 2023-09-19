@@ -1,10 +1,13 @@
 import axios from 'axios';
+import { fetchAllRecipes } from './api-requests';
+import { createMarkupRecipes } from './product-gallery-ex'; 
 
 const refs = {
   areaList: document.querySelector('.main-products-filter-area-select'),
   ingredientsList: document.querySelector(
     '.main-products-filter-ingredients-select'
   ),
+  recipeSearch: document.querySelector('.main-products-filter-search-select'),
 };
 
 //fetch all Areas and ALL ingredients
@@ -49,4 +52,14 @@ function onSelect(evt) {
   }
 }
 
+refs.recipeSearch.addEventListener('input', onSearch);
+async function onSearch(e) {
+  try {
+    const result = await fetchAllRecipes({title: e.currentTarget.value, limit: 9});
+    createMarkupRecipes(result);
+  } catch (err) {
+    console.log(err);
+  }
+  
+}
 // all ingredients options
