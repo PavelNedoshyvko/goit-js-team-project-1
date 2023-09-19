@@ -50,7 +50,7 @@
   letter-spacing: -0.02em;
 
   color: var(--black);
-  transition: color var(--);
+  transition: color var(--trns-general);
 }
 
 .header-menu-link:is(:hover, :focus) {
@@ -209,6 +209,7 @@
 
 .switch-input:checked ~ .switch-span {
   transform: translateX(27px);
+  transition: translateX var(--trns-general);
 }
 
 .switch-input:checked + .switch-label {
