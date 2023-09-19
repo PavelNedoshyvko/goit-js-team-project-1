@@ -15,6 +15,7 @@
     line-height: normal;
     text-align: center;
     font-size: 0;
+    
 }
 
 @media only screen and (min-width: 768px) {
@@ -28,9 +29,9 @@
     display: inline-block;
     position: relative;
     width: 40px;
-     height: 40px; 
-    padding: 11px 0 7px; 
-    margin-left: 6px;
+    height: 40px; 
+    padding: 11px 0 6px; 
+    margin-left: 5px;
     color: var(---black);
    
     font-size: 18px;
@@ -38,8 +39,7 @@
     line-height: 1;
     text-decoration: none;
     vertical-align: middle;
-    border: 1px solid var(--gray-ul-w);
-    border-width: 1px 0;
+    border: 1px solid var(--green);
     border-radius: 50%;
 }
 @media only screen and (min-width: 768px) {
@@ -50,21 +50,21 @@
     }
 }
 .tui-pagination .tui-page-btn:hover {
-    background-color: var(--white-w);
-    border: 1px solid var(--green);
-    color: var(--green);
+    
+    border: 1px solid var(--gray-descrip-w);
+    color: var(--);
 }
 
 .tui-pagination .tui-is-selected, .tui-pagination strong {
     color: var(--white-w);
     background: var(--green);
-    border-color: var(--green);
+    border-color: var(--gray-descrip-w);
     cursor: default;
 }
 
 .tui-pagination .tui-is-selected:hover {
-    background: var(--gray-ul-w);
-    border: 1px solid var(--gray-ul-w);
+    background: var(--green);
+    border: 1px solid var(--green);
 }
 
 .tui-pagination .tui-first-child.tui-is-selected, .tui-pagination strong.tui-first-child {
@@ -85,7 +85,7 @@
     white-space: nowrap;
     font-weight: normal;
     background: var(--white-w);
-    border: 1px solid var(--gray-ul-w);
+    border: 1px solid var(--green);
 }
 
 .tui-pagination .tui-first, .tui-pagination .tui-prev, .tui-pagination .tui-next, .tui-pagination .tui-last {
@@ -155,13 +155,14 @@
 }
 
 .tui-pagination .tui-is-disabled:hover {
-    background: var(--white-w);
+    background: var(--black);
     border: 1px solid var(--green);
     cursor: default
 }
 
 .tui-pagination .tui-is-disabled {
     background: var(--black);
+    border: 1px solid var(--black);
 }
 
 .tui-pagination .tui-is-disabled .tui-ico-prev {

@@ -145,8 +145,8 @@ function createMarkupRecipes(data) {
   const recipesList = data.results
     .map(({ _id, title, description, thumb, rating }) => {
       return `<li class="recipes-item">
-  <div class="photo-thumb">
-    <img class="pic-recipe" src="${thumb}" alt="${title}" loading="lazy" />
+  <div class="photo-thumb pic-recipe">
+    
   </div>
   <button type="button" class="btn-favorite" data-id=${_id}>
     <svg class="icon-favorite" width="22" height="22">
@@ -160,6 +160,7 @@ function createMarkupRecipes(data) {
       <div class="div-popular-recipe">
       <div class="star-reiting-box" id="starRating">
       <ul class="star-icon-list">
+       <li class = "star-recipe-reting">${rating}</li>
        <li class="star">
            <svg class="star-icon" data-value="1">
            <use href="./img/icons.svg#star"></use>

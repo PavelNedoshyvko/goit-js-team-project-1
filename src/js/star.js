@@ -1,17 +1,14 @@
-
-
+//*star
+import { forEach } from 'lodash';
 import { refs } from './refs';
  
- export  function showReiting() {
-
-    const rating = 4; //Math.rond(`${tags.raing}`) //значение з запроса по конкретному рецепту 
-    refs.starBox.insertAdjacentHTML('afterbegin', `<div class="star-reiting">4.2</div>` ) //${tags.raing}  
+ export  function showReiting(obj) {
+forEach(obj) 
     refs.stars.forEach(star => {
-    if (star.dataset.value <= rating) {
-        star.classList.add('active');
+    if (star.dataset.value <= (Math.round(`${rating}`))) {
+        star.classList.add('star-active');
     } else {
-        star.classList.remove('active');
+        star.classList.remove('star-active');
     }
   });
 }
- showReiting();

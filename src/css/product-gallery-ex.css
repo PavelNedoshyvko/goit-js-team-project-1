@@ -45,16 +45,35 @@
 }
 
 .photo-thumb {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(1deg, rgba(5, 5, 5, 0.60) 4.82%, rgba(5, 5, 5, 0.00) 108.72%), url(`${thumb}`), lightgray -25px -10px / 116.716% 114.018% no-repeat;
-  
+  width: 335px;
+  height: 335px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--gray-border-w);
 }
+
+@media only screen and (min-width: 768px) {
+  .photo-thumb{
+    width: 240px;
+    height: 264px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .photo-thumb{
+    width: 250px;
+    height: 287px;
+  }
+}
+
 .pic-recipe {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  background-image: url(${thumb});
+  background: linear-gradient(1deg, rgba(5, 5, 5, 0.60) 4.82%, rgba(5, 5, 5, 0.00) 108.72%), url(<${thumb}>), lightgray -36.5px 0px / 134.583% 122.348% no-repeat;
+  
 }
+
 .btn-favorite {
   border: none;
   position: absolute;
@@ -63,10 +82,10 @@
   fill: var(--gray-border-w);
   stroke: var(--white-w);
   background: none;
-  opacity: 50%; 
+ 
 }
 .icon-favorite {
-  fill: var(--white-w);
+  fill: var(--gray-border-w);
   stroke: var(--white-w);
 }
 .description-recipe-cover {
@@ -153,14 +172,16 @@ text-transform: uppercase;
 .star-recipe-cover-preview {
 }
 .star-recipe-reting {
+  color: var(--white-w);
 }
 .btn-detail-info {
   display: flex;
-  padding: 8px 4px;
+  padding: 8px 10px;
   justify-content: center;
   align-items: center;
   gap: 8px;
   border-radius: 8px;
+  border: 1px solid var(--green);
   background: var(--green);  
 color: var(--white-w);
 font-size: 12px;
@@ -168,35 +189,8 @@ font-weight: 500;
 line-height: normal;
 }
 
-.star-reiting-box {
-  display: flex;
-  width: 112px;
-  align-items: flex-start;
-  gap: 4px;
-}
-
-
-.star-rating {
- width: 22px;
- height: 18px;
- color: var(--white-w);
- font-size: 14px;
- font-weight: 500;
-}
-.btn-detail-info {
-  display: flex;
-  min-height: 18px;
-
-}
-
-.star-icon{
-  width: 18px;
-  height: 16px;
-}
-
-@media only screen and (min-width: 768px) {
-   .star-icon{
-    width: 16px;
-    height: 16px;
+  @media only screen and (min-width: 768px) and(max-wind: 1280px) { 
+    .btn-detail-info {
+      padding: 8px 8px;
+    }
   }
-}
