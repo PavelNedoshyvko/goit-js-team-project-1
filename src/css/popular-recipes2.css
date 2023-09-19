@@ -1,0 +1,190 @@
+.popular-recipes {
+  width: 335px;
+  height: 220px;
+  padding: 0px;
+  overflow-y: hidden;
+}
+@media screen and (max-width: 374px) {
+  .popular-recipes {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .popular-recipes {
+    width: 176px;
+    height: 400px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .popular-recipes {
+    width: 235px;
+    height: 445px;
+  }
+}
+
+.col-popular-recipes {
+  width: 252px;
+  height: 41px;
+  padding: 0px;
+}
+@media screen and (max-width: 374px) {
+  .col-popular-recipes {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .col-popular-recipes {
+    width: 120px;
+    height: 41px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .col-popular-recipes {
+    width: 155px;
+  }
+}
+
+.title-popular-recipes {
+  color: var(--black);
+  text-transform: uppercase;
+
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.33;
+
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  .title-popular-recipes {
+    margin-bottom: 32px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .title-popular-recipes {
+    margin-bottom: 32px;
+    font-size: 24px;
+    line-height: 1.16;
+  }
+}
+.popular-recipes-list-js {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+@media screen and (min-width: 768px) {
+  .popular-recipes-list-js {
+    gap: 16px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .popular-recipes-list-js {
+    gap: 32px;
+  }
+}
+.blok-popular {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  width: 335px;
+  height: 67px;
+}
+
+@media screen and (min-width: 768px) {
+  .blok-popular {
+    gap: 8px;
+    width: 176px;
+    height: 67px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .blok-popular {
+    gap: 16px;
+    width: 235px;
+  }
+}
+
+.img-popular-recipes {
+  border-radius: 8px;
+  width: 64px;
+  height: 64px;
+}
+@media screen and (min-width: 768px) {
+  .img-popular-recipes {
+    width: 48px;
+    height: 48px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .img-popular-recipes {
+    width: 64px;
+    height: 64px;
+  }
+}
+.sub-title-popular {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.28;
+  text-transform: uppercase;
+  padding-bottom: 8px;
+}
+@media screen and (min-width: 768px) {
+  .sub-title-popular {
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    font-size: 14px;
+
+    font-weight: 600;
+    line-height: 1.28;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+}
+
+.text-popular-recipes {
+  color: var(--gray-descrip-w);
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+
+  font-size: 12px;
+  line-height: 16px;
+  width: 100%;
+
+  overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+  .text-popular-recipes {
+    overflow: hidden;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.4;
+
+    width: 120px;
+    max-height: 41px;
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .text-popular-recipes {
+    overflow: hidden;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.4;
+
+    width: 155px;
+    max-height: 41px;
+    overflow: hidden;
+  }
+}
