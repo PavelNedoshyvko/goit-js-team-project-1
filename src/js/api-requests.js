@@ -23,15 +23,7 @@ const POPULAR = '/popular';
 
 async function fetchAllRecipes(filters) {
   console.log(filters);
-	const params = new URLSearchParams({
-    title: filters.title || '',
-    category: '',
-    area: '',
-    ingredient: '',
-    time: '',
-    page: 1,
-    limit: filters.limit || '',
-  });
+	const params = new URLSearchParams(filters);
   const {data} = await axios(`${ALL_RECIPES}?${params}`);
   return data;
 }

@@ -59,7 +59,7 @@
   }
 }
 
-.main-products-fiter-time-select {
+.main-products-filter-time-select {
   color: var(--gray-title-w);
   font-size: 14px;
   line-height: 1.28;
@@ -73,7 +73,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .main-products-fiter-time-select {
+  .main-products-filter-time-select {
     font-size: 16px;
     line-height: 1.25;
 
@@ -83,7 +83,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .main-products-fiter-time-select {
+  .main-products-filter-time-select {
     width: 119px;
   }
 }

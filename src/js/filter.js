@@ -8,6 +8,7 @@ const refs = {
     '.main-products-filter-ingredients-select'
   ),
   recipeSearch: document.querySelector('.main-products-filter-search-select'),
+  timeFilter: document.querySelector('.main-products-filter-time-select'),
 };
 
 //fetch all Areas and ALL ingredients
@@ -36,30 +37,55 @@ async function areaList() {
   }
 }
 
+// Ingredients btn options
+async function IngredientsList() {
+  try {
+    const results = await fetchAllIngredients();
+    createMarkupIngredientsList(results);
+  } catch (err) {
+    console.log(err);
+  }
+}
+
 areaList();
+IngredientsList();
+
+const getActuallFiltersData = () => {
+  return {
+    title: refs.recipeSearch.value, 
+    time: refs.timeFilter.value, 
+    area: refs.areaList.value,
+    ingredient: refs.ingredientsList.value,
+    limit: 9,
+  }
+}
 
 function createMarkupAreasList(data) {
-  const optionsList = data
-    .map(({ id, name }) => `<option value="${id}">${name}</option>`)
+  const optionsList = '<option value=""> </option> ' + data
+    .map(({ _id, name }) => `<option value="${name}">${name}</option>`)
     .join(' ');
 
   refs.areaList.innerHTML = optionsList;
 }
 
-refs.areaList.addEventListener('select', onSelect);
-function onSelect(evt) {
-  if ((evt.target.value = data.area.value)) {
-  }
+function createMarkupIngredientsList(data) {
+  const optionsList = '<option value=""> </option> ' + data
+    .map(({ _id, name }) => `<option value="${_id}">${name}</option>`)
+    .join(' ');
+
+  refs.ingredientsList.innerHTML = optionsList;
 }
 
 refs.recipeSearch.addEventListener('input', onSearch);
+refs.areaList.addEventListener('change', onSearch);
+refs.timeFilter.addEventListener('change', onSearch);
+refs.ingredientsList.addEventListener('change', onSearch);
 async function onSearch(e) {
   try {
-    const result = await fetchAllRecipes({title: e.currentTarget.value, limit: 9});
+    const result = await fetchAllRecipes(getActuallFiltersData());
     createMarkupRecipes(result);
   } catch (err) {
     console.log(err);
   }
-  
 }
 // all ingredients options
