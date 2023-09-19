@@ -16,3 +16,6 @@ import './js/modal-control-recipe';
 
 // SearchId
 import './js/modal-detail-recipe.js';
+
+//searchRecipe
+import './js/search-recipe';

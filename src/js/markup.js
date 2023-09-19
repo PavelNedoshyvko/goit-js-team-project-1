@@ -36,7 +36,7 @@ function createMarkupEvents(arr) {
 function createMarkupPopularRecipesList(arr) {
   return arr
     .map(
-      ({_id, title, description, preview }) =>
+      ({ _id, title, description, preview }) =>
         ` <li class="blok-popular" data-id="${_id}">
       <img
         class="img-popular-recipes"
