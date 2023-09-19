@@ -1,3 +1,5 @@
+import { fetchAllRecipes } from "./api-requests";
+import { createMarkupRecipesByCategory } from "./markup";
 import { refs } from "./refs";
 
 refs.categoryContainer.addEventListener('click', onBtnCLick);
@@ -5,20 +7,22 @@ refs.categoryContainer.addEventListener('click', onBtnCLick);
 let lastClickedBtn = null;
 
 function onBtnCLick(event) {
-  const Btn = event.target;
-  if (Btn.nodeName !== 'BUTTON') {
+  const btn = event.target;
+  if (btn.nodeName !== 'BUTTON') {
     return;
   }
   if (lastClickedBtn) {
     lastClickedBtn.classList.remove('active');
   }
-  if (Btn === refs.allCategoryButton) {
+  if (btn === refs.allCategoryButton) {
     removeActiveClassFromAllButtons();
   } else {
     refs.allCategoryButton.classList.remove('active');
   }
-  Btn.classList.add('active');
-  lastClickedBtn = Btn;
+  btn.classList.add('active');
+	lastClickedBtn = btn;
+	const categoryName = btn.textContent;
+	getRecipesByCategory(categoryName);
 };
 
 function removeActiveClassFromAllButtons() {
@@ -34,3 +38,30 @@ refs.categoryList.addEventListener('click', event => {
     event.stopPropagation();
   }
 });
+
+async function getRecipesByCategory(categoryName){
+	try {
+		let limit;
+		refs.mainList.innerHTML = '';
+    if (window.innerWidth < 768) {
+      limit = 6;
+    } else if (window.innerWidth < 1280) {
+      limit = 8;
+    } else {
+      limit = 9;
+    }
+
+		const data = await fetchAllRecipes(limit);
+		const { results } = data;
+		results.map((recipe) => {
+			const { category } = recipe;
+		
+			if (categoryName === category) {
+				refs.mainList.insertAdjacentHTML("beforeend", createMarkupRecipesByCategory(recipe));
+			}
+		});
+	} catch (err) {
+    console.log(err);
+  }
+}
+

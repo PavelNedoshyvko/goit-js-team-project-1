@@ -7,8 +7,8 @@ import './js/slider';
 import './js/categories-list';
 import './js/popular-recipes-list';
 import './js/star';
-import './js/categories-filter';
 import './js/product-gallery-ex';
+import './js/categories-filter';
 
 import './js/tuipagination.js';
 

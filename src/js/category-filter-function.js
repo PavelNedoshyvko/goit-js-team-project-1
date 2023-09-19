@@ -1,9 +1,9 @@
-import { fetchAllRecipes } from './api-requests'; 
+import { fetchAllRecipes, serviceAllRecipes } from './api-requests'; 
 
 // Функция для фильтрации рецептов по категории
 async function filterRecipesByCategory(categoryName) {
     try {
-        const allRecipes = await fetchAllRecipes();
+        const allRecipes = await serviceAllRecipes();
         const categories = [
             { "_id": "6462a6cd4c3d0ddd28897f8e", "name": "Beef" },
             { "_id": "6462a6cd4c3d0ddd28897f95", "name": "Breakfast" },

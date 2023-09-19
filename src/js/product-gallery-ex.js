@@ -1,4 +1,3 @@
-import { refs } from './refs';
 import { fetchAllRecipes } from './api-requests';
 import { createMarkupRecipes } from './markup';
 
@@ -14,8 +13,8 @@ async function productGalleryList() {
       limit = 9;
     }
 
-    const result = await fetchAllRecipes(limit);
-    return createMarkupRecipes(result);
+		const data = await fetchAllRecipes(limit);
+    return createMarkupRecipes(data);
   } catch (err) {
     console.log(err);
   }
