@@ -148,7 +148,7 @@ function createMarkupRecipes(data) {
     <img class="pic-recipe" src="${thumb}" alt="${title}" loading="lazy" />
   <button type="button" class="btn-favorite" data-id=${_id}>
     <svg class="icon-favorite" width="22" height="22">
-      <use href="./img/icons.svg#heart"></use>
+      <use href="../img/icons.svg#heart"></use>
     </svg>
   </button>
   <div class="description-recipe-cover">
