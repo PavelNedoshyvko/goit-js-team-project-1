@@ -1,11 +1,14 @@
 .favorites-top-header {
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 
+.current-page {
+  color: var(--green);
+}
 
-.favorites-hero-img{ 
-     padding-bottom: 64px;
+.favorites-hero-img {
+  padding-bottom: 64px;
 }
 
 .favorites-block-icon {
@@ -15,20 +18,20 @@
 }
 
 .favorites-taxt {
-    display: block;
-    margin: auto;
-    text-align: center;
+  display: block;
+  margin: auto;
+  text-align: center;
 
-    padding-top: 32px;
-    padding-bottom: 64px;
+  padding-top: 32px;
+  padding-bottom: 64px;
 
-    color: var(--black);
-    text-align: center;
-    font-family: Inter;
-    font-style: normal;
-    line-height: 1,5; 
-    max-width: 481px;
-    text-align: center;    
+  color: var(--black);
+  text-align: center;
+  font-family: Inter;
+  font-style: normal;
+  line-height: 1, 5;
+  max-width: 481px;
+  text-align: center;
 }
 
 /* .favorites-display-none {
