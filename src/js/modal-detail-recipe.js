@@ -1,4 +1,5 @@
 import { serviceGetRecipeById } from './api-requests'; //на бекент
+import { getHeart } from './favorites-icon';
 import { recipeRendering } from './markup'; //розмітка
 import { popularRecipesList } from './popular-recipes-list';
 import { productGalleryList } from './product-gallery-ex';
@@ -9,7 +10,9 @@ async function insertMarkup() {
   let dataRecipe = await productGalleryList();
   refs.mainList.innerHTML = dataRecipe;
   setListenner('.btn-detail-info');
+  getHeart();
 }
+
 insertMarkup();
 
 function setListenner(btnIdSeeinfo) {
@@ -17,6 +20,7 @@ function setListenner(btnIdSeeinfo) {
   items.forEach(item =>
     item.addEventListener('click', async event => {
       let dataRecipe = await serviceGetRecipeById(event.target.dataset.id);
+      // console.log(dataRecipe);
       let renderData = recipeRendering(dataRecipe);
       refs.modalDetailRecipe.innerHTML = renderData;
       refs.modalFullWindows.classList.remove('is-hidden');

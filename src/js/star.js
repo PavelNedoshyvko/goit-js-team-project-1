@@ -29,5 +29,5 @@ function paintingStars() {
   //   });
   // });
 }
-paintingStars();
-console.log(paintingStars());
+// paintingStars();
+// console.log(paintingStars());
