@@ -5,14 +5,14 @@ import { refs } from './refs';
 //new
 import Notiflix from 'notiflix';
 import 'notiflix/dist/notiflix-3.2.6.min.css';
-
+//end
 refs.allCategoryButton.addEventListener('click', onAllCategoryButtonClick);
 refs.categoryContainer.addEventListener('click', onBtnCLick);
 
 //new
 refs.searchForm.addEventListener('submit', onSearch);
 let valueInput = ''; // введене із форми Search
-
+//end
 let lastClickedBtn = null;
 
 //new
@@ -58,7 +58,7 @@ function warning(err) {
 function notifyError(err) {
   Notiflix.Notify.failure('Я такого не знаю');
 }
-//↓ далі все що нижче це твоє
+//end ↓ далі все що нижче це твоє
 async function onAllCategoryButtonClick() {
   try {
     let limit;
