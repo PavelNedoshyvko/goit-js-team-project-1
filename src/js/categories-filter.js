@@ -99,12 +99,12 @@ function onBtnCLick(event) {
   }
   btn.classList.add('active');
 	
-};
-
+	
   lastClickedBtn = btn;
   const categoryName = btn.textContent;
   getRecipesByCategory(categoryName);
-}
+	
+};
 
 
 function removeActiveClassFromAllButtons() {
