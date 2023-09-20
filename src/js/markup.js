@@ -217,7 +217,7 @@ function createMarkupRecipesByCategory(recipe) {
   <div class="description-recipe-cover">
     <p class="description-recipe-title">${title}</p>
     <p class="description-recipe-text">${description}</p>
-    <div class="popular-recept-box"
+    <div class="popular-recept-box">
       <div class="div-popular-recipe">
       <div class="star-reiting-box" id="starRating">
       <ul class="star-icon-list">
