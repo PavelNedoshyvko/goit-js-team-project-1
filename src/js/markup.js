@@ -79,17 +79,19 @@ function recipeRendering(obj) {
   } = obj;
 
   return `<div class="recipe-media-source">
-      <iframe
-        class="video-recipe"
-        src="${youtube.replace('watch?v=', 'embed/')}"
-        frameborder="0"
-        allow="autoplay; encrypted-media; fullscreen"
-      ></iframe>
-    </div>
+        <div class="video-recipe">
+          <iframe
+           class="video-recipe"
+           src="${youtube.replace('watch?v=', 'embed/')}"
+           frameborder="0"
+            allow="autoplay; encrypted-media; fullscreen"
+          ></iframe>
+        </div>
+        <h1 class="modal-recipe-title"">${title}</h1>
 
-    <h1 class="title">${title}</h1>
-
-    <ul class="star-icon-list">
+        </div>
+        <div class=rating-recipe>
+      <ul class="star-icon-list-modal">
        <li class = "star-recipe-reting-modal">${rating}</li>
        <li class="star-modal">
            <svg class="star-icon-modal" data-value="1" viewBox="0 0 34 32">
@@ -138,11 +140,11 @@ function recipeRendering(obj) {
     </div>
   </div>
   
-    <div class="recipe-btn">
-    <button data-id=${_id} class="recipe-btn-addFavorites" type="button">
+    <div class="modal-recipe-btn">
+    <button data-id=${_id} class="modal-recipe-btn-addFavorites" type="button">
       Add to favorite
     </button>
-    <button data-id=${_id} class="recipe-btn-giveRating" type="button">Give a rating</button>
+    <button data-id=${_id} class="modal-recipe-btn-giveRating" type="button">Give a rating</button>
   </div>`;
 }
 
