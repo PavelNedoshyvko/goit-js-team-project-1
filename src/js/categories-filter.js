@@ -98,10 +98,14 @@ function onBtnCLick(event) {
     refs.allCategoryButton.classList.remove('active');
   }
   btn.classList.add('active');
+	
+};
+
   lastClickedBtn = btn;
   const categoryName = btn.textContent;
   getRecipesByCategory(categoryName);
 }
+
 
 function removeActiveClassFromAllButtons() {
   const buttons = refs.categoryList.querySelectorAll('button');
@@ -144,4 +148,6 @@ async function getRecipesByCategory(categoryName) {
   } catch (err) {
     console.log(err);
   }
+
 }
+
