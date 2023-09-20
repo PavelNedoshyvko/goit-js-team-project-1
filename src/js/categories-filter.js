@@ -58,7 +58,7 @@ function warning(err) {
 function notifyError(err) {
   Notiflix.Notify.failure('Я такого не знаю');
 }
-//end ↓ далі все що нижче це твоє
+////end ↓ далі все що нижче це твоє
 async function onAllCategoryButtonClick() {
   try {
     let limit;

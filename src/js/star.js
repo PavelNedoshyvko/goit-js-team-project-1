@@ -16,18 +16,18 @@ function paintingStars() {
   const ratingStar = document.querySelector('.star-recipe-reting');
   const blockStars = document.querySelectorAll('.star-icon');
 
-  ratingStar.forEach(ratingStar => {
-    const currentRating = parseFloat(
-      ratingStar.querySelector('.star-recipe-reting').textContent
-    );
-    console.log(currentRating);
-    const roundedRating = Math.round(currentRating);
-    stars.forEach((star, index) => {
-      if (index < roundedRating) {
-        star.classList.add('filled');
-      }
-    });
-  });
+  // ratingStar.forEach(ratingStar => {
+  //   const currentRating = parseFloat(
+  //     ratingStar.querySelector('.star-recipe-reting').textContent
+  //   );
+  //   console.log(currentRating);
+  //   const roundedRating = Math.round(currentRating);
+  //   stars.forEach((star, index) => {
+  //     if (index < roundedRating) {
+  //       star.classList.add('filled');
+  //     }
+  //   });
+  // });
 }
 paintingStars();
 console.log(paintingStars());
