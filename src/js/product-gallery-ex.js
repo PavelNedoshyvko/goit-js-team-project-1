@@ -1,3 +1,4 @@
+// тут ни кто ни чего не меняет 
 import { fetchAllRecipes } from './api-requests';
 import { createMarkupRecipes } from './markup';
 import Pagination from 'tui-pagination';
@@ -7,6 +8,7 @@ let limit = 6;
 let targetInnerWingt = window.outerWidth;
 let visibleCard = 2;
 let page = 1;
+let category = '';
 
 const paginationTemplate = {
   page: '<a href="#" class="tui-page-btn">{{page}}</a>',
@@ -55,7 +57,6 @@ let pagination;
 async function productGalleryList() {
   try {
     let limit;
-
     if (window.innerWidth < 768) {
       limit = 6;
     } else if (window.innerWidth < 1280) {
@@ -63,13 +64,15 @@ async function productGalleryList() {
     } else {
       limit = 9;
     }
-
-    const data = await fetchAllRecipes(limit, page);
+    // let category = "Dessert"; пока так 
+    const data = await fetchAllRecipes(limit, page, category);
+   
+    let totalItems = data.totalPages;
+    let totalPages = totalItems * limit;
     
-
     if (!pagination) {
       pagination = new Pagination('pagination', {
-        totalItems: data.totalPages, 
+        totalItems: `${totalPages}`, 
         itemsPerPage: data.perPage,
         visiblePages: `${visibleCard}`,
         page: data.page,
@@ -82,6 +85,7 @@ async function productGalleryList() {
     }
     handlingPagination(limit, pagination);
     return createMarkupRecipes(data);
+    
   } catch (err) {
     console.log(err);
   }

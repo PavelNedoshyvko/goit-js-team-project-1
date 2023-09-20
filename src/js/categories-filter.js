@@ -47,7 +47,9 @@ function onBtnCLick(event) {
   btn.classList.add('active');
 	lastClickedBtn = btn;
 	const categoryName = btn.textContent;
-	getRecipesByCategory(categoryName);
+
+  return categoryName;
+	// getRecipesByCategory(categoryName);
 };
 
 function removeActiveClassFromAllButtons() {
@@ -90,3 +92,4 @@ async function getRecipesByCategory(categoryName){
   }
 };
 
+export {onBtnCLick};

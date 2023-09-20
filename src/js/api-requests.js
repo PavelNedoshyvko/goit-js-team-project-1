@@ -20,10 +20,11 @@ const POPULAR = '/popular';
 //   return data;
 // };
 
-async function fetchAllRecipes(limit = 9, page = 1) {
+// в function fetchAllRecipes ни кто ни чего не меняет !!!
+async function fetchAllRecipes(limit = 9, page = 1, category = '') {
   const params = new URLSearchParams({
     title: '',
-    category: '',
+    category,
     area: '',
     ingredient: '',
     time: '',
