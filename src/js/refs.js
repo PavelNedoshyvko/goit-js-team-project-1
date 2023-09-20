@@ -12,6 +12,7 @@ const refs = {
   mainList: document.querySelector('.main-products-filter-gallery-list'), //carsListGlobal
   modalFullWindows: document.querySelector('.detailInfoRecipe'), //modal full window
   modalDetailRecipe: document.querySelector('.recipe-data-cover'), //  modal-window-detail-recipe
+  searchForm: document.querySelector('.main-products-container'), // area for search - input
 };
 
 export { refs };
