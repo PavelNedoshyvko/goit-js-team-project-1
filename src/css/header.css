@@ -57,6 +57,10 @@
   color: var(--green);
 }
 
+.current-page {
+  color: var(--green);
+}
+
 /* ЛОГОТИП */
 
 .header-logo {
@@ -190,6 +194,7 @@
   box-shadow: 7px 5px 15px rgba(160, 158, 160, 0.4);
   background-color: #cecdcd;
   border-radius: 10px;
+  transition: background-color var(--trns-general);
 }
 
 .switch-span {
@@ -205,11 +210,11 @@
   background-color: var(--white-w);
 
   transform: translateX(1px);
+  transition: transform var(--trns-general);
 }
 
 .switch-input:checked ~ .switch-span {
   transform: translateX(27px);
-  transition: translateX var(--trns-general);
 }
 
 .switch-input:checked + .switch-label {
