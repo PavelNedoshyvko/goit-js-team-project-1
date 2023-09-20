@@ -49,6 +49,12 @@
   margin-bottom: 35px;
 }
 
+.star-icon-modal {
+  width: 18px;
+  height: 18px;
+  fill: var(--yellow-star);
+}
+
 /* dynamic markup */
 .recipe-data-cover {
 }
@@ -62,7 +68,7 @@
 }
 .ratingAndTime-recipe-cover {
 }
-.star-recipe-reting {
+.star-recipe-reting-modal {
   fill: var(--yellow-star);
   stroke: none;
 }
