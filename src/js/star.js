@@ -19,7 +19,8 @@ function onWorkStar(gallaryItem) {
     let rating = el.querySelector('#starRating');
     let stars = el.querySelectorAll('.star-icon')
     stars.forEach(star => {
-        if (star.dataset.value <= (Math.round(`${rating}`))) {
+
+        if (star.dataset.value <= (Math.round(rating))) {
             star.classList.add('star-active');
         } else {
             star.classList.remove('star-active');
@@ -27,20 +28,24 @@ function onWorkStar(gallaryItem) {
       });
 
  })
-}
 
+// //*star
+// import { refs } from './refs';
 
-//old
 // export function showReiting(obj) {
-//   forEach(obj);
+//   obj.forEach(
+
+
 //   refs.stars.forEach(star => {
 //     if (star.dataset.value <= Math.round(`${rating}`)) {
 //       star.classList.add('star-active');
 //     } else {
 //       star.classList.remove('star-active');
 //     }
-//   });
+//   }));
 // }
+
+
 //new
 function paintingStars() {
   const ratingStar = document.querySelector('.star-recipe-reting');
