@@ -15,7 +15,7 @@ import './js/tuipagination.js';
 import './js/modal-control-recipe';
 // import './js/dark-theme';
 
-import './js/scroll-up';
+import './js/scrollToTop';
 // SearchId
 import './js/modal-detail-recipe.js';
 import './js/favorites-icon.js';
