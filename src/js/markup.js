@@ -166,7 +166,7 @@ function createMarkupRecipes(data) {
     <div class="popular-recept-box"
       <div class="div-popular-recipe">
       <div class="star-reiting-box" id="starRating">
-      <div> ${paintingStars(rating)} </div>
+      <div>${paintingStars(rating)}</div>
 
      </div>   
     

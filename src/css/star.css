@@ -55,7 +55,13 @@
   }
 }
 
-/* фарбуванні ікончи в JS star.js*/
-.filled {
-  fill: var(--yellow-star);
+.star-active {
+  color: var(--yellow-star);
+  font-size: 18px;
+  letter-spacing: -4px;
 }
+
+/* фарбуванні ікончи в JS star.js*/
+/* .filled {
+  fill: var(--yellow-star);
+} */
