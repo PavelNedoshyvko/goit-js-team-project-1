@@ -11,7 +11,7 @@ import { refs } from './refs';
 async function insertMarkup() {
   let dataRecipe = await productGalleryList();
   refs.mainList.innerHTML = dataRecipe;
-  console.log(dataRecipe);
+  // console.log(dataRecipe);
   // після відмалювання розмітки на головній,
   // викликали функцію setListenner() і передали клас від кнопки See detail
   setListenner('.btn-detail-info');
@@ -46,7 +46,7 @@ function setListenner(btnIdSeeinfo) {
     })
   );
 }
-// слухач на популярні рецепти. Повішав дата атрибути на всі теги,
+// слухач на популярні рецепти. Повішав дата атрибут ід на всі теги,
 // щоб легко відловлювати ід по кліку.
 function setPopularRecipeListener() {
   let item = document.querySelector('.popular-recipes-list-js');

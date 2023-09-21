@@ -22,14 +22,6 @@ const load = key => {
   }
 };
 
-const remove = key => {
-  try {
-    localStorage.removeItem(key);
-  } catch (error) {
-    Notify.Notify('Something went wrong. Please try again');
-  }
-};
-
 function getBtnFev(dataRecipe) {
   const addfevBtn = document.querySelector('.js-listener-fav-btn');
 
@@ -44,7 +36,7 @@ let btnAddtofav;
 
 function addFavCardRecipe(objRecipe) {
   // console.log(objRecipe);
-  if ((btnAddtofav.textContent = 'Add to favorite')) {
+  if (btnAddtofav.textContent === 'Add to favorite') {
     arrayFav.push(objRecipe);
     save(STORAGE_KEY, arrayFav);
 
