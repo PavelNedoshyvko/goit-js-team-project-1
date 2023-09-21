@@ -1,5 +1,14 @@
+import { serviceGetRecipeById } from './api-requests';
+
 export function getBtnFev() {
-  const btnAddtToFav = document.querySelector('.modal-recipe-btn-addFavorites');
+  const addfevBtn = document.querySelector('.js-listener-fav-btn');
+
+  addfevBtn.addEventListener('click', evt => {
+    let clickIdRecipe = evt.target.dataset.id;
+    console.dir(clickIdRecipe);
+  });
+
+  // console.log(addfevBtn);
 }
 
 // function saveFavoriteCard(key, card) {

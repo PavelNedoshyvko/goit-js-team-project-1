@@ -141,7 +141,7 @@ function recipeRendering(obj) {
   </div>
   
     <div class="modal-recipe-btn">
-    <button data-id=${_id} class="modal-recipe-btn-addFavorites" type="button">
+    <button data-id=${_id} class="modal-recipe-btn-addFavorites js-listener-fav-btn" type="button">
       Add to favorite
     </button>
     <button data-id=${_id} class="modal-recipe-btn-giveRating" type="button">Give a rating</button>

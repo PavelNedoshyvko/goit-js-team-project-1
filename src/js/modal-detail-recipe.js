@@ -11,8 +11,7 @@ async function insertMarkup() {
   let dataRecipe = await productGalleryList();
   refs.mainList.innerHTML = dataRecipe;
   setListenner('.btn-detail-info');
-  getHeart();
-  getBtnFev();
+  // getHeart(); //серця на головній
 }
 
 insertMarkup();
@@ -22,10 +21,11 @@ function setListenner(btnIdSeeinfo) {
   items.forEach(item =>
     item.addEventListener('click', async event => {
       let dataRecipe = await serviceGetRecipeById(event.target.dataset.id);
-      console.log(dataRecipe);
+      // console.log(dataRecipe);
       let renderData = recipeRendering(dataRecipe);
       refs.modalDetailRecipe.innerHTML = renderData;
       refs.modalFullWindows.classList.remove('is-hidden');
+      getBtnFev(); // слухаю кнопку "додат обране"
     })
   );
 }
@@ -39,6 +39,7 @@ function setPopularRecipeListener() {
       let renderData = recipeRendering(dataRecipe);
       refs.modalDetailRecipe.innerHTML = renderData;
       refs.modalFullWindows.classList.remove('is-hidden');
+      // getBtnFev(); // слухаю кнопку "додат обране"
     }
   });
 }
