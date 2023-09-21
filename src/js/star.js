@@ -11,24 +11,24 @@ if (gallaryItem.readyState == 'loading') {
     gallaryItem.addEventListener('DOMContentLoaded', onWorkStar);
   } else {
     // DOM готов!
-    onWorkStar();
+    // onWorkStar();
   }
-console.log(gallaryItem);
-function onWorkStar(gallaryItem) {
-	gallaryItem.forEach((el) => {
-		let rating = el.querySelector('#starRating');
-		let stars = el.querySelectorAll('.star-icon')
-		stars.forEach(star => {
+// console.log(gallaryItem);
+// function onWorkStar(gallaryItem) {
+// 	gallaryItem.forEach((el) => {
+// 		let rating = el.querySelector('#starRating');
+// 		let stars = el.querySelectorAll('.star-icon')
+// 		stars.forEach(star => {
 
-			if (star.dataset.value <= (Math.round(rating))) {
-				star.classList.add('star-active');
-			} else {
-				star.classList.remove('star-active');
-			}
-		});
+// 			if (star.dataset.value <= (Math.round(rating))) {
+// 				star.classList.add('star-active');
+// 			} else {
+// 				star.classList.remove('star-active');
+// 			}
+// 		});
 
-	})
-}
+// 	})
+// }
 
 
 
