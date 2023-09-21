@@ -57,6 +57,5 @@
 
 /* фарбуванні ікончи в JS star.js*/
 .filled {
-  fill: red;
-  stroke: green;
+  fill: var(--yellow-star);
 }

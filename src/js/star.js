@@ -22,9 +22,6 @@ function paintingStars() {
   // console.log(blockStars);
 
   ratingStars.forEach(ratingStar => {
-    // const currentRating = parseFloat(
-    //   ratingStar.querySelector('.star-recipe-reting').textContent
-    // );
     const currentRating = parseFloat(ratingStar.textContent);
 
     // console.log(currentRating);
@@ -34,11 +31,9 @@ function paintingStars() {
       console.dir(star);
       if (index < roundedRating) {
         star.classList.add('filled');
-        // star.style.fill.red;
       }
     });
   });
 }
-// paintingStars();
-// console.log(paintingStars());
+
 export { paintingStars };
