@@ -141,7 +141,7 @@ function recipeRendering(obj) {
   </div>
   
     <div class="modal-recipe-btn">
-    <button data-id=${_id} class="modal-recipe-btn-addFavorites" type="button">
+    <button data-id=${_id} class="modal-recipe-btn-addFavorites js-listener-fav-btn" type="button">
       Add to favorite
     </button>
     <button data-id=${_id} class="modal-recipe-btn-giveRating" type="button">Give a rating</button>
@@ -217,7 +217,7 @@ function createMarkupRecipesByCategory(recipe) {
   <div class="description-recipe-cover">
     <p class="description-recipe-title">${title}</p>
     <p class="description-recipe-text">${description}</p>
-    <div class="popular-recept-box"
+    <div class="popular-recept-box">
       <div class="div-popular-recipe">
       <div class="star-reiting-box" id="starRating">
       <ul class="star-icon-list">

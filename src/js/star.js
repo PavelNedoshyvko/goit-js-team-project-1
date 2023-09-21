@@ -19,6 +19,7 @@ function onWorkStar(gallaryItem) {
     let rating = el.querySelector('#starRating');
     let stars = el.querySelectorAll('.star-icon')
     stars.forEach(star => {
+
         if (star.dataset.value <= (Math.round(rating))) {
             star.classList.add('star-active');
         } else {
@@ -27,14 +28,14 @@ function onWorkStar(gallaryItem) {
       });
 
  })
-}
-
 
 // //*star
 // import { refs } from './refs';
 
 // export function showReiting(obj) {
 //   obj.forEach(
+
+
 //   refs.stars.forEach(star => {
 //     if (star.dataset.value <= Math.round(`${rating}`)) {
 //       star.classList.add('star-active');
@@ -43,6 +44,7 @@ function onWorkStar(gallaryItem) {
 //     }
 //   }));
 // }
+
 
 //new
 function paintingStars() {
@@ -62,5 +64,5 @@ function paintingStars() {
   //   });
   // });
 }
-// paintingStars();
-// console.log(paintingStars());
+paintingStars();
+console.log(paintingStars());
