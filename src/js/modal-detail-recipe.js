@@ -43,7 +43,6 @@ function setListenner(btnIdSeeinfo) {
       refs.modalFullWindows.classList.remove('is-hidden');
 
       getBtnFev(); // слухаю кнопку "додат обране"
-      // showReiting();
     })
   );
 }
