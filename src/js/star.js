@@ -1,18 +1,16 @@
+// import { refs } from './refs';
 
-import { refs } from './refs';
+// const gallaryItem = refs.mainList.childNodes;
+// //const arrGallaryitem =  Array.from(gallaryItem);
+// console.dir(gallaryItem);
 
-const gallaryItem = refs.mainList.childNodes;
-//const arrGallaryitem =  Array.from(gallaryItem);
-console.dir(gallaryItem);
-
-
-if (gallaryItem.readyState == 'loading') {
-    // ещё загружается, ждём события
-    gallaryItem.addEventListener('DOMContentLoaded', onWorkStar);
-  } else {
-    // DOM готов!
-    // onWorkStar();
-  }
+// if (gallaryItem.readyState == 'loading') {
+//     // ещё загружается, ждём события
+//     gallaryItem.addEventListener('DOMContentLoaded', onWorkStar);
+//   } else {
+//     // DOM готов!
+//     // onWorkStar();
+//   }
 // console.log(gallaryItem);
 // function onWorkStar(gallaryItem) {
 // 	gallaryItem.forEach((el) => {
@@ -30,9 +28,6 @@ if (gallaryItem.readyState == 'loading') {
 // 	})
 // }
 
-
-
-
 //   refs.stars.forEach(star => {
 //     if (star.dataset.value <= Math.round(`${rating}`)) {
 //       star.classList.add('star-active');
@@ -41,8 +36,6 @@ if (gallaryItem.readyState == 'loading') {
 //     }
 //   });
 // }
-
-
 
 //new
 function paintingStars() {
@@ -69,4 +62,3 @@ function paintingStars() {
 }
 
 export { paintingStars };
-
