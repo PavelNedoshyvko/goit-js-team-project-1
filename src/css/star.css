@@ -1,57 +1,61 @@
 /*star*/
 .star-reiting-box {
-    width: 116px;
-    display: flex;
-    width: 116px;
-    align-items: flex-start;
-    gap: 4px;
+  width: 116px;
+  display: flex;
+  width: 116px;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
+  .star-reiting-box {
+    width: 96px;
   }
-  
-  @media only screen and (min-width: 768px) and (max-width: 1279px) { 
-    .star-reiting-box{
-     width: 96px;
-   }
-  }
+}
+.star-icon-list {
+  width: 116px;
+  display: flex;
+  flex-direction: row;
+  padding: 8px 0;
+}
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
   .star-icon-list {
-    width: 116px;
-    display: flex;
-    flex-direction: row;
-    padding: 8px 0;
+    width: 96px;
   }
-  @media only screen and (min-width: 768px) and (max-width: 1279px) { 
-    .star-icon-list{
-     width: 96px;
-   }
+}
+.star-reiting-galary {
+  height: 18px;
+  color: var(--white-w);
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 2px;
+}
+.btn-detail-info {
+  display: flex;
+  min-height: 18px;
+}
+.star-icon {
+  width: 18px;
+  height: 18px;
+
+  fill: var(--gray-star-w);
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
+  .star-icon {
+    width: 16px;
+    height: 16px;
   }
-  .star-reiting-galary {
-   height: 18px;
-   color: var(--white-w);
-   font-size: 14px;
-   font-weight: 500;
-   margin-left: 2px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
+  .star {
+    width: 16px;
+    height: 16px;
   }
-  .btn-detail-info {
-    display: flex;
-    min-height: 18px;
-  
-  }
-  .star-icon{
-    width: 18px;
-    height: 18px;
-   
-    fill: var(--gray-star-w);
-  }
-  
-  @media only screen and (min-width: 768px) and (max-width: 1279px) { 
-     .star-icon{
-      width: 16px;
-      height: 16px;
-    }
-  }
-  
-  @media only screen and (min-width: 768px) and (max-width: 1279px) { 
-    .star{
-     width: 16px;
-     height: 16px;
-   }
-  }
+}
+
+/* фарбуванні ікончи в JS star.js*/
+.filled {
+  fill: var(--yellow-star);
+}
