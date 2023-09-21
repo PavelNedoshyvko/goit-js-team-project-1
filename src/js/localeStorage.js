@@ -43,24 +43,16 @@ export function getBtnFev() {
 let arrayFav = [];
 
 function addFavCardRecipe(id) {
-  const itemRecipe = arrayFav.findIndex(_id =>
-    // _id === id
-    console.log(_id)
-  );
-
-  console.log(itemRecipe);
-  if (true) {
-    // переписати на bitWise
-    //
-    serviceGetRecipeById(id)
-      .then(data => {
-        arrayFav.push(data);
-        save('favIdCard', arrayFav);
-      })
-      .catch(() => {
-        console.log(error);
-      });
-  }
+  //  bitWise -(x+1)
+  //
+  serviceGetRecipeById(id)
+    .then(data => {
+      arrayFav.push(data);
+      save('favIdCard', arrayFav);
+    })
+    .catch(() => {
+      console.log(error);
+    });
 }
 addFavCardRecipe('6462a8f74c3d0ddd28897fc1');
 addFavCardRecipe('6462a8f74c3d0ddd28897fc1');
