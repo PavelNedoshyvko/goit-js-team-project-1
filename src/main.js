@@ -13,11 +13,13 @@ import './js/categories-filter';
 import './js/tuipagination.js';
 
 import './js/modal-control-recipe';
+// import './js/dark-theme';
 
 import './js/scroll-up';
 // SearchId
 import './js/modal-detail-recipe.js';
 import './js/favorites-icon.js';
 import './js/localeStorage';
+
 
 

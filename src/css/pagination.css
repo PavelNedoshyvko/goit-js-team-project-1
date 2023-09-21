@@ -50,21 +50,23 @@
     }
 }
 .tui-pagination .tui-page-btn:hover {
-    
-    border: 1px solid var(--gray-descrip-w);
-    color: var(--);
+    transform: scale(1.1);
+    /* border: 1px solid var(--gray-descrip-w);
+    color: var(--); */
 }
 
 .tui-pagination .tui-is-selected, .tui-pagination strong {
     color: var(--white-w);
     background: var(--green);
-    border-color: var(--gray-descrip-w);
+    border-color: var(--green);
     cursor: default;
 }
 
 .tui-pagination .tui-is-selected:hover {
-    background: var(--green);
-    border: 1px solid var(--green);
+    transform: scale(1.1);
+
+    /* background: var(--green);
+    border: 1px solid var(--green); */
 }
 
 .tui-pagination .tui-first-child.tui-is-selected, .tui-pagination strong.tui-first-child {
@@ -158,9 +160,10 @@
 }
 
 .tui-pagination .tui-is-disabled:hover {
-    background: var(--black);
+    transform: scale(1.1);
+    /* background: var(--black);
     border: 1px solid var(--green);
-    cursor: default
+    cursor: default */
 }
 
 .tui-pagination .tui-is-disabled {

@@ -1,41 +1,18 @@
-// import { refs } from './refs';
 
-// const gallaryItem = refs.mainList.childNodes;
-// //const arrGallaryitem =  Array.from(gallaryItem);
-// console.dir(gallaryItem);
 
-// if (gallaryItem.readyState == 'loading') {
-//     // ещё загружается, ждём события
-//     gallaryItem.addEventListener('DOMContentLoaded', onWorkStar);
-//   } else {
-//     // DOM готов!
-//     // onWorkStar();
-//   }
-// console.log(gallaryItem);
-// function onWorkStar(gallaryItem) {
-// 	gallaryItem.forEach((el) => {
-// 		let rating = el.querySelector('#starRating');
-// 		let stars = el.querySelectorAll('.star-icon')
-// 		stars.forEach(star => {
 
-// 			if (star.dataset.value <= (Math.round(rating))) {
-// 				star.classList.add('star-active');
-// 			} else {
-// 				star.classList.remove('star-active');
-// 			}
-// 		});
+//*star для зірочок в HTML
+const stars = document.querySelectorAll("star-icon")
+export function showReiting() {
+  refs.stars.forEach(star => {
+    if (star.dataset.value <= Math.round(`${rating}`)) {
+      star.classList.add('star-active');
+    } else {
+      star.classList.remove('star-active');
+    }
+  });
+}
 
-// 	})
-// }
-
-//   refs.stars.forEach(star => {
-//     if (star.dataset.value <= Math.round(`${rating}`)) {
-//       star.classList.add('star-active');
-//     } else {
-//       star.classList.remove('star-active');
-//     }
-//   });
-// }
 
 //new
 function paintingStars() {
