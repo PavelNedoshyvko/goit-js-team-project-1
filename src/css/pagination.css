@@ -78,6 +78,9 @@
       margin-left: 4px;
 } 
 
+.tui-pagination .tui-prev-is-ellip {
+    display: none;
+}
 .tui-pagination .tui-first, .tui-pagination .tui-prev, .tui-pagination .tui-next, .tui-pagination .tui-last, .tui-pagination .tui-prev-is-ellip, .tui-pagination .tui-next-is-ellip {
     overflow: hidden;
     height: 40px;
