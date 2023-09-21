@@ -25,6 +25,7 @@ function paintingStars() {
     const currentRating = parseFloat(ratingStar.textContent);
 
     // console.log(currentRating);
+    console.log(currentRating);
 
     const roundedRating = Math.round(currentRating);
     blockStars.forEach((star, index) => {
