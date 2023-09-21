@@ -37,6 +37,7 @@ export function getBtnFev() {
     let clickIdRecipe = evt.target.dataset.id;
     console.dir(clickIdRecipe);
   });
+  addFavCardRecipe(clickIdRecipe);
   // console.log(addfevBtn);
 }
 
@@ -54,9 +55,6 @@ function addFavCardRecipe(id) {
       console.log(error);
     });
 }
-addFavCardRecipe('6462a8f74c3d0ddd28897fc1');
-addFavCardRecipe('6462a8f74c3d0ddd28897fc1');
-addFavCardRecipe('6462a8f74c3d0ddd28897fbc');
 
 // function saveFavoriteCard(key, card) {
 //   const recipeCard = JSON.stringify(card);
