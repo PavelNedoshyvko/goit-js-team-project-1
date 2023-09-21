@@ -94,7 +94,7 @@
   height: 18px;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: var(--white-w);
+  color: var(--gray-descrip-w);
   font-size: 14px;
   font-weight: 600;
   line-height: 18px;
@@ -105,7 +105,7 @@
   height: 32px;
   flex-shrink: 0;
   overflow: hidden;
-  color: var(--white-w);
+  color: var(--gray-descrip-w);
   text-overflow: ellipsis;
   font-family: Inter;
   font-size: 12px;

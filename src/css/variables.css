@@ -31,13 +31,14 @@
 
   --background-w: #f8f8f8;
   --background-d: #161616;
+  --bacgronund-swap: #050505;
 
   --black: #050505;
   --green: #9bb537;
   --white-w: #f8f8f8;
   --gray-title-w: rgba(5, 5, 5, 0.5);
   --gray-border-w: rgba(5, 5, 5, 0.2);
-  --gray-border-modal-w: rgba(5, 5, 5, 0.1);
+  --gray-border-modal-w: rgba(4, 3, 3, 0.1);
   --gray-ul-w: rgba(5, 5, 5, 0.3);
   --gray-descrip-w: rgba(5, 5, 5, 0.8);
   --yellow-star: #eea10c;

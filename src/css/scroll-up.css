@@ -11,10 +11,10 @@
     height: 40px;
     cursor: pointer;
     border-radius: 50%;
-    background-color: #9bb537;
+    background-color: var(--green);
     animation: slideInDown 6s infinite alternate;
     transition: opacity 0.3s ease-in-out;
-    fill: #050505;
+    fill: var(--black);
 }
 
 

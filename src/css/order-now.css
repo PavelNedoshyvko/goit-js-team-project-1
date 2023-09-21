@@ -34,7 +34,7 @@
 }
 
 .btn-close-icon {
-  stroke: black;
+  stroke: var(--black);
   transition: scale var(--trns-general);
 }
 
@@ -47,7 +47,8 @@
 }
 .input-name {
   font-size: 14px;
-  color: rgba(5, 5, 5, 0.5);
+  background: var(--background-w);
+  color: var(--gray-title-w);
 }
 
 .form-field label {
@@ -60,7 +61,8 @@
   width: 100%;
   border-radius: 15px;
   padding: 14px 18px;
-  border: 1px solid rgba(5, 5, 5, 0.2);
+  background: var(--background-w);
+  border: 1px solid var(--gray-border-w)
 }
 
 .form-field textarea {
@@ -73,8 +75,8 @@
 .send {
   border: none;
   border-radius: 15px;
-  color: #ffffff;
-  background-color: #9bb537;
+  color: var(--white-w);
+  background-color: var(--green);
   width: 100%;
   height: 48px;
   transition: color var(--trns-modal);

@@ -21,12 +21,14 @@
   color: var(--gray-title-w);
   font-size: 12px;
   line-height: 1.16;
+  background: var(--background-w);
 }
 
 @media only screen and (min-width: 768px) {
   .main-products-filter-label {
     font-size: 14px;
     line-height: 1.28;
+   
   }
 }
 
@@ -38,12 +40,13 @@
 
   width: 335px;
   height: 46px;
-
+  background: var(--background-w);
   border-radius: 15px;
   border: 1px solid var(--gray-border-w);
 }
 
 .main-products-filter-search-select::placeholder {
+  background: var(--background-w);
   color: var(--gray-title-w);
   font-size: 14px;
   line-height: 1.28;
@@ -71,7 +74,7 @@
   font-size: 14px;
   line-height: 1.28;
   padding: 14px 18px;
-
+  background: var(--background-w);
   width: 158px;
   height: 46px;
 
@@ -100,7 +103,7 @@
   font-size: 14px;
   line-height: 1.28;
   padding: 14px 18px;
-
+  background: var(--background-w);
   width: 161px;
   height: 46px;
 
@@ -123,7 +126,7 @@
   font-size: 14px;
   line-height: 1.28;
   padding: 14px 18px;
-
+  background: var(--background-w);
   width: 188px;
   height: 46px;
 
