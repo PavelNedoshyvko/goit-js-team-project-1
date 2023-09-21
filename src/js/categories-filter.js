@@ -59,15 +59,7 @@ function notifyError(err) {
 
 async function onAllCategoryButtonClick() {
   try {
-    let limit;
-    refs.mainList.innerHTML = '';
-    if (window.innerWidth < 768) {
-      limit = 6;
-    } else if (window.innerWidth < 1280) {
-      limit = 8;
-    } else {
-      limit = 9;
-    }
+
 
     const data = await fetchAllRecipes(limit);
     const { results } = data;
@@ -143,6 +135,7 @@ async function getRecipesByCategory(categoryName) {
         );
       }
     });
+   
   } catch (err) {
     console.log(err);
   }

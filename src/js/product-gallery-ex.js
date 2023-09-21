@@ -4,6 +4,11 @@ import { createMarkupRecipes } from './markup';
 import Pagination from 'tui-pagination';
 import { refs } from './refs';
 
+const testDTNCollection = document.getElementsByClassName('categories-list');
+
+
+ 
+
 let limit = 6;
 let targetInnerWingt = window.outerWidth;
 let visibleCard = 2;
@@ -28,15 +33,7 @@ const paginationTemplate = {
     '</a>'
 };
 
-const handlingPagination = (limit, pagination) => {
- 
-  pagination.on('afterMove', async function (evt) {
-    const currentPage = evt.page;
-    const data = await fetchAllRecipes(limit, currentPage);
-    const markup = createMarkupRecipes(data);
-    refs.mainList.innerHTML = markup;
-  });
-
+const handlingPagination = (limit, pagination, category) => {
 
  
   document.querySelector('.tui-page-btn.tui-prev').addEventListener('click', () => {
@@ -50,13 +47,34 @@ const handlingPagination = (limit, pagination) => {
       pagination.move(pagination.getCurrentPage() + 1);
     }
   });
+
+  for (const button of testDTNCollection) {
+    button.addEventListener('click', async function(event) {
+      const buttonText = event.target.textContent;
+      category = buttonText;
+      const data = await fetchAllRecipes(limit, page, category);
+      const markup = createMarkupRecipes(data);
+      refs.mainList.innerHTML = markup;
+      console.log(data)
+    });
+  }
+  
+
+  pagination.on('afterMove', async function (evt) {
+    const currentPage = evt.page;
+    const data = await fetchAllRecipes(limit, currentPage, category);
+    const markup = createMarkupRecipes(data);
+    refs.mainList.innerHTML = markup;
+  });
+  
 }
+
 
 let pagination;
 
 async function productGalleryList() {
   try {
-    let limit;
+    let limit = 6;
     if (window.innerWidth < 768) {
       limit = 6;
     } else if (window.innerWidth < 1280) {
@@ -64,18 +82,23 @@ async function productGalleryList() {
     } else {
       limit = 9;
     }
-    // let category = "Dessert"; пока так 
+
+    
+
+
     const data = await fetchAllRecipes(limit, page, category);
    
     let totalItems = data.totalPages;
     let totalPages = totalItems * limit;
-    
+  
+   
     if (!pagination) {
       pagination = new Pagination('pagination', {
         totalItems: `${totalPages}`, 
         itemsPerPage: data.perPage,
         visiblePages: `${visibleCard}`,
         page: data.page,
+        
 
         centerAlign: false,
         firstItemClassName: 'tui-first-child',
@@ -83,7 +106,8 @@ async function productGalleryList() {
         template: paginationTemplate,
       });
     }
-    handlingPagination(limit, pagination);
+    handlingPagination(limit, pagination, category);
+    console.log(data)
     return createMarkupRecipes(data);
     
   } catch (err) {
