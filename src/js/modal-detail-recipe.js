@@ -21,7 +21,7 @@ async function insertMarkup() {
   // у файлі star.js є корява функція із застосуванням parseFloat
 
   paintingStars(); // фарбування зірок
-  // const
+
   // getHeart(); //серця на головній
 }
 

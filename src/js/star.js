@@ -1,21 +1,21 @@
-//*star для зірочок в HTML
-const stars = document.querySelectorAll('starItem');
-
-// export function showReiting() {
-//   stars.forEach(star => {
-//     if (star.dataset.value <= Math.round(`${rating}`)) {
-//       star.classList.add('star-active');
-//     } else {
-//       star.classList.remove('star-active');
-//     }
-//   });
-// }
-
-//new
 function paintingStars(rating) {
+  //спочатку розмітка, потім селектор!!! <<<
   const currentRating = Number(rating).toFixed(1);
   const roundRating = Math.round(rating);
-  // console.log(typeof currentRating);
+
+  let starsHtml = `<div class="rating">
+    <span class="star-recipe-reting">${currentRating}</span>
+    <span class="starItem" data-value="1">&#9733;</span>
+    <span class="starItem" data-value="2">&#9733;</span>
+    <span class="starItem" data-value="3">&#9733;</span>
+    <span class="starItem" data-value="4">&#9733;</span>
+    <span class="starItem" data-value="5">&#9733;</span>
+  </div>`;
+
+  const tempDiv = document.createElement('div');
+  tempDiv.innerHTML = starsHtml;
+
+  const stars = tempDiv.querySelectorAll('.starItem');
 
   stars.forEach(star => {
     if (star.dataset.value <= currentRating) {
@@ -25,14 +25,7 @@ function paintingStars(rating) {
     }
   });
 
-  return `<div class="rating">
-  <span class="star-recipe-reting">${currentRating}</span>
-      <span class="starItem" data-value="1">&#9733;</span>
-      <span class="starItem" data-value="2">&#9733;</span>
-      <span class="starItem" data-value="3">&#9733;</span>
-      <span class="starItem" data-value="4">&#9733;</span>
-      <span class="starItem" data-value="5">&#9733;</span>
-    </div>`;
+  return tempDiv.innerHTML;
 
   // <ul class="star-icon-list">
   //  <p class="star-recipe-reting">${rating}</p>
