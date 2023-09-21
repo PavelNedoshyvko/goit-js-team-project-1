@@ -20,7 +20,7 @@ async function insertMarkup() {
   // лежить в тезі Р, клас star-recipe-reting. стрінга - тре конвертнути в число
   // у файлі star.js є корява функція із застосуванням parseFloat
 
-  paintingStars();
+  paintingStars(); // фарбування зірок
   // const
   // getHeart(); //серця на головній
 }
@@ -43,7 +43,7 @@ function setListenner(btnIdSeeinfo) {
       refs.modalFullWindows.classList.remove('is-hidden');
 
       getBtnFev(); // слухаю кнопку "додат обране"
-      showReiting(); // фарбування зірок
+      // showReiting();
     })
   );
 }
