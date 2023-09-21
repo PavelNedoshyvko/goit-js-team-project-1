@@ -1,4 +1,4 @@
-//*star
+
 import { refs } from './refs';
 
 const gallaryItem = refs.mainList.childNodes;
@@ -15,20 +15,20 @@ if (gallaryItem.readyState == 'loading') {
   }
 console.log(gallaryItem);
 function onWorkStar(gallaryItem) {
-    gallaryItem.forEach((el) => {
-    let rating = el.querySelector('#starRating');
-    let stars = el.querySelectorAll('.star-icon')
-    stars.forEach(star => {
+	gallaryItem.forEach((el) => {
+		let rating = el.querySelector('#starRating');
+		let stars = el.querySelectorAll('.star-icon')
+		stars.forEach(star => {
 
-        if (star.dataset.value <= (Math.round(rating))) {
-            star.classList.add('star-active');
-        } else {
-            star.classList.remove('star-active');
-        }
-      });
+			if (star.dataset.value <= (Math.round(rating))) {
+				star.classList.add('star-active');
+			} else {
+				star.classList.remove('star-active');
+			}
+		});
 
- })
-
+	})
+}
 // //*star
 // import { refs } from './refs';
 
