@@ -2,7 +2,8 @@
 import { refs } from './refs';
 
 export function showReiting(obj) {
-  forEach(obj);
+  // forEach(obj);
+
   refs.stars.forEach(star => {
     if (star.dataset.value <= Math.round(`${rating}`)) {
       star.classList.add('star-active');
@@ -11,23 +12,33 @@ export function showReiting(obj) {
     }
   });
 }
+
 //new
 function paintingStars() {
-  const ratingStar = document.querySelector('.star-recipe-reting');
+  const ratingStars = document.querySelectorAll('.star-recipe-reting');
   const blockStars = document.querySelectorAll('.star-icon');
 
-  // ratingStar.forEach(ratingStar => {
-  //   const currentRating = parseFloat(
-  //     ratingStar.querySelector('.star-recipe-reting').textContent
-  //   );
-  //   console.log(currentRating);
-  //   const roundedRating = Math.round(currentRating);
-  //   stars.forEach((star, index) => {
-  //     if (index < roundedRating) {
-  //       star.classList.add('filled');
-  //     }
-  //   });
-  // });
+  // console.log(ratingStars);
+  // console.log(blockStars);
+
+  ratingStars.forEach(ratingStar => {
+    // const currentRating = parseFloat(
+    //   ratingStar.querySelector('.star-recipe-reting').textContent
+    // );
+    const currentRating = parseFloat(ratingStar.textContent);
+
+    // console.log(currentRating);
+
+    const roundedRating = Math.round(currentRating);
+    blockStars.forEach((star, index) => {
+      console.dir(star);
+      if (index < roundedRating) {
+        star.classList.add('filled');
+        // star.style.fill.red;
+      }
+    });
+  });
 }
 // paintingStars();
 // console.log(paintingStars());
+export { paintingStars };

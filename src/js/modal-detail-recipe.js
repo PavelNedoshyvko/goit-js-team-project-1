@@ -4,16 +4,24 @@ import { getBtnFev } from './localeStorage'; // test
 import { recipeRendering } from './markup'; //розмітка
 import { popularRecipesList } from './popular-recipes-list';
 import { productGalleryList } from './product-gallery-ex';
+import { paintingStars } from './star';
 
 import { refs } from './refs';
 
 async function insertMarkup() {
   let dataRecipe = await productGalleryList();
   refs.mainList.innerHTML = dataRecipe;
+
   // після відмалювання розмітки на головній,
   // викликали функцію setListenner() і передали клас від кнопки See detail
   setListenner('.btn-detail-info');
 
+  // щоб відмалювати рейтинг, потрібне значення рейнтингу,
+  // лежить в тезі Р, клас star-recipe-reting. стрінга - тре конвертнути в число
+  // у файлі star.js є корява функція із застосуванням parseFloat
+
+  paintingStars();
+  // const
   // getHeart(); //серця на головній
 }
 
