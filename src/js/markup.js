@@ -1,5 +1,6 @@
 import { getIngredients } from './rendering-ingredients';
 import { getTags } from './rendering-tags';
+import { paintingStars } from './star';
 
 function createMarkupCategoriesList(arr) {
   return arr
@@ -151,7 +152,7 @@ function recipeRendering(obj) {
 function createMarkupRecipes(data) {
   const recipesList = data.results
     .map(({ _id, title, description, thumb, rating }) => {
-      return `<li class="recipes-item" data-id=${_id}>
+      return `<li class="recipes-item" data-id=${_id}>>
     <img class="pic-recipe" src="${thumb}" alt="${title}" loading="lazy" />
   <button type="button" class="btn-favorite" data-id=${_id}>
     <svg class="icon-favorite" width="22" height="22" viewBox="0 0 32 32">
@@ -165,32 +166,8 @@ function createMarkupRecipes(data) {
     <div class="popular-recept-box"
       <div class="div-popular-recipe">
       <div class="star-reiting-box" id="starRating">
-      <ul class="star-icon-list">
-       <p class = "star-recipe-reting">${rating}</p>
-       <li class="star">
-           <svg class="star-icon" data-value="1" viewBox="0 0 34 32">
-           <path d="M14.89 2.282c0.737-2.268 3.945-2.268 4.682 0l2.080 6.402c0.33 1.014 1.275 1.701 2.341 1.701h6.731c2.384 0 3.376 3.051 1.447 4.453l-5.446 3.957c-0.863 0.627-1.224 1.738-0.894 2.752l2.080 6.402c0.737 2.268-1.859 4.154-3.788 2.752l-5.446-3.957c-0.863-0.627-2.031-0.627-2.894 0l-5.446 3.957c-1.929 1.402-4.525-0.484-3.788-2.752l2.080-6.402c0.33-1.014-0.031-2.125-0.894-2.752l-5.446-3.957c-1.929-1.402-0.938-4.453 1.447-4.453h6.731c1.066 0 2.012-0.687 2.341-1.701l2.080-6.402z"></path>
-         </svg></li>
-       <li class="star">
-           <svg class="star-icon" data-value="2" viewBox="0 0 34 32">
-           <path d="M14.89 2.282c0.737-2.268 3.945-2.268 4.682 0l2.080 6.402c0.33 1.014 1.275 1.701 2.341 1.701h6.731c2.384 0 3.376 3.051 1.447 4.453l-5.446 3.957c-0.863 0.627-1.224 1.738-0.894 2.752l2.080 6.402c0.737 2.268-1.859 4.154-3.788 2.752l-5.446-3.957c-0.863-0.627-2.031-0.627-2.894 0l-5.446 3.957c-1.929 1.402-4.525-0.484-3.788-2.752l2.080-6.402c0.33-1.014-0.031-2.125-0.894-2.752l-5.446-3.957c-1.929-1.402-0.938-4.453 1.447-4.453h6.731c1.066 0 2.012-0.687 2.341-1.701l2.080-6.402z"></path>
-         </svg></li>
-       <li class="star">
-           <svg class="star-icon" data-value="3" viewBox="0 0 34 32">
-               <path d="M14.89 2.282c0.737-2.268 3.945-2.268 4.682 0l2.080 6.402c0.33 1.014 1.275 1.701 2.341 1.701h6.731c2.384 0 3.376 3.051 1.447 4.453l-5.446 3.957c-0.863 0.627-1.224 1.738-0.894 2.752l2.080 6.402c0.737 2.268-1.859 4.154-3.788 2.752l-5.446-3.957c-0.863-0.627-2.031-0.627-2.894 0l-5.446 3.957c-1.929 1.402-4.525-0.484-3.788-2.752l2.080-6.402c0.33-1.014-0.031-2.125-0.894-2.752l-5.446-3.957c-1.929-1.402-0.938-4.453 1.447-4.453h6.731c1.066 0 2.012-0.687 2.341-1.701l2.080-6.402z"></path>
-             </svg>
-       </li>
-       <li class="star">
-           <svg class="star-icon" data-value="4" viewBox="0 0 34 32">
-               <path d="M14.89 2.282c0.737-2.268 3.945-2.268 4.682 0l2.080 6.402c0.33 1.014 1.275 1.701 2.341 1.701h6.731c2.384 0 3.376 3.051 1.447 4.453l-5.446 3.957c-0.863 0.627-1.224 1.738-0.894 2.752l2.080 6.402c0.737 2.268-1.859 4.154-3.788 2.752l-5.446-3.957c-0.863-0.627-2.031-0.627-2.894 0l-5.446 3.957c-1.929 1.402-4.525-0.484-3.788-2.752l2.080-6.402c0.33-1.014-0.031-2.125-0.894-2.752l-5.446-3.957c-1.929-1.402-0.938-4.453 1.447-4.453h6.731c1.066 0 2.012-0.687 2.341-1.701l2.080-6.402z"></path>
-             </svg>
-       </li>
-       <li class="star">
-           <svg class="star-icon" data-value="5" viewBox="0 0 34 32">
-               <path d="M14.89 2.282c0.737-2.268 3.945-2.268 4.682 0l2.080 6.402c0.33 1.014 1.275 1.701 2.341 1.701h6.731c2.384 0 3.376 3.051 1.447 4.453l-5.446 3.957c-0.863 0.627-1.224 1.738-0.894 2.752l2.080 6.402c0.737 2.268-1.859 4.154-3.788 2.752l-5.446-3.957c-0.863-0.627-2.031-0.627-2.894 0l-5.446 3.957c-1.929 1.402-4.525-0.484-3.788-2.752l2.080-6.402c0.33-1.014-0.031-2.125-0.894-2.752l-5.446-3.957c-1.929-1.402-0.938-4.453 1.447-4.453h6.731c1.066 0 2.012-0.687 2.341-1.701l2.080-6.402z"></path>
-             </svg>
-       </li>
-      </ul>
+      <div> ${paintingStars(rating)} </div>
+
      </div>   
     
     <button class="btn-detail-info" type="button" data-id=${_id}>See recipe</button>
@@ -217,7 +194,7 @@ function createMarkupRecipesByCategory(recipe) {
   <div class="description-recipe-cover">
     <p class="description-recipe-title">${title}</p>
     <p class="description-recipe-text">${description}</p>
-    <div class="popular-recept-box">
+    <div class="popular-recept-box"
       <div class="div-popular-recipe">
       <div class="star-reiting-box" id="starRating">
       <ul class="star-icon-list">

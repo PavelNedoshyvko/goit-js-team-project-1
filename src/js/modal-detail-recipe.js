@@ -1,6 +1,6 @@
 import { serviceGetRecipeById } from './api-requests'; //на бекент
 import { getHeart } from './favorites-icon';
-import { getBtnFev } from './localeStorage'; // test
+import { checkAvaliableInLocalStorage, getBtnFev } from './localeStorage'; // test
 import { recipeRendering } from './markup'; //розмітка
 import { popularRecipesList } from './popular-recipes-list';
 import { productGalleryList } from './product-gallery-ex';
@@ -11,7 +11,7 @@ import { refs } from './refs';
 async function insertMarkup() {
   let dataRecipe = await productGalleryList();
   refs.mainList.innerHTML = dataRecipe;
-
+  console.log(dataRecipe);
   // після відмалювання розмітки на головній,
   // викликали функцію setListenner() і передали клас від кнопки See detail
   setListenner('.btn-detail-info');
@@ -41,8 +41,8 @@ function setListenner(btnIdSeeinfo) {
       refs.modalDetailRecipe.innerHTML = renderData;
       // щоб побачити це вікно - прибрав клас невидимості ↓
       refs.modalFullWindows.classList.remove('is-hidden');
-
-      getBtnFev(); // слухаю кнопку "додат обране"
+      checkAvaliableInLocalStorage(dataRecipe._id);
+      getBtnFev(dataRecipe); // слухаю кнопку "додат обране"
     })
   );
 }
