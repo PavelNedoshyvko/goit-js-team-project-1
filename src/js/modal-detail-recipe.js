@@ -11,7 +11,7 @@ async function insertMarkup() {
   let dataRecipe = await productGalleryList();
   refs.mainList.innerHTML = dataRecipe;
   setListenner('.btn-detail-info');
-  // getHeart();
+  getHeart();
   getBtnFev();
 }
 
