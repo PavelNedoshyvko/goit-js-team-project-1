@@ -151,7 +151,7 @@ function recipeRendering(obj) {
 function createMarkupRecipes(data) {
   const recipesList = data.results
     .map(({ _id, title, description, thumb, rating }) => {
-      return `<li class="recipes-item" data-id=${_id}>>
+      return `<li class="recipes-item" data-id=${_id}>
     <img class="pic-recipe" src="${thumb}" alt="${title}" loading="lazy" />
   <button type="button" class="btn-favorite" data-id=${_id}>
     <svg class="icon-favorite" width="22" height="22" viewBox="0 0 32 32">
@@ -217,7 +217,7 @@ function createMarkupRecipesByCategory(recipe) {
   <div class="description-recipe-cover">
     <p class="description-recipe-title">${title}</p>
     <p class="description-recipe-text">${description}</p>
-    <div class="popular-recept-box"
+    <div class="popular-recept-box">
       <div class="div-popular-recipe">
       <div class="star-reiting-box" id="starRating">
       <ul class="star-icon-list">
