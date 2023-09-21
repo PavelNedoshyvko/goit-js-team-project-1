@@ -31,7 +31,7 @@ function setListenner(btnIdSeeinfo) {
       let renderData = recipeRendering(dataRecipe);
       // вставив розмітку у вікно ↓
       refs.modalDetailRecipe.innerHTML = renderData;
-      // щоб побачити це вікно - прибрав клас видимості ↓
+      // щоб побачити це вікно - прибрав клас невидимості ↓
       refs.modalFullWindows.classList.remove('is-hidden');
 
       getBtnFev(); // слухаю кнопку "додат обране"
