@@ -9,6 +9,7 @@ const refs = {
   ),
   recipeSearch: document.querySelector('.main-products-filter-search-select'),
   timeFilter: document.querySelector('.main-products-filter-time-select'),
+  resetFilter: document.querySelector('.main-products-filter-form-reset-btn'),
 };
 
 //fetch all Areas and ALL ingredients
@@ -80,6 +81,7 @@ refs.recipeSearch.addEventListener('input', onSearch);
 refs.areaList.addEventListener('change', onSearch);
 refs.timeFilter.addEventListener('change', onSearch);
 refs.ingredientsList.addEventListener('change', onSearch);
+refs.resetFilter.addEventListener('click', buttonRecipeSearch);
 async function onSearch(e) {
   try {
     const result = await fetchAllRecipes(getActuallFiltersData());
@@ -88,4 +90,17 @@ async function onSearch(e) {
     console.log(err);
   }
 }
-// all ingredients options
+
+async function buttonRecipeSearch() {
+  refs.recipeSearch.value = '';
+  refs.timeFilter.value = '', 
+  refs.areaList.value = '',
+  refs.ingredientsList.value = '',
+  console.log('buttonRecipeSearch');
+    try {
+      const result = await fetchAllRecipes(getActuallFiltersData());
+      createMarkupRecipes(result);
+    } catch (err) {
+      console.log(err);
+    }
+  };
