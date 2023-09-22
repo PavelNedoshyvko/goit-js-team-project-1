@@ -1,5 +1,6 @@
 import { paintingStars } from './js/star';
 const STORAGE_KEY = 'favorites-recipe';
+// import './js/modal-detail-recipe';
 
 const load = key => {
   try {
@@ -64,15 +65,38 @@ function paintingFavoritePage() {
   );
 
   const favorites = load(STORAGE_KEY);
-  // console.log(favorites);
 
-  if (favorites.length !== 0) {
-    return insertDataFromLocaleStorage.insertAdjacentHTML(
-      'beforeend',
-      createMarkupLS(currentValueStorage)
-    );
+  console.log(favorites);
+
+  if (favorites === undefined || favorites.length === 0) {
+    return (insertDataFromLocaleStorage.innerHTML = markup);
   }
-
-  insertDataFromLocaleStorage.innerHTML = markup;
+  insertDataFromLocaleStorage.insertAdjacentHTML(
+    'beforeend',
+    createMarkupLS(currentValueStorage)
+  );
 }
 paintingFavoritePage();
+
+function renderFavoritesCategoriesFilter() {
+  const favoritesList = document.querySelector('.favorites-categories');
+
+  const favorites = load(STORAGE_KEY);
+  const markup = favorites
+    .map(({ category }) => category)
+    .filter((category, idx, arr) => arr.indexOf(category) === idx)
+    .map(
+      category => `<li class="favorites-categories-item">
+  <button class="favorites-category-btn">
+  ${category}
+  </button>
+</li>`
+    )
+    .join('');
+  favoritesList.innerHTML = markup;
+}
+renderFavoritesCategoriesFilter();
+
+// function filterByCategory() {
+//   const btnCategory = document.querySelector('.favorites-categories');
+// }
