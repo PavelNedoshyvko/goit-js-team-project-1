@@ -3,9 +3,10 @@ import { refs } from './refs';
 import { debounce } from 'lodash';
 import { fetchAllIngredients, fetchAllRecipes } from './api-requests';
 import { createMarkupRecipesByCategory } from './markup';
-// import { notifyNothingFound } from './notifications';
+import { notifyNothingFound } from './notifications';
 
-//fetch all Areas and ALL ingredients =========================================
+
+//fetch all Areas and ALL ingredients
 
 axios.defaults.baseURL = 'https://tasty-treats-backend.p.goit.global/api';
 const AREA = '/areas';
@@ -16,7 +17,7 @@ async function fetchAllAreas() {
   return data;
 }
 
-// Time Options ==================================================
+
 
 // function createMarkupTimeList() {
 // 	let timeList = [];
@@ -30,10 +31,17 @@ async function fetchAllAreas() {
 
 // createMarkupTimeList();
 
-// Area Options ========================================================
+
+async function fetchAllIngredients() {
+  const { data } = await axios.get(`${ALL_INGREDIENTS}`);
+  return data;
+}
+
+// area btn options
+
 async function areaList() {
   try {
-    const results = await fetchAllAreas();
+		const results = await fetchAllAreas();
     createMarkupAreasList(results);
   } catch (err) {
     console.log(err);
@@ -43,17 +51,13 @@ async function areaList() {
 areaList();
 
 function createMarkupAreasList(data) {
-  const optionsList = data
-    .map(
-      ({ id, name }) =>
-        `<option class="option-select" value="${id}">${name}</option>`
-    )
+  const optionsList = data.map(({ id, name }) => `<option value="${id}">${name}</option>`)
     .join(' ');
 
-  refs.areaList.insertAdjacentHTML('beforeend', optionsList);
+  refs.areaList.innerHTML = optionsList;
 }
 
-// refs.areaList.addEventListener('select', onSelect);
+
 
 // All Ingredients Options ================================================
 
@@ -88,6 +92,14 @@ function createMarkupIngridientsList(data) {
 refs.searchInput.addEventListener('input', debounce(onSearchInput, 300));
 
 async function onSearchInput(evt) {
+
+
+// Fetch Area Options ======================================================
+
+refs.areaList.addEventListener('change', onChangeAreaSelect);
+
+async function onChangeAreaSelect(evt) {
+
   try {
     let limit;
     refs.mainList.innerHTML = '';
@@ -98,6 +110,7 @@ async function onSearchInput(evt) {
     } else {
       limit = 9;
     }
+
 
     const searchQuery = evt.target.value;
 
@@ -116,9 +129,96 @@ async function onSearchInput(evt) {
         return;
       }
     });
+
+		const searchAreaSelect = evt.currentTarget.value;
+		// console.log(searchAreaSelect);
+		
+    const data = await fetchAllRecipes();
+    const { results } = data;
+    results.map(recipe => {
+			const { area } = recipe;
+			
+      if (searchAreaSelect === area) {
+				refs.mainList.insertAdjacentHTML('beforeend', createMarkupRecipesByCategory(recipe));
+        
+				return;
+			}
+		});
+
   } catch (err) {
     console.log(err);
   }
 }
 
+
 export { onSearchInput };
+
+// refs.areaList.addEventListener('select', onSelect);
+
+
+
+// All Ingredients Options ================================================
+
+async function ingridientsList() {
+  try {
+    const results = await fetchAllIngredients();
+    createMarkupIngridientsList(results);
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+// all ingredients options
+
+
+
+
+
+// Search Input Filter
+
+
+// async function loadAllRecipesWithoutCategory() {
+//   category = ''; // Сбрасываем фильтр по категории
+//   page = 1; // Сбрасываем страницу на первую
+//   const data = await fetchAllRecipes(limit, page, category);
+//   const totalPages = data.totalPages;
+//   pagination.reset(totalPages); // Устанавливаем количество страниц в пагинаторе
+//   const markup = createMarkupRecipes(data);
+//   refs.mainList.innerHTML = markup;
+// }
+
+
+// refs.searchInput.addEventListener('input', debounce(onSearchInput, 300));
+
+// async function onSearchInput(evt) {
+//   try {
+//     let limit;
+//     refs.mainList.innerHTML = '';
+//     if (window.innerWidth < 768) {
+//       limit = 6;
+//     } else if (window.innerWidth < 1280) {
+//       limit = 8;
+//     } else {
+//       limit = 9;
+//     }
+
+// 		const searchQuery = evt.target.value;
+		
+//     const data = await fetchAllRecipes();
+//     const { results } = data;
+//     results.map(recipe => {
+// 			const { title } = recipe;
+// 			const titleToLowerCase = title.toLowerCase();
+// 			const searchQueryToLowerCase = searchQuery.toLowerCase().trim();
+//       if (titleToLowerCase.includes(searchQueryToLowerCase)) {
+// 				refs.mainList.insertAdjacentHTML('beforeend', createMarkupRecipesByCategory(recipe));
+        
+// 				return;
+// 			}
+// 		});
+//     await loadAllRecipesWithoutCategory();
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
+
