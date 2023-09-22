@@ -5,7 +5,6 @@ import { fetchAllIngredients, fetchAllRecipes } from './api-requests';
 import { createMarkupRecipesByCategory } from './markup';
 import { notifyNothingFound } from './notifications';
 
-
 //fetch all Areas and ALL ingredients
 
 axios.defaults.baseURL = 'https://tasty-treats-backend.p.goit.global/api';
@@ -16,8 +15,6 @@ async function fetchAllAreas() {
   const { data } = await axios.get(`${AREA}`);
   return data;
 }
-
-
 
 // function createMarkupTimeList() {
 // 	let timeList = [];
@@ -31,17 +28,16 @@ async function fetchAllAreas() {
 
 // createMarkupTimeList();
 
-
-async function fetchAllIngredients() {
-  const { data } = await axios.get(`${ALL_INGREDIENTS}`);
-  return data;
-}
+// async function fetchAllIngredients() {
+//   const { data } = await axios.get(`${ALL_INGREDIENTS}`);
+//   return data;
+// }
 
 // area btn options
 
 async function areaList() {
   try {
-		const results = await fetchAllAreas();
+    const results = await fetchAllAreas();
     createMarkupAreasList(results);
   } catch (err) {
     console.log(err);
@@ -51,13 +47,12 @@ async function areaList() {
 areaList();
 
 function createMarkupAreasList(data) {
-  const optionsList = data.map(({ id, name }) => `<option value="${id}">${name}</option>`)
+  const optionsList = data
+    .map(({ id, name }) => `<option value="${id}">${name}</option>`)
     .join(' ');
 
   refs.areaList.innerHTML = optionsList;
 }
-
-
 
 // All Ingredients Options ================================================
 
@@ -89,17 +84,15 @@ function createMarkupIngridientsList(data) {
 
 // Search Input Filter =================================================
 
-refs.searchInput.addEventListener('input', debounce(onSearchInput, 300));
+// refs.searchInput.addEventListener('input', debounce(onSearchInput, 300));
 
-async function onSearchInput(evt) {
-
+// async function onSearchInput(evt) {
 
 // Fetch Area Options ======================================================
 
 refs.areaList.addEventListener('change', onChangeAreaSelect);
 
 async function onChangeAreaSelect(evt) {
-
   try {
     let limit;
     refs.mainList.innerHTML = '';
@@ -110,7 +103,6 @@ async function onChangeAreaSelect(evt) {
     } else {
       limit = 9;
     }
-
 
     const searchQuery = evt.target.value;
 
@@ -130,52 +122,31 @@ async function onChangeAreaSelect(evt) {
       }
     });
 
-		const searchAreaSelect = evt.currentTarget.value;
-		// console.log(searchAreaSelect);
-		
-    const data = await fetchAllRecipes();
-    const { results } = data;
-    results.map(recipe => {
-			const { area } = recipe;
-			
-      if (searchAreaSelect === area) {
-				refs.mainList.insertAdjacentHTML('beforeend', createMarkupRecipesByCategory(recipe));
-        
-				return;
-			}
-		});
-
+    // const searchAreaSelect = evt.currentTarget.value;
+    // console.log(searchAreaSelect);
   } catch (err) {
     console.log(err);
   }
 }
 
-
-export { onSearchInput };
+// export { onSearchInput };
 
 // refs.areaList.addEventListener('select', onSelect);
 
-
-
 // All Ingredients Options ================================================
 
-async function ingridientsList() {
-  try {
-    const results = await fetchAllIngredients();
-    createMarkupIngridientsList(results);
-  } catch (err) {
-    console.log(err);
-  }
-}
+// async function ingridientsList() {
+//   try {
+//     const results = await fetchAllIngredients();
+//     createMarkupIngridientsList(results);
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }
 
 // all ingredients options
 
-
-
-
-
 // Search Input Filter
-
 
 // async function loadAllRecipesWithoutCategory() {
 //   category = ''; // Сбрасываем фильтр по категории
@@ -186,7 +157,6 @@ async function ingridientsList() {
 //   const markup = createMarkupRecipes(data);
 //   refs.mainList.innerHTML = markup;
 // }
-
 
 // refs.searchInput.addEventListener('input', debounce(onSearchInput, 300));
 
@@ -203,7 +173,7 @@ async function ingridientsList() {
 //     }
 
 // 		const searchQuery = evt.target.value;
-		
+
 //     const data = await fetchAllRecipes();
 //     const { results } = data;
 //     results.map(recipe => {
@@ -212,7 +182,7 @@ async function ingridientsList() {
 // 			const searchQueryToLowerCase = searchQuery.toLowerCase().trim();
 //       if (titleToLowerCase.includes(searchQueryToLowerCase)) {
 // 				refs.mainList.insertAdjacentHTML('beforeend', createMarkupRecipesByCategory(recipe));
-        
+
 // 				return;
 // 			}
 // 		});
@@ -221,4 +191,3 @@ async function ingridientsList() {
 //     console.log(err);
 //   }
 // };
-
