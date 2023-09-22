@@ -156,46 +156,22 @@ function createMarkupRecipes(data) {
 
 function createMarkupRecipesByCategory(recipe) {
   const { _id, title, description, thumb, rating } = recipe;
-  return `<li class="recipes-item">
-  <div class="photo-thumb">
+  return `<li class="recipes-item" data-id=${_id}>
     <img class="pic-recipe" src="${thumb}" alt="${title}" loading="lazy" />
-  </div>
   <button type="button" class="btn-favorite" data-id=${_id}>
-    <svg class="icon-favorite" width="22" height="22">
-      <use href="./img/icons.svg#heart"></use>
+    <svg class="icon-favorite" width="22" height="22" viewBox="0 0 32 32">
+      <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.9091" 
+			d="M15.991 6.848c-2.666-3.117-7.111-3.955-10.451-1.101s-3.81 7.625-1.187 11c2.181 2.806 8.781 8.725 10.944 10.641 0.242 0.214 0.363 0.321 0.504 0.364 0.123 0.037 0.258 0.037 0.381 0 0.141-0.042 0.262-0.149 0.504-0.364 2.163-1.916 8.763-7.834 10.944-10.641 2.623-3.375 2.21-8.177-1.187-11.001s-7.785-2.015-10.451 1.101z"></path>
     </svg>
   </button>
   <div class="description-recipe-cover">
-    <p class="description-recipe-title">${title}</p>
+    <p class="description-recipe-title" data-title=title>${title}</p>
     <p class="description-recipe-text">${description}</p>
     <div class="popular-recept-box"
       <div class="div-popular-recipe">
       <div class="star-reiting-box" id="starRating">
-      <ul class="star-icon-list">
-       <li class="star">
-           <svg class="star-icon" data-value="1">
-           <use href="./img/icons.svg#star"></use>
-         </svg></li>
-       <li class="star">
-           <svg class="star-icon" data-value="2">
-           <use href="./img/icons.svg#star"></use>
-         </svg></li>
-       <li class="star">
-           <svg class="star-icon" data-value="3">
-               <use href="./img/icons.svg#star"></use>
-             </svg>
-       </li>
-       <li class="star">
-           <svg class="star-icon" data-value="4">
-               <use href="./img/icons.svg#star"></use>
-             </svg>
-       </li>
-       <li class="star">
-           <svg class="star-icon" data-value="5">
-               <use href="./img/icons.svg#star"></use>
-             </svg>
-       </li>
-      </ul>
+      <div>${paintingStars(rating)}</div>
+
      </div>   
     
     <button class="btn-detail-info" type="button" data-id=${_id}>See recipe</button>
