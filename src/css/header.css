@@ -1,14 +1,14 @@
 .top-header {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  margin-bottom: 65px;
+  padding-top: 28px;
+  /* padding-bottom: 20px; */
+  margin-bottom: 91px;
 }
 
 @media only screen and (min-width: 1280px) {
   .top-header {
-    /* padding-top: 20px;
-    padding-bottom: 14px; */
-    margin-bottom: 75px;
+    padding-top: 40px;
+    /* padding-bottom: 14px;  */
+    margin-bottom: 100px;
   }
 }
 

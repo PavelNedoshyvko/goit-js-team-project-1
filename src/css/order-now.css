@@ -58,6 +58,7 @@
 .form-field input,
 .form-field textarea {
   display: block;
+  color: var(--gray-title-w);
   width: 100%;
   border-radius: 15px;
   padding: 14px 18px;
