@@ -1,6 +1,6 @@
 .rating-modal {
   border-radius: 15px;
-  background: #ffff;
+  background: var(--background-w);
   width: 424px;
   padding: 32px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -9,7 +9,7 @@
 .modal-rating-title {
   margin-top: auto;
   margin-bottom: 4px;
-  color: #050505;
+  color: var(--black);
   font-weight: 600;
   line-height: 18px;
   font-size: 14px;
@@ -17,7 +17,7 @@
 
 .rating-modal-input {
   border-radius: 15px;
-  border: 1px solid rgba(5, 5, 5, 0.2);
+  border: 1px solid var(--gray-border-w);
   width: 95%;
   padding: 14px 0 14px 18px;
   margin-bottom: 16px;
@@ -26,13 +26,13 @@
 
 .rating-modal-button {
   border-radius: 15px;
-  background: #9bb537;
+  background: var(--green);
   width: 100%;
   height: 48px;
 }
 
 .rating-modal-button-text {
-  color: #f8f8f8;
+  color: var(--whitw-w);
   font-size: 14px;
   font-weight: 500;
   line-height: normal;
@@ -50,22 +50,22 @@
 
 /* Стили для неактивных звезд  */
 .rating-stars label svg {
-  fill: #d9d9d9;
+  fill: var(--gray-star-modal);
 }
 /* Стили для активных звезд (при выборе радиокнопки) */
 .rating-stars input[type='radio']:checked + label svg {
-  fill: #eea10c;
+  fill: var(--yellow-star)
 }
 
 .rating-stars label::before {
   content: attr(for);
   position: absolute;
   display: none;
-  color: #050505;
+  color: var(--black);
 }
 
 #rating-counter {
-  color: #050505;
+  color: var(--black);
   font-weight: 500;
   line-height: 24px; /* 150% */
 

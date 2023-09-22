@@ -167,8 +167,8 @@
 }
 
 .tui-pagination .tui-is-disabled {
-    background: var(--black);
-    border: 1px solid var(--black);
+    background: #050505;
+    border: 1px solid #050505;
 }
 
 .tui-pagination .tui-is-disabled .tui-ico-prev {

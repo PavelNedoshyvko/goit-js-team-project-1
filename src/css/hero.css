@@ -86,7 +86,7 @@
   border: 1px solid var(--green);
   font-size: 14px;
   font-weight: 500;
-  background-color: var(--white-w);
+  background: var(--background-w);
   transition: all var(--trns-general);
   color: var(--black);
 }
@@ -133,7 +133,7 @@
   margin: 0 10px;
   height: 280px;
   width: 200px;
-  background-color: var(--black);
+  background-color: var(--bacgronund-swap);
   border-radius: 15px;
   flex-direction: column;
   justify-content: center;

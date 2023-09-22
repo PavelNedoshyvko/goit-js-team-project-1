@@ -13,7 +13,7 @@ import './js/categories-filter';
 import './js/tuipagination.js';
 
 import './js/modal-control-recipe';
-// import './js/dark-theme';
+import './js/dark-theme';
 
 import './js/scrollToTop';
 // SearchId
