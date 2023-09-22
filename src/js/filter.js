@@ -3,10 +3,10 @@ import { refs } from './refs';
 import { debounce } from 'lodash';
 import { fetchAllRecipes } from './api-requests';
 import { createMarkupRecipesByCategory } from './markup';
-import { notifyNothingFound } from './notifications';
+// import { notifyNothingFound } from './notifications';
 
 
-//fetch all Areas and ALL ingredients
+//fetch all Areas and ALL ingredients =========================================
 
 axios.defaults.baseURL = 'https://tasty-treats-backend.p.goit.global/api';
 const AREA = '/areas';
@@ -19,7 +19,24 @@ async function fetchAllAreas() {
 
 
 
-// area btn options
+
+// Time Options ==================================================
+
+// function createMarkupTimeList() {
+// 	let timeList = [];
+// 	console.log(timeList);
+// 	for (let i = 5; i <= 160; i += 5){
+// 		timeList.push(`<option class="time-select">${i} min</option>`);
+// 	}
+
+//   refs.timeList.insertAdjacentHTML('beforeend', timeList.join(''));
+// }
+
+
+// createMarkupTimeList();
+
+
+// Area Options ========================================================
 async function areaList() {
   try {
     const results = await fetchAllAreas();
@@ -33,17 +50,45 @@ areaList();
 
 function createMarkupAreasList(data) {
   const optionsList = data
-    .map(({ id, name }) => `<option value="${id}">${name}</option>`)
+    .map(({ id, name }) => `<option class="option-select" value="${id}">${name}</option>`)
     .join(' ');
 
-  refs.areaList.innerHTML = optionsList;
+  refs.areaList.insertAdjacentHTML('beforeend', optionsList);
 }
 
-refs.areaList.addEventListener('select', onSelect);
-function onSelect(evt) {
-  if ((evt.target.value = data.area.value)) {
+// refs.areaList.addEventListener('select', onSelect);
+
+
+
+// All Ingredients Options ================================================
+
+async function ingridientsList() {
+  try {
+    const results = await fetchAllIngredients();
+    createMarkupIngridientsList(results);
+  } catch (err) {
+    console.log(err);
   }
 }
+
+ingridientsList();
+
+function createMarkupIngridientsList(data) {
+  const optionsList = data
+    .map(({ id, name }) => `<option class="ingridients-select" value="${id}">${name}</option>`)
+    .join(' ');
+
+  refs.ingredientsList.insertAdjacentHTML('beforeend', optionsList);
+}
+
+// refs.ingredientsList.addEventListener('select', onSelect);
+
+
+// ingridientsList()
+
+// Search Input Filter =================================================
+
+
 
 refs.searchInput.addEventListener('input', debounce(onSearchInput, 300));
 

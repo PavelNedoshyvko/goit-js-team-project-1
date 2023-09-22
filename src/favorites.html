@@ -7,6 +7,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="./css/favorites.css" />
+    <script type="module" src="./favorites.js"></script>
   </head>
   <body>
     <header class="favorites-top-header" id="home">
@@ -131,32 +132,21 @@
         </picture>
       </section>
       <section class="">
-        <div class="favorites-display-none">
-          <div class="favorites-block-icon">
-            <svg class="favorites-icon" width="97" height="83">
-              <use href="./img/icons.svg#toque"></use>
-            </svg>
-          </div>
-          <p class="favorites-taxt">
-            It appears that you haven't added any recipes to your favorites yet.
-            To get started, you can add recipes that you like to your favorites
-            for easier access in the future.
-          </p>
-        </div>
+        <div
+          class="favorites-display-none main-products-filter-gallery-list"
+        ></div>
 
         <div id="tui-pagination-container" class="tui-pagination"></div>
       </section>
     </main>
-    <div class="favorites-container-card"></div>
-    
+    <!-- <div class="favorites-container-card"></div> -->
+
     <!--SCROLL-->
     <div class="scroll-icon scroll-icon__hide" onclick="scrollToTop()">
       <svg class="scroll-btn-icon" role="img" aria-label="Scroll up the page">
-          <use href="./img/icons.svg#icon-up"></use>
+        <use href="./img/icons.svg#icon-up"></use>
       </svg>
     </div>
-
     <script src="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.js"></script>
-    <script src="./favorites.js"></script>
   </body>
 </html>

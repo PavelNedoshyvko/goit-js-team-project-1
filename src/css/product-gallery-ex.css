@@ -94,7 +94,7 @@
   height: 18px;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: var(--gray-descrip-w);
+  color: var(--color-card-gallary);
   font-size: 14px;
   font-weight: 600;
   line-height: 18px;
@@ -105,7 +105,7 @@
   height: 32px;
   flex-shrink: 0;
   overflow: hidden;
-  color: var(--gray-descrip-w);
+  color: var(--color-card-gallary);
   text-overflow: ellipsis;
   font-family: Inter;
   font-size: 12px;
@@ -134,7 +134,7 @@
 @media only screen and (min-width: 768px) {
   .popular-recept-box {
     width: 208px;
-    gap: 16px;
+    gap: 23px;
   }
 }
 @media only screen and (min-width: 1280px) {

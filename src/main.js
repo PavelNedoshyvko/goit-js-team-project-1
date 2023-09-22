@@ -20,6 +20,3 @@ import './js/scrollToTop';
 import './js/modal-detail-recipe.js';
 import './js/favorites-icon.js';
 import './js/localeStorage';
-
-
-

@@ -2,6 +2,7 @@
 .star-reiting-box {
   width: 116px;
   display: flex;
+  padding: 4px 0;
   width: 116px;
   align-items: flex-start;
   gap: 4px;
@@ -25,7 +26,7 @@
 }
 .star-reiting-galary {
   height: 18px;
-  color: var(--white-w);
+  color: var(--color-card-gallary);
   font-size: 14px;
   font-weight: 500;
   margin-left: 2px;
@@ -37,8 +38,7 @@
 .star-icon {
   width: 18px;
   height: 18px;
-
-  fill: var(--gray-star-w);
+  color: var(--gray-star-w);
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1279px) {
@@ -57,7 +57,6 @@
 
 .star-active {
   color: var(--yellow-star);
-  font-size: 18px;
   letter-spacing: -4px;
 }
 
