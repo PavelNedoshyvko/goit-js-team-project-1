@@ -20,3 +20,4 @@ const refs = {
 };
 
 export { refs };
+console.log('qwer');
