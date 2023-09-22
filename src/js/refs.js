@@ -14,9 +14,8 @@ const refs = {
   modalDetailRecipe: document.querySelector('.recipe-data-cover'), //  modal-window-detail-recipe
   searchForm: document.querySelector('.main-products-container'), // area for search - input
   areaList: document.querySelector('.main-products-filter-area-select'),
-  ingredientsList: document.querySelector(
-    '.main-products-filter-ingredients-select'
-  ),
+  ingredientsList: document.querySelector('.main-products-filter-ingredients-select'),
+  searchInput: document.querySelector('#main-products-filter-search-input'),
 };
 
 export { refs };
