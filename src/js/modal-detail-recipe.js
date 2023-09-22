@@ -41,6 +41,7 @@ function setListenner(btnIdSeeinfo) {
       refs.modalDetailRecipe.innerHTML = renderData;
       // щоб побачити це вікно - прибрав клас невидимості ↓
       refs.modalFullWindows.classList.remove('is-hidden');
+      paintingStars();
       checkAvaliableInLocalStorage(dataRecipe._id);
       getBtnFev(dataRecipe); // слухаю кнопку "додат обране"
     })

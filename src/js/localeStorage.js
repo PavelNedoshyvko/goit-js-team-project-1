@@ -49,11 +49,13 @@ function addFavCardRecipe(objRecipe) {
 
 function checkAvaliableInLocalStorage(id) {
   const favorites = load(STORAGE_KEY);
+  console.log(favorites);
   btnAddtofav = document.querySelector('.modal-recipe-btn-addFavorites');
 
   if (!favorites) {
     return;
   }
+
   const recepi = favorites.find(({ _id }) => _id === id);
   if (recepi) {
     btnAddtofav.textContent = 'Remove from favorite';
@@ -61,5 +63,16 @@ function checkAvaliableInLocalStorage(id) {
     btnAddtofav.textContent = 'Add to favorite';
   }
 }
+
+const insertDataFromLocaleStorage = document.querySelector(
+  '.favorites-container-card'
+);
+console.log(insertDataFromLocaleStorage);
+
+function paintingFavoritePage() {
+  const currentValueStorage = load(STORAGE_KEY);
+  // console.log(currentValueStorage);
+}
+paintingFavoritePage();
 
 export { getBtnFev, checkAvaliableInLocalStorage };
