@@ -17,6 +17,11 @@ async function fetchAllAreas() {
   return data;
 }
 
+async function fetchAllIngredients() {
+  const { data } = await axios.get(`${ALL_INGREDIENTS}`);
+  return data;
+}
+
 
 
 
@@ -39,7 +44,7 @@ async function fetchAllAreas() {
 // Area Options ========================================================
 async function areaList() {
   try {
-    const results = await fetchAllAreas();
+		const results = await fetchAllAreas();
     createMarkupAreasList(results);
   } catch (err) {
     console.log(err);
@@ -55,6 +60,42 @@ function createMarkupAreasList(data) {
 
   refs.areaList.insertAdjacentHTML('beforeend', optionsList);
 }
+
+
+// Fetch Area Options ======================================================
+
+refs.areaList.addEventListener('change', onChangeAreaSelect);
+
+async function onChangeAreaSelect(evt) {
+  try {
+    let limit;
+    refs.mainList.innerHTML = '';
+    if (window.innerWidth < 768) {
+      limit = 6;
+    } else if (window.innerWidth < 1280) {
+      limit = 8;
+    } else {
+      limit = 9;
+    }
+
+		const searchAreaSelect = evt.currentTarget.value;
+		// console.log(searchAreaSelect);
+		
+    const data = await fetchAllRecipes();
+    const { results } = data;
+    results.map(recipe => {
+			const { area } = recipe;
+			
+      if (searchAreaSelect === area) {
+				refs.mainList.insertAdjacentHTML('beforeend', createMarkupRecipesByCategory(recipe));
+        
+				return;
+			}
+		});
+  } catch (err) {
+    console.log(err);
+  }
+};
 
 // refs.areaList.addEventListener('select', onSelect);
 
