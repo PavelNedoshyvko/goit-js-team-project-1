@@ -1,4 +1,5 @@
 import Notiflix from 'notiflix';
+import { createMarkupRecipes } from './markup';
 
 const STORAGE_KEY = 'favorites-recipe';
 
@@ -63,16 +64,5 @@ function checkAvaliableInLocalStorage(id) {
     btnAddtofav.textContent = 'Add to favorite';
   }
 }
-
-const insertDataFromLocaleStorage = document.querySelector(
-  '.favorites-container-card'
-);
-console.log(insertDataFromLocaleStorage);
-
-function paintingFavoritePage() {
-  const currentValueStorage = load(STORAGE_KEY);
-  // console.log(currentValueStorage);
-}
-paintingFavoritePage();
 
 export { getBtnFev, checkAvaliableInLocalStorage };
