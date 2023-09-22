@@ -212,7 +212,7 @@
   background-size: 564px;
   border-radius: 15px;
   background-position: 30%;
-  background-color: var(--black);
+  background-color: var(--bacgronund-swap);
 }
 
 @media screen and (min-width: 768px) {
@@ -245,7 +245,7 @@
 
 span.swiper-pagination-bullet {
   opacity: 1;
-  background-color: var(--black);
+  background-color: var(--bacgronund-swap);
 }
 
 span.swiper-pagination-bullet-active {

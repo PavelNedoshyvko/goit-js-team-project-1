@@ -11,7 +11,8 @@ const themes = {
         "--gray-ul-w": "rgba(5, 5, 5, 0.3)",
         "--gray-border-w": "rgba(5, 5, 5, 0.2)",
         "--gallery-gradient": "linear-gradient(1deg,rgba(5, 5, 5, 0.6) 0%,rgba(5, 5, 5, 0) 100%)",
-        "--gray-descrip-w": "rgba(5, 5, 5, 0.8)"
+        "--gray-descrip-w": "rgba(5, 5, 5, 0.8)",
+        "--color-card-gallary": "#f8f8f8",
     },
 
     dark: {
@@ -23,14 +24,13 @@ const themes = {
         "--gray-border-w": "#f8f8f822",
         "--gallery-gradient": "linear-gradient(1deg,rgba(5, 5, 5, 0.8) 0%,rgba(5, 5, 5, 0.2) 100%)",
         "--gray-descrip-w": "#f8f8f888",
+        "--color-card-gallary": "#f8f8f888"
     },
 }
 
 if(!localStorage.getItem("isDarkTheme")) {
     localStorage.setItem("isDarkTheme", false)
 }
-
-
 
 let isDarkTheme = JSON.parse(localStorage.getItem("isDarkTheme"));
 

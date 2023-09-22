@@ -4,21 +4,21 @@ function paintingStars(rating) {
   const roundRating = Math.round(rating);
 
   let starsHtml = `<div class="star-reiting-box">
-    <span class="star-recipe-reting">${currentRating}</span>
-    <span class="starItem" data-value="1">&#9733;</span>
-    <span class="starItem" data-value="2">&#9733;</span>
-    <span class="starItem" data-value="3">&#9733;</span>
-    <span class="starItem" data-value="4">&#9733;</span>
-    <span class="starItem" data-value="5">&#9733;</span>
+    <span class="star-reiting-galary">${currentRating}</span>
+    <span class="star-icon" data-value="1">&#9733;</span>
+    <span class="star-icon" data-value="2">&#9733;</span>
+    <span class="star-icon" data-value="3">&#9733;</span>
+    <span class="star-icon" data-value="4">&#9733;</span>
+    <span class="star-icon" data-value="5">&#9733;</span>
   </div>`;
 
   const tempDiv = document.createElement('div');
   tempDiv.innerHTML = starsHtml;
 
-  const stars = tempDiv.querySelectorAll('.starItem');
+  const stars = tempDiv.querySelectorAll('.star-icon');
 
   stars.forEach(star => {
-    if (star.dataset.value <= currentRating) {
+    if (star.dataset.value <= roundRating) {
       star.classList.add('star-active');
     } else {
       star.classList.remove('star-active');
@@ -85,17 +85,17 @@ function paintingStarsModalWindow(rating) {
 
   let starsHtml = `<div class="rating">
     <span class="star-recipe-reting-modal">${currentRating}</span>
-    <span class="starItem" data-value="1">&#9733;</span>
-    <span class="starItem" data-value="2">&#9733;</span>
-    <span class="starItem" data-value="3">&#9733;</span>
-    <span class="starItem" data-value="4">&#9733;</span>
-    <span class="starItem" data-value="5">&#9733;</span>
+    <span class="star-icon" data-value="1">&#9733;</span>
+    <span class="star-icon" data-value="2">&#9733;</span>
+    <span class="star-icon" data-value="3">&#9733;</span>
+    <span class="star-icon" data-value="4">&#9733;</span>
+    <span class="star-icon" data-value="5">&#9733;</span>
   </div>`;
 
   const tempDiv = document.createElement('div');
   tempDiv.innerHTML = starsHtml;
 
-  const stars = tempDiv.querySelectorAll('.starItem');
+  const stars = tempDiv.querySelectorAll('.star-icon');
 
   stars.forEach(star => {
     if (star.dataset.value <= currentRating) {
