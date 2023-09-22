@@ -1,15 +1,17 @@
-// тут ни кто ни чего не меняет
 import { fetchAllRecipes } from './api-requests';
 import { createMarkupRecipes } from './markup';
 import Pagination from 'tui-pagination';
 import { refs } from './refs';
 
+
 const testDTNCollection = document.getElementsByClassName('categories-list');
+
+
 
 let limit = 6;
 let targetInnerWingt = window.outerWidth;
 let visibleCard = 2;
-let page = 1;
+let page = 1; // Установите начальную страницу в 1
 let category = '';
 
 const paginationTemplate = {
@@ -31,35 +33,46 @@ const paginationTemplate = {
 };
 
 const handlingPagination = (limit, pagination, category) => {
-  document
-    .querySelector('.tui-page-btn.tui-prev')
-    .addEventListener('click', () => {
-      if (pagination.getCurrentPage() > 1) {
-        pagination.move(pagination.getCurrentPage() - 1);
-      }
-    });
+  document.querySelector('.tui-page-btn.tui-prev').addEventListener('click', () => {
+    if (pagination.getCurrentPage() > 1) {
+      pagination.move(pagination.getCurrentPage() - 1);
+    }
+  });
 
-  document
-    .querySelector('.tui-page-btn.tui-next')
-    .addEventListener('click', () => {
-      if (
-        pagination.getCurrentPage() <
-        pagination._options.totalItems / pagination._options.itemsPerPage
-      ) {
-        pagination.move(pagination.getCurrentPage() + 1);
-      }
-    });
+  document.querySelector('.tui-page-btn.tui-next').addEventListener('click', () => {
+    if (pagination.getCurrentPage() < pagination._options.totalItems / pagination._options.itemsPerPage) {
+      pagination.move(pagination.getCurrentPage() + 1);
+    }
+  });
 
   for (const button of testDTNCollection) {
-    button.addEventListener('click', async function (event) {
+    button.addEventListener('click', async function(event) {
       const buttonText = event.target.textContent;
       category = buttonText;
+      pagination.movePageTo(1);
+      
       const data = await fetchAllRecipes(limit, page, category);
+    
+      const pages = data.totalPages * data.perPage;
+      pagination.reset(pages);
       const markup = createMarkupRecipes(data);
+      
+      
       refs.mainList.innerHTML = markup;
-      console.log(data);
+     
     });
   }
+  refs.allCategoryButton.addEventListener('click', async function() {
+    category = '';
+    pagination.movePageTo(1); 
+    await productGalleryList(); 
+    const data = await fetchAllRecipes(limit, page, category);
+      const pages = data.totalPages * data.perPage;
+      pagination.reset(pages);
+      const markup = createMarkupRecipes(data);
+      
+  });
+  
 
   pagination.on('afterMove', async function (evt) {
     const currentPage = evt.page;
@@ -67,7 +80,7 @@ const handlingPagination = (limit, pagination, category) => {
     const markup = createMarkupRecipes(data);
     refs.mainList.innerHTML = markup;
   });
-};
+}
 
 let pagination;
 
@@ -83,17 +96,17 @@ async function productGalleryList() {
     }
 
     const data = await fetchAllRecipes(limit, page, category);
-
+   
     let totalItems = data.totalPages;
     let totalPages = totalItems * limit;
-
+  
+   
     if (!pagination) {
       pagination = new Pagination('pagination', {
-        totalItems: `${totalPages}`,
+        totalItems: `${totalPages}`, 
         itemsPerPage: data.perPage,
         visiblePages: `${visibleCard}`,
-        page: data.page,
-
+        page: page, // Установите начальную страницу
         centerAlign: false,
         firstItemClassName: 'tui-first-child',
         lastItemClassName: 'tui-last-child',
@@ -101,10 +114,11 @@ async function productGalleryList() {
       });
     }
     handlingPagination(limit, pagination, category);
-    // console.log(data);
+    console.log(data);
     return createMarkupRecipes(data);
+    
   } catch (err) {
-    // console.log(err);
+    console.log(err);
   }
 }
 
