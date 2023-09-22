@@ -1,4 +1,4 @@
-import{p as c}from"./dark-theme-8e371551.js";const n="favorites-recipe",s=e=>{try{const t=localStorage.getItem(e);return t===null?void 0:JSON.parse(t)}catch{Notiflix.Notify("Something went wrong. Please try again")}},d=s("favorites-recipe");document.querySelector(".favorites-display-none");function l(e){return e.map(({_id:t,title:i,description:r,thumb:a,rating:o})=>`<li class="recipes-favorit-item" data-id=${t}>
+import{p as c}from"./dark-theme-92531ed9.js";const n="favorites-recipe",s=e=>{try{const t=localStorage.getItem(e);return t===null?void 0:JSON.parse(t)}catch{Notiflix.Notify("Something went wrong. Please try again")}},d=s("favorites-recipe");document.querySelector(".favorites-display-none");function l(e){return e.map(({_id:t,title:i,description:r,thumb:a,rating:o})=>`<li class="recipes-favorit-item" data-id=${t}>
     <img class="pic-recipe" src="${a}" alt="${i}" loading="lazy" />
   <button type="button" class="btn-favorite" data-id=${t}>
     <svg class="icon-favorite" width="22" height="22" viewBox="0 0 32 32">
