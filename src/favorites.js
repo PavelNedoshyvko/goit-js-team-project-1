@@ -62,7 +62,7 @@ function paintingFavoritePage() {
 
   const favorites = load(STORAGE_KEY);
 
-  console.log(favorites);
+  // console.log(favorites);
 
   if (favorites === undefined || favorites.length === 0) {
     return (insertDataFromLocaleStorage.innerHTML = markup);

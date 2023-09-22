@@ -5,6 +5,7 @@ const ALL_RECIPES = '/recipes';
 const EVENTS = '/events';
 const CATEGORIES = '/categories';
 const POPULAR = '/popular';
+const INGRIDIENTS = '/ingredients';
 
 // async function serviceAllRecipes(page = 1, limit = 6) {
 //   const params = new URLSearchParams({
@@ -32,6 +33,11 @@ async function fetchAllRecipes(limit = 9, page = 1, category = '') {
     limit,
   });
   const { data } = await axios(`${ALL_RECIPES}?${params}`);
+  return data;
+}
+
+async function fetchAllIngredients() {
+  const { data } = await axios(`${INGRIDIENTS}`);
   return data;
 }
 
@@ -67,4 +73,5 @@ export {
   serviceAllCategories,
   allMasterDish,
   servicePopularRecipes,
+  fetchAllIngredients,
 };

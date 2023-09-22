@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { refs } from './refs';
 import { debounce } from 'lodash';
-import { fetchAllRecipes } from './api-requests';
+import { fetchAllIngredients, fetchAllRecipes } from './api-requests';
 import { createMarkupRecipesByCategory } from './markup';
 import { notifyNothingFound } from './notifications';
 
@@ -17,12 +17,28 @@ async function fetchAllAreas() {
   return data;
 }
 
+
+
+// function createMarkupTimeList() {
+// 	let timeList = [];
+// 	console.log(timeList);
+// 	for (let i = 5; i <= 160; i += 5){
+// 		timeList.push(`<option class="time-select">${i} min</option>`);
+// 	}
+
+//   refs.timeList.insertAdjacentHTML('beforeend', timeList.join(''));
+// }
+
+// createMarkupTimeList();
+
+
 async function fetchAllIngredients() {
   const { data } = await axios.get(`${ALL_INGREDIENTS}`);
   return data;
 }
 
 // area btn options
+
 async function areaList() {
   try {
 		const results = await fetchAllAreas();
@@ -35,8 +51,7 @@ async function areaList() {
 areaList();
 
 function createMarkupAreasList(data) {
-  const optionsList = data
-    .map(({ id, name }) => `<option value="${id}">${name}</option>`)
+  const optionsList = data.map(({ id, name }) => `<option value="${id}">${name}</option>`)
     .join(' ');
 
   refs.areaList.innerHTML = optionsList;
@@ -44,11 +59,47 @@ function createMarkupAreasList(data) {
 
 
 
+// All Ingredients Options ================================================
+
+async function ingridientsList() {
+  try {
+    const results = await fetchAllIngredients();
+    createMarkupIngridientsList(results);
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+ingridientsList();
+
+function createMarkupIngridientsList(data) {
+  const optionsList = data
+    .map(
+      ({ id, name }) =>
+        `<option class="ingridients-select" value="${id}">${name}</option>`
+    )
+    .join(' ');
+
+  refs.ingredientsList.insertAdjacentHTML('beforeend', optionsList);
+}
+
+// refs.ingredientsList.addEventListener('select', onSelect);
+
+// ingridientsList()
+
+// Search Input Filter =================================================
+
+refs.searchInput.addEventListener('input', debounce(onSearchInput, 300));
+
+async function onSearchInput(evt) {
+
+
 // Fetch Area Options ======================================================
 
 refs.areaList.addEventListener('change', onChangeAreaSelect);
 
 async function onChangeAreaSelect(evt) {
+
   try {
     let limit;
     refs.mainList.innerHTML = '';
@@ -59,6 +110,25 @@ async function onChangeAreaSelect(evt) {
     } else {
       limit = 9;
     }
+
+
+    const searchQuery = evt.target.value;
+
+    const data = await fetchAllRecipes();
+    const { results } = data;
+    results.map(recipe => {
+      const { title } = recipe;
+      const titleToLowerCase = title.toLowerCase();
+      const searchQueryToLowerCase = searchQuery.toLowerCase().trim();
+      if (titleToLowerCase.includes(searchQueryToLowerCase)) {
+        refs.mainList.insertAdjacentHTML(
+          'beforeend',
+          createMarkupRecipesByCategory(recipe)
+        );
+
+        return;
+      }
+    });
 
 		const searchAreaSelect = evt.currentTarget.value;
 		// console.log(searchAreaSelect);
@@ -74,10 +144,14 @@ async function onChangeAreaSelect(evt) {
 				return;
 			}
 		});
+
   } catch (err) {
     console.log(err);
   }
-};
+}
+
+
+export { onSearchInput };
 
 // refs.areaList.addEventListener('select', onSelect);
 
