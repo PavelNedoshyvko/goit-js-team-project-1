@@ -101,10 +101,10 @@ async function productGalleryList() {
       });
     }
     handlingPagination(limit, pagination, category);
-    console.log(data);
+    // console.log(data);
     return createMarkupRecipes(data);
   } catch (err) {
-    console.log(err);
+    // console.log(err);
   }
 }
 

@@ -11,7 +11,7 @@ import { refs } from './refs';
 async function insertMarkup() {
   let dataRecipe = await productGalleryList();
   refs.mainList.innerHTML = dataRecipe;
-  console.log(dataRecipe);
+  // console.log(dataRecipe);
   // після відмалювання розмітки на головній,
   // викликали функцію setListenner() і передали клас від кнопки See detail
   setListenner('.btn-detail-info');
@@ -21,7 +21,7 @@ async function insertMarkup() {
   // у файлі star.js є корява функція із застосуванням parseFloat
 
   paintingStars(); // фарбування зірок
-  // const
+
   // getHeart(); //серця на головній
 }
 
@@ -41,12 +41,13 @@ function setListenner(btnIdSeeinfo) {
       refs.modalDetailRecipe.innerHTML = renderData;
       // щоб побачити це вікно - прибрав клас невидимості ↓
       refs.modalFullWindows.classList.remove('is-hidden');
+      paintingStars();
       checkAvaliableInLocalStorage(dataRecipe._id);
       getBtnFev(dataRecipe); // слухаю кнопку "додат обране"
     })
   );
 }
-// слухач на популярні рецепти. Повішав дата атрибути на всі теги,
+// слухач на популярні рецепти. Повішав дата атрибут ід на всі теги,
 // щоб легко відловлювати ід по кліку.
 function setPopularRecipeListener() {
   let item = document.querySelector('.popular-recipes-list-js');

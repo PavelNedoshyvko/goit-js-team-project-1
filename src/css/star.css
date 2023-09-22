@@ -55,7 +55,19 @@
   }
 }
 
-/* фарбуванні ікончи в JS star.js*/
-.filled {
-  fill: var(--yellow-star);
+.star-active {
+  color: var(--yellow-star);
+  font-size: 18px;
+  letter-spacing: -4px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 1279px) {
+  .rating {
+    display: flex;
+    font-size: 18px;
+  }
+}
+
+.star-recipe-reting-modal {
+  color: var(--gray-star-w2);
 }

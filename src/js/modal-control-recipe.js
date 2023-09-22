@@ -8,4 +8,15 @@ const closebtn = document.querySelector('.btn-close-recipe');
 
 closebtn.addEventListener('click', () => {
   modalWindow.classList.add('is-hidden');
+
+  let video = document.querySelector('#videoYouTube');
+
+  window.addEventListener('beforeunload', function () {
+    if (video) {
+      video.contentWindow.postMessage(
+        '{"event":"command","func":"pauseVideo","args":""}',
+        '*'
+      );
+    }
+  });
 });
