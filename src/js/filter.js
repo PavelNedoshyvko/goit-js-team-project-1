@@ -17,10 +17,7 @@ async function fetchAllAreas() {
   return data;
 }
 
-async function fetchAllIngredients() {
-  const { data } = await axios.get(`${ALL_INGREDIENTS}`);
-  return data;
-}
+
 
 // area btn options
 async function areaList() {
@@ -48,15 +45,6 @@ function onSelect(evt) {
   }
 }
 
-// all ingredients options
-
-
-
-
-
-// Search Input Filter
-
-
 refs.searchInput.addEventListener('input', debounce(onSearchInput, 300));
 
 async function onSearchInput(evt) {
@@ -81,6 +69,7 @@ async function onSearchInput(evt) {
 			const searchQueryToLowerCase = searchQuery.toLowerCase().trim();
       if (titleToLowerCase.includes(searchQueryToLowerCase)) {
 				refs.mainList.insertAdjacentHTML('beforeend', createMarkupRecipesByCategory(recipe));
+        
 				return;
 			}
 		});
