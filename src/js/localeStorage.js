@@ -1,12 +1,14 @@
 import axios from 'axios';
 import { serviceGetRecipeById } from './api-requests';
+import Notiflix from 'notiflix';
+
+const STORAGE_KEY = 'favorites-recipe';
 
 const save = (key, value) => {
   try {
     const serializedState = JSON.stringify(value);
     localStorage.setItem(key, serializedState);
   } catch (error) {
-    console.error('Set state error: ', error.message);
     // Notify.failure("Something went wrong. Please try again");
   }
 };
@@ -16,8 +18,7 @@ const load = key => {
     const serializedState = localStorage.getItem(key);
     return serializedState === null ? undefined : JSON.parse(serializedState);
   } catch (error) {
-    console.error('Get state error: ', error.message);
-    // Notify.failure("Something went wrong. Please try again");
+    Notify.Notify('Something went wrong. Please try again');
   }
 };
 
@@ -25,36 +26,61 @@ const remove = key => {
   try {
     localStorage.removeItem(key);
   } catch (error) {
-    console.error('Remove item error: ', error.message);
-    // Notify.failure("Something went wrong. Please try again");
+    Notify.Notify('Something went wrong. Please try again');
   }
 };
 
-export function getBtnFev() {
+function getBtnFev(dataRecipe) {
   const addfevBtn = document.querySelector('.js-listener-fav-btn');
 
   addfevBtn.addEventListener('click', evt => {
-    let clickIdRecipe = evt.target.dataset.id;
-    console.dir(clickIdRecipe);
+    addFavCardRecipe(dataRecipe);
   });
-  addFavCardRecipe(clickIdRecipe);
-  // console.log(addfevBtn);
 }
 
 let arrayFav = [];
 
-function addFavCardRecipe(id) {
-  //  bitWise -(x+1)
-  //
-  serviceGetRecipeById(id)
-    .then(data => {
-      arrayFav.push(data);
-      save('favIdCard', arrayFav);
-    })
-    .catch(() => {
-      console.log(error);
+let btnAddtofav;
+
+function addFavCardRecipe(objRecipe) {
+  // console.log(objRecipe);
+  if ((btnAddtofav.textContent = 'Add to favorite')) {
+    arrayFav.push(objRecipe);
+    save(STORAGE_KEY, arrayFav);
+
+    btnAddtofav.textContent = 'Remove from favorite';
+  } else {
+    arrayFav = arrayFav.filter(({ _id }) => {
+      console.log(objRecipe._id);
+      console.log(_id);
+
+      objRecipe._id !== _id;
     });
+    //додати функціонал видалення з ЛС
+    save(STORAGE_KEY, arrayFav);
+    //видали з масив ІД. метод filter
+  }
+
+  // arrayFav.push(objRecipe);
+  // save(STORAGE_KEY, arrayFav);
 }
+
+function checkAvaliableInLocalStorage(id) {
+  const favorites = load(STORAGE_KEY);
+  btnAddtofav = document.querySelector('.modal-recipe-btn-addFavorites');
+
+  if (!favorites) {
+    return;
+  }
+  const recepi = favorites.find(({ _id }) => _id === id);
+  if (recepi) {
+    btnAddtofav.textContent = 'Remove from favorite';
+  } else {
+    btnAddtofav.textContent = 'Add to favorite';
+  }
+}
+
+export { getBtnFev, checkAvaliableInLocalStorage };
 
 // function saveFavoriteCard(key, card) {
 //   const recipeCard = JSON.stringify(card);
