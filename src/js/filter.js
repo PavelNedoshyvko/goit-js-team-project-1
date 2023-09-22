@@ -25,7 +25,7 @@ async function fetchAllIngredients() {
 // area btn options
 async function areaList() {
   try {
-    const results = await fetchAllAreas();
+		const results = await fetchAllAreas();
     createMarkupAreasList(results);
   } catch (err) {
     console.log(err);
@@ -42,9 +42,55 @@ function createMarkupAreasList(data) {
   refs.areaList.innerHTML = optionsList;
 }
 
-refs.areaList.addEventListener('select', onSelect);
-function onSelect(evt) {
-  if ((evt.target.value = data.area.value)) {
+
+
+// Fetch Area Options ======================================================
+
+refs.areaList.addEventListener('change', onChangeAreaSelect);
+
+async function onChangeAreaSelect(evt) {
+  try {
+    let limit;
+    refs.mainList.innerHTML = '';
+    if (window.innerWidth < 768) {
+      limit = 6;
+    } else if (window.innerWidth < 1280) {
+      limit = 8;
+    } else {
+      limit = 9;
+    }
+
+		const searchAreaSelect = evt.currentTarget.value;
+		// console.log(searchAreaSelect);
+		
+    const data = await fetchAllRecipes();
+    const { results } = data;
+    results.map(recipe => {
+			const { area } = recipe;
+			
+      if (searchAreaSelect === area) {
+				refs.mainList.insertAdjacentHTML('beforeend', createMarkupRecipesByCategory(recipe));
+        
+				return;
+			}
+		});
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+// refs.areaList.addEventListener('select', onSelect);
+
+
+
+// All Ingredients Options ================================================
+
+async function ingridientsList() {
+  try {
+    const results = await fetchAllIngredients();
+    createMarkupIngridientsList(results);
+  } catch (err) {
+    console.log(err);
   }
 }
 

@@ -1,16 +1,16 @@
 .favorites-top-header {
   width: 335px;
- margin: 20px auto 44px;
+  margin: 20px auto 44px;
 }
 @media only screen and (min-width: 768px) {
   .favorites-top-header {
-   width: 704px;
+    width: 704px;
   }
 }
 
 @media only screen and (min-width: 1280px) {
   .favorites-top-header {
-   width: 1080px;
+    width: 1080px;
   }
 }
 
@@ -26,13 +26,13 @@
 }
 @media only screen and (min-width: 768px) {
   .favorites-hero-img {
-   width: 704px;
+    width: 704px;
   }
 }
 
 @media only screen and (min-width: 1280px) {
   .favorites-hero-img {
-   width: 1080px;
+    width: 1080px;
   }
 }
 
@@ -40,6 +40,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.hidden {
+  display: none;
 }
 
 .favorites-taxt {
@@ -60,16 +64,16 @@
 }
 
 .favorites-display-none {
-display: flex;
-flex-direction: column;
-gap: 24px;
-} 
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 
 @media only screen and (min-width: 768px) {
   .favorites-display-none {
     flex-direction: row;
-   flex-wrap: wrap;
-   gap: 16px;
+    flex-wrap: wrap;
+    gap: 16px;
   }
 }
 
@@ -95,4 +99,3 @@ gap: 24px;
     height: 287px;
   }
 }
-

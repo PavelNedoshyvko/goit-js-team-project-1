@@ -49,11 +49,7 @@ function createMarkupLS(arr) {
 
 function paintingFavoritePage() {
   //Toque
-  const markup = `<div class="favorites-block-icon">
-            <svg class="favorites-icon" width="97" height="83">
-              <use href="./img/icons.svg#toque"></use>
-            </svg>
-          </div>
+  const markup = `
           <p class="favorites-taxt">
             It appears that you haven't added any recipes to your favorites yet.
             To get started, you can add recipes that you like to your favorites
