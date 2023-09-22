@@ -19,7 +19,7 @@ const themes = {
         "--background-w": "#161616",
         "--black": "#f8f8f8",
         "--white-w":"#050505",
-        "--gray-title-w": "#f8f8f844",
+        "--gray-title-w": "#ffffff8c",
         "--gray-ul-w": "#f8f8f833",
         "--gray-border-w": "#f8f8f822",
         "--gallery-gradient": "linear-gradient(1deg,rgba(5, 5, 5, 0.8) 0%,rgba(5, 5, 5, 0.2) 100%)",
