@@ -1,6 +1,17 @@
 .favorites-top-header {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  width: 335px;
+ margin: 20px auto 44px;
+}
+@media only screen and (min-width: 768px) {
+  .favorites-top-header {
+   width: 704px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .favorites-top-header {
+   width: 1080px;
+  }
 }
 
 .current-page {
@@ -8,7 +19,21 @@
 }
 
 .favorites-hero-img {
-  padding-bottom: 64px;
+  width: 335px;
+  margin-bottom: 64px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+@media only screen and (min-width: 768px) {
+  .favorites-hero-img {
+   width: 704px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .favorites-hero-img {
+   width: 1080px;
+  }
 }
 
 .favorites-block-icon {
@@ -34,6 +59,40 @@
   text-align: center;
 }
 
-/* .favorites-display-none {
-display: none;
-} */
+.favorites-display-none {
+display: flex;
+flex-direction: column;
+gap: 24px;
+} 
+
+@media only screen and (min-width: 768px) {
+  .favorites-display-none {
+    flex-direction: row;
+   flex-wrap: wrap;
+   gap: 16px;
+  }
+}
+
+.recipes-favorit-item {
+  position: relative;
+  width: 335px;
+  height: 335px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--gallery-gradient);
+}
+
+@media only screen and (min-width: 768px) {
+  .recipes-favorit-item {
+    width: 224px;
+    height: 244px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .recipes-favorit-item {
+    width: 258px;
+    height: 287px;
+  }
+}
+
