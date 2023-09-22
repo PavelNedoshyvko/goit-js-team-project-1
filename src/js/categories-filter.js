@@ -5,8 +5,9 @@ import { refs } from './refs';
 //new
 import Notiflix from 'notiflix';
 import 'notiflix/dist/notiflix-3.2.6.min.css';
+
 //end
-refs.allCategoryButton.addEventListener('click', onAllCategoryButtonClick);
+
 refs.categoryContainer.addEventListener('click', onBtnCLick);
 refs.searchForm.addEventListener('submit', onSearch);
 

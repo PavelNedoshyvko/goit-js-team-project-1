@@ -47,20 +47,8 @@ function createMarkupLS(arr) {
     .join('');
 }
 
-// function createToqueFavorite() {
-//   return `<div class="favorites-block-icon">
-//             <svg class="favorites-icon" width="97" height="83">
-//               <use href="./img/icons.svg#toque"></use>
-//             </svg>
-//           </div>
-//           <p class="favorites-taxt">
-//             It appears that you haven't added any recipes to your favorites yet.
-//             To get started, you can add recipes that you like to your favorites
-//             for easier access in the future.
-//           </p>`;
-// }
-
 function paintingFavoritePage() {
+  //Toque
   const markup = `<div class="favorites-block-icon">
             <svg class="favorites-icon" width="97" height="83">
               <use href="./img/icons.svg#toque"></use>
@@ -77,6 +65,7 @@ function paintingFavoritePage() {
   );
 
   const favorites = load(STORAGE_KEY);
+
   console.log(favorites);
 
   if (favorites === undefined || favorites.length === 0) {
