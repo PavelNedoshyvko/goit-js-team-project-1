@@ -15,6 +15,7 @@ const refs = {
   searchForm: document.querySelector('.main-products-container'), // area for search - input
   areaList: document.querySelector('.main-products-filter-area-select'),
   ingredientsList: document.querySelector('.main-products-filter-ingredients-select'),
+  timeList: document.querySelector('.main-products-filter-time-select'),
   searchInput: document.querySelector('#main-products-filter-search-input'),
 };
 
