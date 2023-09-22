@@ -3,7 +3,7 @@ function paintingStars(rating) {
   const currentRating = Number(rating).toFixed(1);
   const roundRating = Math.round(rating);
 
-  let starsHtml = `<div class="rating">
+  let starsHtml = `<div class="star-reiting-box">
     <span class="star-recipe-reting">${currentRating}</span>
     <span class="starItem" data-value="1">&#9733;</span>
     <span class="starItem" data-value="2">&#9733;</span>
