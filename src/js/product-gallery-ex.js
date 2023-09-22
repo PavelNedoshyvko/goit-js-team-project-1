@@ -2,16 +2,15 @@ import { fetchAllRecipes } from './api-requests';
 import { createMarkupRecipes } from './markup';
 import Pagination from 'tui-pagination';
 import { refs } from './refs';
-
+import { debounce } from 'lodash';
 
 const testDTNCollection = document.getElementsByClassName('categories-list');
-
 
 
 let limit = 6;
 let targetInnerWingt = window.outerWidth;
 let visibleCard = 2;
-let page = 1; // Установите начальную страницу в 1
+let page = 1; 
 let category = '';
 
 const paginationTemplate = {
@@ -57,22 +56,43 @@ const handlingPagination = (limit, pagination, category) => {
       pagination.reset(pages);
       const markup = createMarkupRecipes(data);
       
-      
       refs.mainList.innerHTML = markup;
-     
     });
   }
   refs.allCategoryButton.addEventListener('click', async function() {
     category = '';
     pagination.movePageTo(1); 
-    await productGalleryList(); 
-    const data = await fetchAllRecipes(limit, page, category);
-      const pages = data.totalPages * data.perPage;
-      pagination.reset(pages);
-      const markup = createMarkupRecipes(data);
-      
+    await loadAllRecipesWithoutCategory(); 
   });
-  
+
+  async function loadAllRecipesWithoutCategory() {
+    category = ''; 
+    page = 1; 
+    const data = await fetchAllRecipes(limit, page, category);
+    const totalPages = data.totalPages;
+    pagination.reset(totalPages); 
+    const markup = createMarkupRecipes(data);
+    refs.mainList.innerHTML = markup;
+  }
+
+  refs.searchInput.addEventListener('input', debounce(onSearchInput, 300));
+
+  async function onSearchInput(evt) {
+    try {
+      const searchQuery = evt.target.value;
+      category = '';
+      page = 1; 
+      
+      const data = await fetchAllRecipes(limit, page, category, searchQuery);
+      
+      const totalPages = data.totalPages;
+      pagination.reset(totalPages);
+      const markup = createMarkupRecipes(data);
+      refs.mainList.innerHTML = markup;
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
   pagination.on('afterMove', async function (evt) {
     const currentPage = evt.page;
@@ -100,13 +120,12 @@ async function productGalleryList() {
     let totalItems = data.totalPages;
     let totalPages = totalItems * limit;
   
-   
     if (!pagination) {
       pagination = new Pagination('pagination', {
         totalItems: `${totalPages}`, 
         itemsPerPage: data.perPage,
         visiblePages: `${visibleCard}`,
-        page: page, // Установите начальную страницу
+        page: page, 
         centerAlign: false,
         firstItemClassName: 'tui-first-child',
         lastItemClassName: 'tui-last-child',
@@ -114,9 +133,7 @@ async function productGalleryList() {
       });
     }
     handlingPagination(limit, pagination, category);
-    // console.log(data);
     return createMarkupRecipes(data);
-    
   } catch (err) {
     console.log(err);
   }
