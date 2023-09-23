@@ -79,6 +79,7 @@ function createMarkupIngridientsList(data) {
 }
 
 // refs.ingredientsList.addEventListener('select', onSelect);
+// refs.ingredientsList.addEventListener('select', onSelect);
 
 // ingridientsList()
 
